@@ -1,0 +1,72 @@
+Andrew Baldock
+Senior Web Developer ➥ San Francisco Bay Area
+
+510-545-3739
+andrewbaldock@yahoo.com
+
+PROFILE
+
+Design-Savvy Senior Web Developer seeking a Javascript+HTML+CSS focused position building beautiful, world class web applications.
+
+SKILLS
+
+Javascript, HTML, CSS, jQuery, able to work in any Javascript project or framework.  Photoshop, Wordpress, some PHP, some JSP. Apache configuration. Google Analytics. Page optimization and load times.
+
+EXPERIENCE
+
+---
+Senior Web Developer
+Mindjet, San Francisco, Ca
+Jan 2011 - July 2013
+
+ - Responsible for www.mindjet.com.  
+ - Migrated the website from an unversioned, aging Java CMS to a clean static Apache website, versioned in Github. 
+ - Removing the CMS, combined with rewriting the site HTML, brought global page load time down from 12 seconds to 3.  The SEO improvements were felt immediately.  
+ - Wrote Apache config files to handle localization of site in 7 languages. 
+ - Wrote ajax-based user signup flow application. 
+ - Wired social signup via FB or G+ into the signup
+installed Tealium so marketing data folks could manage their own tracking tags. 
+Redesigned www.mapsforthat.com to align to new company branding.
+
+---
+Senior Developer
+Macys.Com, San Francisco, Ca
+Aug 2000 — Nov 2010
+
+ - Successfully migrated the below CMS from a custom built FileMaker application to a custom built HTML/CSS/Javascript YUI Web Application on top of Oracle and SpringMVC.
+ - Responsible for the design, implementation, and uptime of a 15gb, 200+ user FileMaker application managing the content of the retail website at Macys.com. The application use(d) FileMaker in every conceivable way including connections to external databases using SQL and ODBC, instant web publishing, XML, PHP, PERL, and others. 
+ - Authored Technical Requirements, Use Cases, UML Diagrams, Business Workflows, Functional Specifications, Design Documents, Domain Models, Information Architecture, UI, and Usability documentation for the Enterprise-level replacement Java application above.
+ - Designed and built related websites using PHP and JSP.
+ - Built the macys.com retail pricing management application.
+
+---
+Web Director
+University Of California At Berkeley
+1998-2000
+
+ -  Built the official UC Berkeley website at www.berkeley.edu, which was the online face of the University for EIGHT YEARS.  The site stood with almost no change from 2000-2008.
+ - Roles included Web/UI Developer in XHTML/CSS/SQL/JavaScript/FileMaker, IA of Site Architecture, and Manager.
+
+---
+Web Developer
+University Of California At Santa Cruz
+1995-1998
+
+ - Responsible for the design and execution of 10+ divisional websites. 
+ - Managed multiple departmental servers and supported 100+ workstations.
+
+
+CERTIFICATION
+
+Certified Usability Analyst
+ - License 2007-1197, Human Factors International
+
+
+EDUCATION
+
+University of California, Santa Cruz, 1992-1994
+ - BA, Latin American Studies, 
+
+University of California, Los Angeles, 1987-1990
+
+

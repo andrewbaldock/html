@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Andrew Baldock. Boss-Level Javascript/Web/Front-End Developer." name="description">
+    <title>Andrew Baldock. Boss-Level Javascript/Web/Front-End Developer.</title>
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Style 
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen" />  -->
+   
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Codystar|Megrim|Source+Code+Pro' rel='stylesheet' type='text/css'>
+    
+    <style>
+    	html {
+    	background-image: url("backgrounds/decali-baybridge.jpg");
+    		background-color: #222!important;
+    		color:#D5BCE9;
+    		font-family: 'Source+Code+Pro', sans-serif;
+    		padding:20px;
+    	}
+    	body {
+    		
+    	}
+    	.dotty {font-family: 'Codystar', cursive;}
+    	p {    		font-size:16px;font-family: 'Source Code Pro', sans-serif!important;}
+    	#contact {float:right;display:block;width:100px; margin-right:20px;}
+    	#supername {
+    		width:500px;
+    		/* border: 3px white dotted; */
+    		padding:20px 50px;
+				text-align: center;
+    	}
+    	
+    	h1 {font-size:80px;display:inline-block;margin-bottom;-100px;}
+    	#tagline {font-size:35px;display:inline-block;}
+    	#subtag {font-size:25px;display:inline-block;}
+
+    	
+    </style>
+    
+	</head>
+	<body>
+	
+	<header>
+		<div id="contact">Contact Me</div>
+	</header>
+	
+	<div id="supername">
+		<h1 class="dotty colormebadd">Andrew Baldock</h1>
+		<div id="tagline" class="dotty"><div class="colormebadd">Boss-Level </div>Javascript/Front-End/Web<br>Developer</div>
+		<p id="subtag">+ backend skills for the full stack experience</p>
+	</div>
+	
+	<section id="things" class="colormebadd">
+		<h2>things I've built</h2>
+		<!-- <ul>
+			<li>mindjet.com</li>
+			<li>macys.com</li>
+			<li>berkeley.edu</li>
+		</ul> -->
+	</section>
+	
+	<div class="row-fluid">
+            <div class="span4">
+              <h2>mindjet.com</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>macys.com</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>berkeley.edu</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+  </div>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script>
+	
+	
+			
+			$(function() {
+     		 
+
+					
+						$(".colormebadd").animate({
+								color: '#CF2CC7'
+							}, 5000 ,function() {
+									$(".colormebadd").animate({
+											color: '#2686E5'
+									}, 5000, function() {
+											$(".colormebadd").animate({
+													color: '#D5BCE9'
+											}, 5000 );
+  								} );
+  							}
+  						);
+							
+			});
+
+	</script>
+	</body>
+</html>
