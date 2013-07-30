@@ -169,7 +169,7 @@ h4 {
 	font-size:37px;
 	font-style:normal;
 	line-height:36px;
-	color:#3e3e3e;
+	color:#3E3E3E;
 }
 
 img.icon_img {
@@ -189,7 +189,7 @@ img.icon_img {
 }
 
 .effect_menu {
-	background:url(../images/effect_4.png) repeat rgba(39, 26, 39, 0.82) left top;
+	background:url(../images/effect_4.png) repeat rgba(39, 26, 39, 0.92) left top;
 }
 
 #subtag {
@@ -273,22 +273,20 @@ img.icon_img {
 	cursor:pointer;
 	display:block;
 	margin:20px auto 0;
-	width:120px;
-	height:50px;
-	border:none;
+	width:45px;
+	height:45px;
 	text-transform:uppercase;
 
-
 	border-radius:9px;
-	background:url(../images/effect_4.png) repeat rgba(39, 16, 38, 0.67) left top;
-
-	transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
+	/*background:url(../images/effect_4.png) repeat rgba(39, 16, 38, 0.67) left top;*/
+	border:2px dotted #D5BCE9;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
 }
-#slide1 .button:hover, #slide1 .button:active, {
-	background:url(../images/effect_4.png) repeat gba(185, 38, 162, 0.33) left top;
+#slide1 .button:hover, #slide1 .button:active {
+	background:url(../images/effect_4.png) repeat rgba(117, 31, 104, 0.47) left top;
 
 }
 
@@ -307,7 +305,7 @@ img.icon_img {
 	color:#5D1268;
 }
 #praise{
-	border:2px dotted #bbb;
+	border:3px dotted #bbb;
 	padding:20px;
 	background:url(../images/slide2pink_bg.jpg) repeat left top;
 	opacity:0.8;
@@ -1050,3 +1048,6 @@ img.icon_img {
 
 /* ___________________________________ //FOOTER ___________________________________ */
 
+.shadow-2 {color:#FFCDB2;
+  text-shadow: 0px 0px 0 #EE72DE,-1px 1px 0 #EE72DE,-2px 2px 0 #EE72DE,-3px 3px 0 #EE72DE,-4px 4px 0 #EE72DE,-5px 5px 0 #EE72DE,-6px 6px 0 #EE72DE,-7px 7px 0 #EE72DE,-8px 8px 0 #EE72DE,-9px 9px 0 #EE72DE,-10px 10px 0 #EE72DE,-11px 11px 0 #EE72DE,-12px 12px 0 #EE72DE;
+}
