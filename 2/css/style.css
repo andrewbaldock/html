@@ -105,19 +105,19 @@ ul.navigation {
 .btn_dropdown {
 	display:none;
 	cursor:pointer;
-	background:#fff;
-	margin:20px 30px 0 0;
-	width:130px;
-	height:36px;
+	margin-top:5px;
 	text-align:center;
 	font-family: 'Open Sans', sans-serif;
-	font-weight:700;
-	font-size:18px;
+	font-weight:100;
+	font-size:24px;
 	line-height:36px;
-	color:#3e3e3e;
+	color:#bbb;
 	border-radius:5px;
+	position:absolute;
+	left:15px;
+	top:0px;
 }
-.btn_dropdown:hover {color:#3e3e3e;}
+.btn_dropdown:hover {color:RGBA(225.00, 37.00, 155.00, 1.00)}
 
 
 /* General Slides */ 
@@ -319,7 +319,7 @@ img.icon_img {
 }
 #skills_block p b{
 	font-weight:400;
-	color:#559ac3;
+	color:#DD23B0;
 }
 #skills_block li {
 	width:99%;
@@ -406,10 +406,10 @@ img.icon_img {
 .progress-striped .bar {
   margin-top:-1px;
   height:14px;
-  border-top:1px solid #6bbceb;
-  border-left:1px solid #6bbceb;
+  border-top:1px solid #DD23B0;
+  border-left:1px solid #DD23B0;
   border-radius:10px;
-  background-color: #478bb8;
+  background-color: #A04DA3;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -711,9 +711,7 @@ img.icon_img {
 	position:relative;
 	margin:0 0 0 127px;
 	padding:12px 0 12px 22px;
-	background:url(../images/ac_h3_span_bg.jpg) repeat-x left top #559ac3;
-	border-right:1px solid #4b8aaf;
-	border-bottom:1px solid #4b8aaf;
+	background:rgba(59, 4, 70, 0.35);
 	text-align:left;
 	text-transform:none;
 	font-family: 'Open Sans', sans-serif;
@@ -728,8 +726,8 @@ img.icon_img {
 	left:0;
 	bottom:1px;
 	height:98%;
-	width:2px;
-	background:url(../images/left_bord_ac_title.jpg) repeat-y;
+	width:3px;
+	background:#D32B94;
 }
 
 .accordion .accord_cont {
@@ -1048,6 +1046,20 @@ img.icon_img {
 
 /* ___________________________________ //FOOTER ___________________________________ */
 
-.shadow-2 {color:#FFCDB2;
+#map_block {
+	position: relative;
+	left: 0px;
+	bottom: -75px;
+}
+
+	
+.sherbert {color:#FFCDB2;
   text-shadow: 0px 0px 0 #EE72DE,-1px 1px 0 #EE72DE,-2px 2px 0 #EE72DE,-3px 3px 0 #EE72DE,-4px 4px 0 #EE72DE,-5px 5px 0 #EE72DE,-6px 6px 0 #EE72DE,-7px 7px 0 #EE72DE,-8px 8px 0 #EE72DE,-9px 9px 0 #EE72DE,-10px 10px 0 #EE72DE,-11px 11px 0 #EE72DE,-12px 12px 0 #EE72DE;
+}
+
+#slide8 #content, #slide10 #content {text-align:center;}
+
+.nombre {font-family:codystar, sans-serif;
+font-size:18pt;
+display:inline-block;
 }

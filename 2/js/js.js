@@ -9,18 +9,17 @@
 d.extend(true,d,{support:{rgba:m()}});var k=["color","backgroundColor","borderBottomColor","borderLeftColor","borderRightColor","borderTopColor","outlineColor"];d.each(k,function(b,a){d.Tween.propHooks[a]={get:function(c){return d(c.elem).css(a)},set:function(c){var e=c.elem.style,i=g(d(c.elem).css(a)),h=g(c.end);c.run=function(f){e[a]=j(i,h,f)}}}});d.Tween.propHooks.borderColor={set:function(b){var a=b.elem.style,c=[],e=k.slice(2,6);d.each(e,function(h,f){c[f]=g(d(b.elem).css(f))});var i=g(b.end);
 b.run=function(h){d.each(e,function(f,l){a[l]=j(c[l],i,h)})}}}})(jQuery);
 
-
-function sliderHeight(){
-		
+//get slide height
+function sliderHeight(){	
 	wh = $(window).height();
 	$('#slide1').css({height:wh});
-	
 }
 
+//centers homepage blurb
 function mymargtop() {
 	var body_h = $(window).height();
 	var container_h = $('.filtr_bg').height();	
-	var marg_top = Math.abs((body_h - container_h)/3);	
+	var marg_top = Math.abs((body_h - container_h)/3); 	
 	$('.filtr_bg').css('margin-top', marg_top);
 	$('.filtr_bg').css('margin-bottom', marg_top);
 }
@@ -29,19 +28,17 @@ function mymargtop() {
 function colorMeBadd(){
 	$(".colormebadd").animate({
 			color: '#CF2CC7'
-		}, 10000 ,function() {
-				$(".colormebadd").animate({
-						color: '#2686E5'
-				}, 10000, function() {
-						$(".colormebadd").animate({
-								color: '#D5BCE9'
-						}, 10000 );
-				} );
-			}
-		);
-	}
-
-
+	}, 3000 ,function() {
+			$(".colormebadd").animate({
+					color: '#2686E5'
+			}, 3000, function() {
+					$(".colormebadd").animate({
+							color: '#D5BCE9'
+					}, 3000 );
+			} );
+		}
+	);
+}
 
 jQuery(document).ready(function ($) {
 
@@ -54,7 +51,7 @@ jQuery(document).ready(function ($) {
     htmlbody = $('html,body');
 	
 	/**/	
-	if (mywindow.scrollTop() < 1) {
+	if (mywindow.scrollTop() < 10) {
 		$('.navigation li[data-slide="1"]').addClass('active');
 	}
 	/**/
