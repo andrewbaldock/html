@@ -69,7 +69,7 @@ a:hover {
 	margin: 0;
 		width:665px;
 		text-align:center;
-		display:inline-block!important;
+		display:inline-block;
 }
 ul.navigation {
 	position:relative;
