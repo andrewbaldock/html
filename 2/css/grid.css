@@ -54,8 +54,8 @@
 @media only screen and (min-width: 767px) and (max-width: 1023px) {	
 	.gallery-list .omega {margin-right:10px;}
 	
-	#slide1 h1 {font-size:80px;line-height:90px;}
-	#slide1 span {font-size:80px;line-height:100px;letter-spacing:0;}
+	#slide1 h1 {font-size:60px;line-height:70px;}
+	#slide1 span {font-size:30px;line-height:40px;letter-spacing:0;}
 	
 	.icon1, .icon1_h {height:100px;}
 	.ca-content {top:100px;}
@@ -70,6 +70,11 @@
 	
 	.left_bord2, .right_bord2 {display:none;}
 
+.navigation{
+
+		width:530px;
+
+}
 
 	
 /* _______________ Gallery ________________ */	
@@ -145,14 +150,17 @@
 }
 
 @media only screen and (min-width: 480px) and (max-width: 766px) {
-	h1 {font-size:46px;line-height:115px;padding-bottom:0;}
+	/* h1 {font-size:46px;line-height:115px;padding-bottom:0;} */
 	
 	#logo {text-align:center;}
 	
 	.padding_slide1 {padding:188px 0 100px;}
 
-	#slide1 h1 {font-size:66px;line-height:80px;}
-	#slide1 span {font-size:48px;line-height:70px;}
+	#slide1 h1 {font-size:52px;line-height:50px;}
+	#slide1 span {font-size:26px;line-height:30px;letter-spacing:0;}
+	#v-spacer {
+		height:30px;
+	}
 	
 	#slide1 .button {margin:50px auto 0;}
 	
@@ -198,8 +206,8 @@
 	
 	.padding_slide1 {padding:188px 0 100px;}
 
-	#slide1 h1 {font-size:46px;line-height:55px;}
-	#slide1 span {font-size:36px;line-height:45px;}
+	#slide1 h1 {font-size:36px;line-height:35px;}
+	#slide1 span {font-size:20px;line-height:20px;}
 	#slide1 .button {margin:40px auto 0;}
 	
 	.icon1, .icon1_h {height:132px;}

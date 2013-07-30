@@ -57,9 +57,9 @@
           if (s.currentTop != newTop) {
             s.stickyElement
               .css('position', 'fixed')
-			  .css('height', '56')
+			  .css('height', '45')
 			  .css({ 'marginTop': '0px'})
-			  .css({ 'paddingBottom': '20px'})
+			  .css({ 'paddingBottom': '0px'})
               .css('top', newTop);
 
             if (typeof s.getWidthFrom !== 'undefined') {
