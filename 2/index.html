@@ -93,8 +93,13 @@
 			<div class="grid_7">
 				<h4 class="sherbert">About Me</h4>
 				<p>Hi!  I'm a design-savvy web developer seeking a JavaScript focused position.</p>
-				<p>I started building web pages in 1995, eventually launching a new website for UC Berkeley in 2000.  This website stood for 8 years: an eternity in internet time.  During that time I went to work for Macys.com to help build their retail website.  Most recently I worked on the Mindjet.com website where I built out the signup flows and user try/buy funnels.</p>
-				<p>I love JavaScript: building beautiful, visual, world-class web applications is what I want to be doing. </p>
+				<p>I started building web pages in 1995, eventually launching a new homepage website for UC Berkeley in 2000, with a curious feature at the time: a UC Berkeley search engine by then-unheard-of Google. This website stood for 8 years.  EIGHT YEARS.  </p>
+				
+				<p>
+				On the success of that site I went to work for Macys.com to build their retail website, building two generations of the Macys.com in-house Content Management System in two completely different technology stacks (first FileMaker, then in Java/Spring/YUI).</p>
+				
+				<p>Most recently I worked on the <a  style="font-weight:bold;" href="http://www.mindjet.com" target="_blank">Mindjet.com</a> website, where I replatformed and optimized the entire site, bringing the global page load time down from 12 seconds (ouch) to just 3 (yay!), built out the signup flows as a single-page Ajax application, and architected a custom WebTrends tracking breadcrumbs installation in JavaScript.</p>
+				<p>I love JavaScript: building beautiful, performant, visual, world-class web applications is what I want to be doing. What are we building today?</p>
 				
 							
 
@@ -165,8 +170,32 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 						<div class="ac_plmin"></div>
 						<span><div class="left_bord_ac_title"></div>Senior Web Developer, Mindjet LLC</span>
 					</h3>
-					<div class="accord_cont">
-						Donec in vehicula augue. Sed et nisi sem, at semper dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut urna nibh, a semper neque. Mauris ultrices tempus nisi, et porttitor nulla varius a. Ut turpis magna, feugiat quis ultrices tristique, rhoncus eu leo. In eu quam lacus. Praesent
+					<div class="accord_cont" style="text-align:left;">
+	
+						
+						<ul style="list-style-type:circle">
+						<li>Responsible for <a href="www.mindjet.com" target="_blank">www.mindjet.com</a>.</li>
+						<li>Migrated the website from an unversioned, aging Java CMS to a clean static Apache website, versioned in Github.  Removing the CMS, combined with rewriting the site HTML, organizing page structure, moving static contents to a CDN, and optimizing JavaScript brought global page load time down from 12 seconds to 3.  The SEO improvements were felt immediately.</li>
+						<li>Wrote Apache configuration files to handle localization of site in 7 languages. 
+						<li>Namespaced the core mindjet.com javascript functions – go to  <a href="www.mindjet.com" target="_blank">www.mindjet.com</a>, open your browser console, and type in <code>mindJet</code> (that’s a capital J) and you can see the mindjet global JavaScript object.</li>
+						<li>Built the Mindjet.com user signup flows as single-page javascript applications.  The user flow starts in a lightbox, captures form information, alters the presentation based on user input, validates the form entries, sends values over AJAX to a REST api to check status, uses callbacks to validate the status, fires a tracking breadcrumb for each step of the path down the funnel, and eventually deposits the user at either the software download page or inside the cloud application.
+					<ul style="list-style-type:square; margin-left:30px;">
+						<li>Mindjet.com download trial flow, authored entirely by me:
+<a href="http://www.mindjet.com/start" target="_blank">http://www.mindjet.com/start</a></li>
+	<li>see it in a lightbox:
+<a href="http://www.mindjet.com/products/mindmanager" target="_blank">http://www.mindjet.com/products/mindmanager</a> (click the TRY FREE button)</li>
+
+						<li>Mindjet.com cloud application signup flow:
+<a href="http://www.mindjet.com" target="_blank">http://www.mindjet.com/</a>  (click Try ProjectDirector for Free)</li>
+<li>Keep your browser JS console open to see the tracking breadcrumbs
+</ul>
+</li>
+						<li>Wired social signup via FB or G+ into the signup using JanRain platform</li>
+						<li>Wrote a custom installation of Tealium (www.tealium.com) so marketing data folks could manage their own tracking tags.   The standard installation calls for every page on the website to be tagged; instead I wrote a singlepage javascript that does the job.  <a href="http://www.mindjet.com/js/trackstar.js" target="_blank">http://www.mindjet.com/js/trackstar.js</a>
+works with <a href="http://www.mindjet.com/js/trackstar-secure.js" target="_blank">http://www.mindjet.com/js/trackstar-secure.js</a>
+and <a href="http://www.mindjet.com/js/trackstar-www.js" target="_blank">http://www.mindjet.com/js/trackstar-www.js</a> to track the user across multiple domains as they approach conversion.</li>
+						<li>Redesigned <a href="http://www.mapsforthat.com/" target="_blank">www.mapsforthat.com</a> to align to new company branding.  This involved rewriting lots of PHP in an existing LAMP stack.</li>
+</ul>
 					</div>
 					<h3>
 						<div class="ac_date">2000&mdash;2010</div>
@@ -174,7 +203,14 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 						<span><div class="left_bord_ac_title"></div>Senior Developer / Web Developer Macys, Inc.</span>
 					</h3>
 					<div class="accord_cont">
-						Donec in vehicula augue. Sed et nisi sem, at semper dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut urna nibh, a semper neque. Mauris ultrices tempus nisi, et porttitor nulla varius a. Ut turpis magna, feugiat quis ultrices tristique, rhoncus eu leo. In eu quam lacus. Praesent
+							<ul style="list-style-type:circle">
+					 			<li>Successfully replatformed the below CMS from a custom built FileMaker application to a custom built HTML/CSS/JavaScript YUI Web Application on top of Oracle / Java / SpringMVC.  (Why YUI?  YUI had the most awesomest datatables at the time.)  </li>
+					 			<li>Responsible for the design, implementation, and uptime of a 15gb, 200+ user FileMaker application managing the content of the retail website at Macys.com. The application use(d) FileMaker in every conceivable way including connections to external databases using SQL and ODBC, instant web publishing, XML, PHP, PERL, and others. </li>
+					 			<li>Authored Technical Requirements, Use Cases, UML Diagrams, Business Workflows, Functional Specifications, Design Documents, Domain Models, Information Architecture, UI, and Usability documentation for the Enterprise-level replacement Java application above.</li>
+					 			<li>Designed and built related websites using PHP and JSP.</li>
+					 			<li>Built the macys.com retail pricing management application.</li>
+					 		</ul>
+
 					</div>
 					<h3>
 						<div class="ac_date">1998 - 2000</div>
@@ -182,7 +218,11 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 						<span><div class="left_bord_ac_title"></div>Web Director, UC Berkeley</span>
 					</h3>
 					<div class="accord_cont">
-						Donec in vehicula augue. Sed et nisi sem, at semper dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut urna nibh, a semper neque. Mauris ultrices tempus nisi, et porttitor nulla varius a. Ut turpis magna, feugiat quis ultrices tristique, rhoncus eu leo. In eu quam lacus. Praesent
+						
+							<ul style="list-style-type:circle">
+					 			<li>Built the official UC Berkeley website at www.berkeley.edu, which was the online face of the University for EIGHT YEARS.  The site stood with almost no change from 2000-2008.</li>
+<li>Roles included Web/UI Developer in XHTML/CSS/SQL/JavaScript/FileMaker, IA of Site Architecture, and Manager.</li>
+
 					</div>
 					<h3>
 						<div class="ac_date">1995 - 1998</div>
@@ -190,7 +230,10 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 						<span><div class="left_bord_ac_title"></div>Web Developer, UC Santa Cruz</span>
 					</h3>
 					<div class="accord_cont">
-						Donec in vehicula augue. Sed et nisi sem, at semper dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut urna nibh, a semper neque. Mauris ultrices tempus nisi, et porttitor nulla varius a. Ut turpis magna, feugiat quis ultrices tristique, rhoncus eu leo. In eu quam lacus. Praesent
+							<ul style="list-style-type:circle">
+					 			<li>Responsible for the design and execution of 10+ websites. </li>
+<li>Managed multiple departmental servers and supported 100+ workstations.</li>
+</ul>
 					</div>
 				</div>
 			</div>
@@ -220,8 +263,10 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 		
 		<div id="contenet">
 			<div class="overflow_hidden">
+			
+			
 				<!-- portfolio_block -->
-				<div class="gallery-list">
+	<!--			<div class="gallery-list">
 					<div class="img_block">
 						<div class="hover_img">
 							<img class="portf_img" src="images/portfolio/1.jpg" alt="" />
@@ -263,50 +308,17 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 						</div>
 					</div>
 					
-					<!--<div class="img_block">
-						<div class="hover_img">
-							<img class="portf_img" src="images/portfolio/5.jpg" alt="" />
-							<span class="portfolio_zoom"><a href="images/portfolio/full/5.jpg" rel="prettyPhoto[portfolio1]"></a></span>
-							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
-						</div>
-						<div class="item_description">
-							Etiam gravida convallis
-						</div>
-					</div>
-					<div class="img_block">
-						<div class="hover_img">
-							<img class="portf_img" src="images/portfolio/6.jpg" alt="" />
-							<span class="portfolio_zoom"><a href="images/portfolio/full/6.jpg" rel="prettyPhoto[portfolio1]"></a></span>
-							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
-						</div>
-						<div class="item_description">
-							Praesent a augue non
-						</div>
-					</div>
-					<div class="img_block">
-						<div class="hover_img">
-							<img class="portf_img" src="images/portfolio/7.jpg" alt="" />
-							<span class="portfolio_zoom"><a href="images/portfolio/full/7.jpg" rel="prettyPhoto[portfolio1]"></a></span>
-							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
-						</div>
-						<div class="item_description">
-							Etiam gravida convallis
-						</div>
-					</div>
-					<div class="img_block">
-						<div class="hover_img">
-							<img class="portf_img" src="images/portfolio/8.jpg" alt="" />
-							<span class="portfolio_zoom"><a href="images/portfolio/full/8.jpg" rel="prettyPhoto[portfolio1]"></a></span>
-							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
-						</div>
-						<div class="item_description">
-							Lorem ipsum dolor
-						</div>
-					</div>-->
+
 					
 					<div class="clear"></div>
-				</div>   
+				</div>   -->
 				<!-- //portfolio_block -->   
+				
+				<div id="construction" style="width:100%;display:block;text-align:center;">
+					<h4 style="font-size:24px;width:50%;display:inline-block;">Tuesday July 30 2013 -- <br>I just launched this new site and am adding to the portfolio section today & tomorrow - thanks!  <br>But do try resizing the <-- browser window --> to see JavaScript and CSS work together in this fully responsive website! <br><span style="color:white;float:right;font-size:34px;" class="sherbert">Andrew</span> </h4><br><br><br>
+					<img src="images/construction.gif" style="display:inline-block">
+				</div>
+				
 			</div>
 		</div>
 	
@@ -328,9 +340,9 @@ JavaScript, HTML5, CSS3, jQuery, able to work in any JavaScript project or frame
 		<div class="clear"></div>
 		
 		<div class="grid_12">
-			<h5>Andrew Baldock</h5>
+			<h5 style="color:#DD23B0;line-height:40px;">Andrew <span style="color:rgb(184, 0, 184)">Baldock</span></h5>
 			<span class="subtag" style="font-size:18pt">Senior Web / Javascript Developer<br>San Francisco Bay Area</span>
-			<p style="display:inline-block;font-size:14pt;width:75%;">Drop me a line and let me know what you're interested in. How can I bend the web to your will for you today?</p><br><br>
+			<p style="display:inline-block;font-size:14pt;width:75%;">Drop me a line and let me know what you're interested in. How can I shape the web for you today?</p><br><br>
 			<div class="contact_det">
 				<a href="mailto:andrewbaldock3@gmail.com">a n d r e w b a l d o c k 3 @ g m a i l . c o m</a>
 				<p>5 1 0 - 5 4 5 - D R E W</p>

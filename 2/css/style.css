@@ -69,6 +69,7 @@ a:hover {
 	margin: 0;
 		width:665px;
 		text-align:center;
+		display:inline-block;
 }
 ul.navigation {
 	position:relative;
@@ -1059,7 +1060,29 @@ img.icon_img {
 
 #slide8 #content, #slide10 #content {text-align:center;}
 
+#slide8 .accord_cont {text-align:left;}
 .nombre {font-family:codystar, sans-serif;
 font-size:18pt;
 display:inline-block;
+}
+
+.subtag {
+	line-height:37px;
+}
+
+.pinklink, .pinklink:visited {
+	font-weight:bold;
+	color:#DD23B0;
+}
+.pinklink:hover {
+	color:purple;
+}
+
+
+#slide8 a:hover {
+	color:#DD23B0;
+}
+
+#slide8 a:visited {
+	color:#D5BCE9;
 }

@@ -171,7 +171,7 @@
 
     .navigation {
         width: 530px;
-        display:inline-block;
+        display:inline-block!important;
     }
     #slide1 .button {
     	height:39px;
