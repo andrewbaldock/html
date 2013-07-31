@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Andrew Baldock. I really really really really really love Javascript.  And HTML and CSS.  And building world-class things with great people who are having as much fun as I am!" name="description">
+    <meta property="og:image" content="http://andrewbaldock.com/img/sitepreview.png">
+    <title>Andrew Baldock. Boss-Level Javascript/Web/Front-End Developer.</title>
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Style 
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen" />  -->
+   
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Codystar|Megrim|Source+Sans+Pro:400,400italic' rel='stylesheet' type='text/css'> 
+    
+    <style>
+    	html {
+    		background-image: url("img/backgrounds/decali-baybridge-1-night.jpg");
+    		background-position: -100px 0px;
+    		background-color: #222!important;
+    		color:#D5BCE9;
+    		font-family: sans-serif;
+    		padding:20px;
+    	}
+    	p {
+    		font-size:16px;
+    	}
+    	#contact {
+    		float:right;
+    		display:block;
+    		width:100px;
+    		margin-right:20px;
+    	}
+    	#supername {
+    		/* width:500px; */
+    		/* border: 3px white dotted; */
+    		padding:16px;
+				text-align: center;
+    	}
+    	a {
+    		color:#D5BCE9;
+    		text-decoration:none;
+    	}
+    	a:hover {
+    		color:#E43A90
+    	}
+    	
+    	h1 {
+    		font-wieght:400;
+    		font-size:70px;
+    		display:inline-block;
+    		margin-bottom;-100px;
+    		margin-top:-10px;
+    		width:100%;
+    	}
+    	#tagline {
+    		font-size:36px;
+    		display:inline-block;
+    		margin-top:-17px;
+    	}
+    	#subtag {
+    		font-size:22px;
+    		display:inline-block;
+    		font-family:'Megrim', san-serif; 
+    		margin-top:30px;
+    	}
+		 .dotty {
+		 	font-family: 'Codystar', cursive;
+		 	}
+		 #praise {
+		 	font-family: 'Source Sans Pro', cursive;
+			margin-top:30px;
+			width:350px;
+			opacity:0.8;
+			padding:10px;
+			border:2px dotted pink;
+		 	display:inline-block;color:#fff;
+		 	margin-top:16px;
+		 	}
+
+    </style>
+	</head>
+	
+	<body>
+	<img src="img/sitepreview.png" style="margin-left:-900px;margin-top:-185px;">
+	<header>
+
+		<div id="contact">
+			<a href="mailto:andrewbaldock3@gmail.com">Contact Me</a>
+		</div>
+	</header>
+	
+	<div id="supername" class="colormebadd"><br>
+		<h1 class="dotty">Andrew Baldock</h1>
+		<div id="tagline" class="dotty">
+				BOSS-LEVEL WEB DEVELOPER<BR>
+				Javascript&mdash;UX&mdash;FrontEnd
+		</div>
+		<br>
+	  <p id="subtag" class="dotty">
+	  	plus BACKEND SKILLS<br>
+	  	for the FULL STACK EXPERIENCE
+	  </p>
+	  <br>
+		<a id="praiselink" href="http://www.linkedin.com/in/andrewbaldock">
+			<div id="praise">
+				<span style="font-style:italic">"One of the most passionate and committed<br>
+				developers I've ever worked with...<br>a joy to work with and his team adores him!"</span><br>
+				<div style="margin-top:10px;"> <a href="http://www.linkedin.com/profile/recommendations?id=554668&trk=NUS_PREC-more">Jascha Kaykas-Wolff<br>
+				CMO, Mindjet</a>
+			</div>	
+		</a>
+	</div>
+
+	<div style="height:400px;">&nbsp;</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<script>
+		//doc ready	
+		$(function() {
+		
+			//color animation
+			function colorMeBadd(){
+				$(".colormebadd").animate({
+						color: '#CF2CC7'
+					}, 10000 ,function() {
+							$(".colormebadd").animate({
+									color: '#2686E5'
+							}, 10000, function() {
+									$(".colormebadd").animate({
+											color: '#D5BCE9'
+									}, 10000 );
+							} );
+						}
+					);
+				}
+				colorMeBadd();
+			});
+			
+	</script>
+	</body>
+</html>
