@@ -88,7 +88,7 @@ ul.navigation {
 	background:none;
 	font-family: 'Open Sans', sans-serif;
 	font-weight:400;
-	font-size:14px;
+	font-size:16px;
 	line-height:20px;
 	color:#E9E9E9;
 	transition: all 0.2s ease-in-out;
@@ -1085,4 +1085,12 @@ display:inline-block;
 
 #slide8 a:visited {
 	color:#D5BCE9;
+}
+
+.praiselink, .praiselink:visited {
+	color:#8A1B80!important;
+}
+
+.praiselink:hover {
+	color:#DD23B0!important;
 }
