@@ -1,0 +1,2220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+            <title>Functional Specifications - Stella - Confluence</title>
+            
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <script language="javascript">
+      var contextPath = '/confluence';
+    </script>
+
+                            <link rel="stylesheet" href="Functional+Specifications_files/main-action.css" type="text/css">
+            
+        <link rel="shortcut icon" href="http://intramdc/confluence/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" href="http://intramdc/confluence/images/icons/favicon.png">
+        
+            <script type="text/javascript" src="Functional+Specifications_files/effects.js"></script>
+    
+
+        
+
+    
+</head><body onload="placeFocus()">
+    
+
+
+    <script type="text/javascript">
+        function hideMessage(messageId)
+        {
+            var message = document.getElementById(messageId)
+            message.style.display = "none";
+            setCookie(messageId, true);
+        }
+    </script>
+
+        
+<div id="PageContent">
+
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                <tbody><tr class="topBar">
+            <td align="left">
+                &nbsp;
+                <span class="topBarDiv">             
+    <script language="JavaScript">
+        function showBreadcrumbsEllipsis()
+        {
+            document.getElementById('breadcrumbsEllipsis').style.display = 'none';
+            document.getElementById('breadcrumbsExpansion').style.display = 'inline';
+        }
+    </script>
+
+                <a href="http://intramdc/confluence/dashboard.action">Dashboard</a>
+     &gt;
+
+                        <a href="http://intramdc/confluence/display/CMS">Stella</a> &gt;
+        
+        
+        
+        
+        
+                                    <span id="breadcrumbs"><span id="breadcrumbsEllipsis"><a href="#" onclick="showBreadcrumbsEllipsis();return false;" title="Home">...</a></span><span id="breadcrumbsExpansion" style="display: none;"><a href="http://intramdc/confluence/display/CMS/Home">Home</a></span>&nbsp;&gt;&nbsp;</span><a href="http://intramdc/confluence/display/CMS/UI+Documentation">UI Documentation</a>&nbsp;&gt;&nbsp;<a href="http://intramdc/confluence/display/CMS/Functional+Specifications">Functional Specifications</a>
+                                                                        
+     </span>
+            </td>
+
+            <td style="white-space: nowrap;" align="right" valign="middle">
+                    <form method="POST" action="/confluence/dosearchsite.action" name="searchForm" style="padding: 1px; margin: 1px;">
+        <input name="quickSearch" value="true" type="hidden">
+        
+        <input name="searchQuery.spaceKey" value="conf_global" type="hidden">
+        <input accesskey="s" name="searchQuery.queryString" size="25" type="text">
+        <input value="Search" type="submit">
+    </form>
+            </td>
+        </tr>
+        
+                <tr>
+            <td style="padding: 5px;" colspan="2">
+            <table style="padding: 0px; margin: 0px 5px; width: 100%;" border="0" cellpadding="1" cellspacing="0">
+                <tbody><tr>
+										<td rowspan="2" valign="bottom" width="1%"><a href="http://intramdc/confluence/display/CMS"><img src="Functional+Specifications_files/logo" align="absmiddle" border="0"></a></td>
+										<td align="left" valign="bottom" width="1%" nowrap="nowrap">&nbsp;
+                        <span class="logoSpaceLink">            <a href="http://intramdc/confluence/display/CMS">Stella</a>    </span>
+                    </td>
+                    <td align="right" valign="top" width="98%">
+                                                    
+    <span class="smalltext" id="userNavBar">
+                    Welcome Andrew Baldock</a> |
+
+                            <a href="http://intramdc/confluence/users/viewuserhistory.action" onclick="window.open(this.href,'user_history', 'width=620, height=125, resizable'); return false;" title="View History">History</a> |
+            
+            <a href="http://intramdc/confluence/users/viewuserprofile.action?username=P139KWC">Preferences</a> |
+
+            
+            <a href="http://intramdc/confluence/logout.action" id="logout">Log Out</a>&nbsp;
+            </span>
+    						
+						        <a href="http://intramdc/confluence/display/CMS/Functional+Specifications?decorator=printable" rel="nofollow"><img src="Functional+Specifications_files/print_16.gif" alt="View a printable version of the current page." title="View a printable version of the current page." align="absmiddle" border="0" vspace="1" width="16" height="16" hspace="1"></a>
+
+                                                        
+            <a href="http://intramdc/confluence/pages/doexportpage.action?pageId=5047943&amp;type=TYPE_PDF" rel="nofollow">
+        <img src="Functional+Specifications_files/pdf.gif" title="Export Page as PDF" align="absmiddle" border="0" width="16" height="16"></a>
+                                                                                &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left" height="22">&nbsp;
+                        <span class="pagetitle" style="line-height: 1; margin: 0px; text-decoration: none;">
+                                        Functional Specifications
+                            </span>
+                    </td>
+                </tr>
+            </tbody></table>
+            </td>
+        </tr>
+            </tbody></table>
+
+        <!--
+    Root decorator: all decisions about how a page is to be decorated via the
+                    inline decoration begins here.
+-->
+
+
+
+<!--
+    Switch based upon the context. However, for now, just delegate to a decorator
+    identified directly by the context.
+-->
+
+
+    
+    
+
+
+    
+    
+        
+    
+    
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+    <tbody><tr>
+        <td>
+            <div class="greynavbar">
+                <span style="float: right; padding: 6px 10px 4px 0px;">
+								
+        
+        
+        
+        						    <a href="http://intramdc/confluence/spaces/browsespace.action?key=CMS"><img src="Functional+Specifications_files/browse_space.gif" title="Browse Space" align="absmiddle" border="0" width="16" height="16"></a>&nbsp;<a href="http://intramdc/confluence/spaces/browsespace.action?key=CMS">Browse Space</a>
+					    		 &nbsp; 
+        
+        
+        
+        						    <a href="http://intramdc/confluence/pages/createpage.action?spaceKey=CMS&amp;fromPageId=5047943"><img src="Functional+Specifications_files/add_page_16.gif" title="Add Page" align="absmiddle" border="0" width="16" height="16"></a>&nbsp;<a href="http://intramdc/confluence/pages/createpage.action?spaceKey=CMS&amp;fromPageId=5047943">Add Page</a>
+					    		 &nbsp; 
+        
+        
+        
+        						    <a href="http://intramdc/confluence/pages/createblogpost.action?spaceKey=CMS"><img src="Functional+Specifications_files/add_blogentry_16.gif" title="Add News" align="absmiddle" border="0" width="16" height="16"></a>&nbsp;<a href="http://intramdc/confluence/pages/createblogpost.action?spaceKey=CMS">Add News</a>
+					    				</span>
+
+				<ul id="foldertab" style="margin-bottom: 0px; padding-top: 10px;">
+											<li><a id="viewPageLink" href="http://intramdc/confluence/display/CMS/Functional+Specifications" class="current" accesskey="v">View</a></li>
+											<li><a id="editPageLink" href="http://intramdc/confluence/pages/editpage.action?pageId=5047943" accesskey="e">Edit</a></li>
+											<li><a href="http://intramdc/confluence/pages/viewpageattachments.action?pageId=5047943" accesskey="a"><u>A</u>ttachments (64)</a></li>
+											<li><a id="viewPageLink" href="http://intramdc/confluence/pages/pageinfo.action?pageId=5047943" accesskey="i"><u>I</u>nfo</a></li>
+									</ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pagebody" valign="top">
+
+                        <table style="clear: both;" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="pagecontent" valign="top" width="100%">
+
+                    
+                    
+                    
+                                                    
+                            <table style="margin-bottom: 5px;" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td align="left" valign="top">
+                                        <span class="smalltext">
+                                                        Added by     <a href="http://intramdc/confluence/display/%7Ejbelew">Andrew Baldock</a>, last edited by     <a href="http://intramdc/confluence/display/%7Eabaldock@macys.com">Andrew Baldock</a> on Jun 06, 2008
+                      &nbsp;(<a href="http://intramdc/confluence/pages/diffpages.action?pageId=5047943&amp;originalId=9603304">view change</a>)
+              
+                                            
+ 
+<style type="text/css">
+div.auto_complete {
+    width: 350px;
+    background: #fff;
+}
+
+div.auto_complete ul {
+    border: 1px solid #888;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+div.auto_complete ul li {
+    margin: 0;
+    padding: 3px;
+}
+
+div.auto_complete ul li.selected {
+    background-color: #ffb;
+}
+
+div.auto_complete ul strong.highlight {
+    color: #800;
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+
+<!-- Delay the loading of the external javascript file needed for labels (as it takes too long to load and visibly holds loading of the page body) -->
+<!-- To do this without javascript errors over undefined functions, we need to declare stubs here (that are overrided later by the proper implementations) -->
+<script language="JavaScript" type="text/javascript">
+    function doAddLabel(hideTextfieldAfterAddParam)
+    {
+        // stub
+    }
+
+    function onAddLabel()
+    {
+        // stub
+    }
+
+    function showLabelsInput()
+    {
+        // stub
+    }
+</script>
+
+<!-- This is a hack to work around an apparent SiteMesh bug - http://jira.opensymphony.com/browse/SIM-198 -->
+
+
+<span class="error"><span class="errorMessage" id="errorSpan"></span></span>
+<form name="addLabelForm" method="" action="" onsubmit="doAddLabel(false); return false;" style="margin: 0px; padding: 0px;">
+    <div style="float: left;">Labels:&nbsp;</div>
+    <div id="labelsInfo" style="float: left; width: 90%;">
+        <span id="labelsList">
+                              <a href="http://intramdc/confluence/label/CMS/functional">functional</a>,  <a href="http://intramdc/confluence/label/CMS/specifications">specifications</a>,  <a href="http://intramdc/confluence/label/CMS/interaction">interaction</a>,  <a href="http://intramdc/confluence/label/CMS/design">design</a>                    </span>
+                    <span id="editLabelsLink" class="inline-control-link" style="display: inline;">
+            <a href="" onclick="onAddLabel(); showLabelsInput(); return false;">EDIT</a>
+        </span>
+            </div>
+    <br clear="all"><!-- Do not remove this line-break. You will make Safari cry. -->
+    <div id="labelInputSpan" style="display: none; clear: both;">
+        <br>
+        <div style="border: 1px solid rgb(204, 204, 204); padding: 8px; background-color: rgb(240, 240, 240);">
+
+        <div id="labelOperationErrorContainer" style="display: none;"><span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span></div>
+
+        <table width="100%">
+            <tbody><tr>
+                <td>
+                    <div class="formtitle" style="padding-bottom: 3px; font-size: 13px;">Add Labels</div>
+                </td>
+                <td align="right"><div id="waitImageAndStatus" style="display: none; height: 16px;"><img alt="Wait Image" src="Functional+Specifications_files/wait.gif" align="absmiddle" border="0">&nbsp;<span id="labelOperationStatus" class="smalltext" style="vertical-align: middle;"></span></div></td>
+            </tr>
+            <tr><td width="50%">
+                    Enter labels to add to this page:<br>
+        <input autocomplete="off" id="labelName" name="labelsString" class="monospaceInput" size="40" type="text">
+        <input onclick="doAddLabel(false); return false;" value="Add" type="submit"><input onclick="doAddLabel(true); return false;" value="Done" type="button">
+        <div style="display: none;" class="auto_complete" id="labelsAutocompleteList"></div>
+        <div class="smalltext">
+            <em>Tip:</em> Looking for a label? Just start typing.
+        </div>
+        </td>
+            <td valign="top" width="50%">
+                <div id="suggestedLabelsSpan"></div>
+            </td>
+        </tr></tbody></table>
+        </div>
+    </div>
+</form>
+    <script type="text/javascript">
+        // if there is javascript support, enable the [Edit] link that enables AJAX label adding/removing functionality
+        if (document.getElementById('editLabelsLink'))
+        {
+            document.getElementById('editLabelsLink').style.display = 'inline';
+        }
+    </script>
+                                        </span>
+                                    </td>
+                                    <td align="right" valign="top">
+                                                                                    <div style="padding: 5px; border: 1px solid rgb(204, 204, 204); margin: 0px; float: right;">
+                                                <center>
+                                                                                                    <a id="pageFavourite" href="http://intramdc/confluence/labels/addfavourite.action?entityId=5047943"><img src="Functional+Specifications_files/star_grey.gif" title="Add this page to your favourites list" alt="Add this page to your favourites list" align="absmiddle" border="0" width="16" height="16"></a>
+					                                                                                <a id="pageWatch" href="http://intramdc/confluence/pages/addpagenotification.action?pageId=5047943"><img src="Functional+Specifications_files/watch_16.gif" title="Watch this page" alt="Watch this page" align="absmiddle" border="0" width="16" height="16"></a>
+					                                                                            </center>
+                                            </div>
+                                                                            </td>
+                                </tr>
+                            </tbody></table>
+
+                                                        
+                            <div class="wiki-content">
+                               <!-- wiki content -->
+            <div class="panel" style="border-style: solid;"><div class="panelHeader" style="border-bottom-style: solid; background-color: rgb(255, 255, 255);"><b>Contents</b></div><div class="panelContent" style="background-color: rgb(255, 255, 255);">
+<div class="toc">
+<ul>
+    <li><a href="#FunctionalSpecifications-Introduction"><b>Introduction</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-ProjectSummary">Project Summary</a></li>
+    <li><a href="#FunctionalSpecifications-PIMProjectTeamRoster">PIM Project Team Roster</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-UILayer">UI Layer</a></li>
+    <li><a href="#FunctionalSpecifications-ServiceLayer">Service Layer</a></li>
+    <li><a href="#FunctionalSpecifications-GXSTechnicalTasks">GXS Technical Tasks</a></li>
+    <li><a href="#FunctionalSpecifications-Integration">Integration</a></li>
+    <li><a href="#FunctionalSpecifications-Data">Data</a></li>
+    <li><a href="#FunctionalSpecifications-Creative%2CProductOwners%2CProject%2FIterationManagers">Creative, Product Owners, Project/Iteration Managers</a></li>
+    <li><a href="#FunctionalSpecifications-NonDelivery">Non-Delivery</a></li>
+    <li><a href="#FunctionalSpecifications-Alumni">Alumni</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-PIMInfrastructureTeamRoster%28MCOM%26MST%29">PIM Infrastructure Team Roster (MCOM &amp; MST)</a></li>
+    <li><a href="#FunctionalSpecifications-GotVPNIssues%3F">Got VPN Issues?</a></li>
+    <li><a href="#FunctionalSpecifications-Misc.">Misc.</a></li>
+    <li><a href="#FunctionalSpecifications-DocumentOverview">Document Overview</a></li>
+    <li><a href="#FunctionalSpecifications-ApplicationPurpose">Application Purpose</a></li>
+    <li><a href="#FunctionalSpecifications-ApplicationAudience">Application Audience</a></li>
+    <li><a href="#FunctionalSpecifications-ApplicationPrecedent">Application Precedent</a></li>
+    <li><a href="#FunctionalSpecifications-ApplicationName">Application Name</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Models"><b>Models</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Users%27ConceptualModels">Users' Conceptual Models</a></li>
+    <li><a href="#FunctionalSpecifications-UserInteractionModel">User Interaction Model</a></li>
+    <li><a href="#FunctionalSpecifications-Designer%27sModel">Designer's Model</a></li>
+    <li><a href="#FunctionalSpecifications-Programmer%27sModel">Programmer's Model</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-InformationFlow"><b>Information Flow</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-NavigationandContext">Navigation and Context</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Login%2FLogout">Log in / Log out</a></li>
+    <li><a href="#FunctionalSpecifications-GlobalNavigation">Global Navigation</a></li>
+    <li><a href="#FunctionalSpecifications-Subnavigation">Subnavigation</a></li>
+    <li><a href="#FunctionalSpecifications-Search">Search</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-SimpleSearch">Simple Search</a></li>
+    <li><a href="#FunctionalSpecifications-AdvancedSearch">Advanced Search</a></li>
+    <li><a href="#FunctionalSpecifications-SavedSets">Saved Sets</a></li>
+    <li><a href="#FunctionalSpecifications-SavedQueries">Saved Queries</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-CorporateClassificationContext">Corporate Classification Context</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-DivisionIdentification">Division Identification</a></li>
+    <li><a href="#FunctionalSpecifications-DivisionalFilteringofRecords">Divisional Filtering of Records</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-DefaultDetailScreen">Default Detail Screen</a></li>
+    <li><a href="#FunctionalSpecifications-BusinessRoleContext">Business Role Context</a></li>
+    <li><a href="#FunctionalSpecifications-MovingFromRecordtoRecordPersistsWindowState">Moving From Record to Record Persists Window State</a></li>
+    <li><a href="#FunctionalSpecifications-RecordFocus">Record Focus</a></li>
+    <li><a href="#FunctionalSpecifications-RecordLocking">Record Locking</a></li>
+    <li><a href="#FunctionalSpecifications-BusinessProcessState">Business Process State</a></li>
+    <li><a href="#FunctionalSpecifications-ArchiveView">Archive View</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-AutomaticChildObjectFlagging">Automatic Child Object Flagging</a></li>
+    <li><a href="#FunctionalSpecifications-ArchiveSchedule">Archive Schedule</a></li>
+    <li><a href="#FunctionalSpecifications-TheArchiveWorld">The Archive World</a></li>
+    <li><a href="#FunctionalSpecifications-ObjectRetrieval">Object Retrieval</a></li>
+</ul>
+</ul>
+    <li><a href="#FunctionalSpecifications-PageInteractionFlow">Page Interaction Flow</a></li>
+    <li><a href="#FunctionalSpecifications-Wireframes">Wireframes</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-GeneralDesignStandardsandApplicationBehavior"><b>General Design Standards and Application Behavior</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-DesignIntroduction">Design Introduction</a></li>
+    <li><a href="#FunctionalSpecifications-AJAXFramework">AJAX Framework</a></li>
+    <li><a href="#FunctionalSpecifications-InteractionElements"><b>Interaction Elements</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Aggregators">Aggregators</a></li>
+    <li><a href="#FunctionalSpecifications-ClickableIDs">Clickable IDs</a></li>
+    <li><a href="#FunctionalSpecifications-ContextualHelp">Contextual Help</a></li>
+    <li><a href="#FunctionalSpecifications-Dashboard">Dashboard</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Alerts%26Tasks">Alerts &amp; Tasks</a></li>
+    <li><a href="#FunctionalSpecifications-Preferences">Preferences</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Dates%26Times">Dates &amp; Times</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-CalendarWidgets">Calendar Widgets</a></li>
+    <li><a href="#FunctionalSpecifications-Times">Times</a></li>
+    <li><a href="#FunctionalSpecifications-Multidates">Multidates</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Dropdowns%26AutoComplete%28Comboboxes%29">Dropdowns &amp; Auto-Complete (Comboboxes)</a></li>
+    <li><a href="#FunctionalSpecifications-Expanding%2FCollapsingWindowFunctionality">Expanding/Collapsing Window Functionality</a></li>
+    <li><a href="#FunctionalSpecifications-Filters">Filters</a></li>
+    <li><a href="#FunctionalSpecifications-HoverDropdownsforNavigation">Hover Dropdowns for Navigation</a></li>
+    <li><a href="#FunctionalSpecifications-HTML%2FXHTMLInputTypes">HTML/XHTML Input Types</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-BasicField">Basic Field</a></li>
+    <li><a href="#FunctionalSpecifications-Checkboxes">Checkboxes</a></li>
+    <li><a href="#FunctionalSpecifications-Dropdownlists">Dropdown lists</a></li>
+    <li><a href="#FunctionalSpecifications-MultiSelectListBoxes">Multi-Select List Boxes</a></li>
+    <li><a href="#FunctionalSpecifications-RadioButtons">Radio Buttons</a></li>
+    <li><a href="#FunctionalSpecifications-TextArea">Text Area</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-ImageMapUtility">ImageMap Utility</a></li>
+    <li><a href="#FunctionalSpecifications-ListofIDstoSet%2FSettoListofIDs">List of IDs to Set / Set to List of IDs</a></li>
+    <li><a href="#FunctionalSpecifications-ListViews">List Views</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Quantityofresultsshown">Quantity of results shown</a></li>
+    <li><a href="#FunctionalSpecifications-Endless%28autoload%29Paging">Endless (auto-load) Paging</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Messaging">Messaging</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-InformationalMessaging">Informational Messaging</a></li>
+    <li><a href="#FunctionalSpecifications-ErrorMessaging">Error Messaging</a></li>
+    <li><a href="#FunctionalSpecifications-IDValidation">ID Validation</a></li>
+    <li><a href="#FunctionalSpecifications-RecordState">Record State</a></li>
+    <li><a href="#FunctionalSpecifications-RequiredFieldsandCompletionStatus">Required Fields and Completion Status</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Notes">Notes</a></li>
+    <li><a href="#FunctionalSpecifications-Overlays">Overlays</a></li>
+    <li><a href="#FunctionalSpecifications-Popup%2FModaldialogboxes">Pop-up / Modal dialog boxes</a></li>
+    <li><a href="#FunctionalSpecifications-Preview">Preview</a></li>
+    <li><a href="#FunctionalSpecifications-ProgressandActivityAnimations">Progress and Activity Animations</a></li>
+    <li><a href="#FunctionalSpecifications-RecentlyViewedItems">Recently Viewed Items</a></li>
+    <li><a href="#FunctionalSpecifications-SearchInteraction">Search Interaction</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-SimpleSearch">Simple Search</a></li>
+    <li><a href="#FunctionalSpecifications-AdvancedSearch">Advanced Search</a></li>
+    <li><a href="#FunctionalSpecifications-SearchResults">Search Results</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Sequencing%2FReorderingItemsinaList">Sequencing/Reordering Items in a List</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-ManualNumberEntry">Manual Number Entry</a></li>
+    <li><a href="#FunctionalSpecifications-DragandDropSequencing">Drag and Drop Sequencing</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-TabbedPanels%2FSheets">Tabbed Panels/Sheets</a></li>
+    <li><a href="#FunctionalSpecifications-TabularDataDisplay%28tables%29">Tabular Data Display (tables)</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Expandablerows">Expandable rows</a></li>
+    <li><a href="#FunctionalSpecifications-Liquidtablelength">Liquid table length</a></li>
+    <li><a href="#FunctionalSpecifications-Rowquantitycounter">Row quantity counter</a></li>
+    <li><a href="#FunctionalSpecifications-Sortablecolumns">Sortable columns</a></li>
+    <li><a href="#FunctionalSpecifications-Tablepagination">Table pagination</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-Tooltips%2FMouseovers">Tooltips / Mouseovers</a></li>
+    <li><a href="#FunctionalSpecifications-ThumbnailsinListViews">Thumbnails in List Views</a></li>
+    <li><a href="#FunctionalSpecifications-UnmatchingentryAddorReject">Unmatching entry Add or Reject</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Listthatcanbeaddedto%3A">List that can be added to:</a></li>
+    <li><a href="#FunctionalSpecifications-Unchangeablelist%3A">Unchangeable list:</a></li>
+</ul>
+</ul>
+    <li><a href="#FunctionalSpecifications-GeneralApplicationBehavior"><b>General Application Behavior</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-AutoSave">Auto Save</a></li>
+    <li><a href="#FunctionalSpecifications-ExternalDeviceSupport">External Device Support</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-BarcodeScanners">Barcode Scanners</a></li>
+    <li><a href="#FunctionalSpecifications-Printers">Printers</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-LocalizationSupportforMessaging">Localization Support for Messaging</a></li>
+    <li><a href="#FunctionalSpecifications-ApplicationPreferences">Application Preferences</a></li>
+    <li><a href="#FunctionalSpecifications-Spellcheck">Spellcheck</a></li>
+    <li><a href="#FunctionalSpecifications-SystemErrors">System Errors</a></li>
+    <li><a href="#FunctionalSpecifications-Timeout">Timeout</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-BrowserBehavior"><b>Browser Behavior</b></a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-BrowserRequirements">Browser Requirements</a></li>
+    <li><a href="#FunctionalSpecifications-AutoFill">Auto-Fill</a></li>
+    <li><a href="#FunctionalSpecifications-Find">Find</a></li>
+    <li><a href="#FunctionalSpecifications-KeyboardSupport">Keyboard Support</a></li>
+<ul>
+    <li><a href="#FunctionalSpecifications-Help%2FListofKeyboardShortcuts">Help / List of Keyboard Shortcuts</a></li>
+    <li><a href="#FunctionalSpecifications-Returnkeyactsassubmitbutton">Return key acts as submit button</a></li>
+    <li><a href="#FunctionalSpecifications-Tabbingaction">Tabbing action</a></li>
+</ul>
+    <li><a href="#FunctionalSpecifications-MultipleBrowserWindows">Multiple Browser Windows</a></li>
+    <li><a href="#FunctionalSpecifications-TheBackandForwardbuttons">The Back and Forward buttons</a></li>
+    <li><a href="#FunctionalSpecifications-TheRefreshbutton">The Refresh button</a></li>
+    <li><a href="#FunctionalSpecifications-TypingUndo">Typing Undo</a></li>
+    <li><a href="#FunctionalSpecifications-URLs%2FBookmarks%2FDeeplinks">URLs / Bookmarks / Deeplinks</a></li>
+</ul>
+</ul>
+    <li><a href="#FunctionalSpecifications-RevisionHistory"><b>Revision History</b></a></li>
+</ul></div>
+</div></div>
+
+<h1 id="FunctionalSpecifications-Introduction"><b>Introduction</b></h1>
+
+<h2 id="FunctionalSpecifications-ProjectSummary">Project Summary</h2>
+<ul>
+	<li><b>Project Name:</b> Stella</li>
+	<li><b>Expected Release:</b> Fall 2008</li>
+	<li><b>Executive Champion:</b> Kent Anderson</li>
+	<li><b>Project Owner:</b> ******* *******</li>
+</ul>
+
+
+<h2 id="FunctionalSpecifications-STELLA%26nbsp%3BProjectTeamRosterAsof%26nbsp%3BNovember%2C2009">STELLA&nbsp;Project Team Roster - As of&nbsp;November, 2009</h2>
+
+
+
+<h2 id="FunctionalSpecifications-DocumentOverview">Document Overview</h2>
+
+<p>This document describes the functional specifications for the 
+Macys.com Stella project, a Product Information Management application. 
+The functional specifications contained within this document are based 
+upon input received from requirements gathering sessions with Macys.com 
+Users, Stakeholders, and Business Analysts.  This document contains the 
+User Interface design specifications for all of the key user interaction
+ components in the application. </p>
+
+<h2 id="FunctionalSpecifications-ApplicationPurpose">Application Purpose</h2>
+
+<p>Stella is a Product Information Management application that will be 
+used to stock, merchandise, and promote products available on the 
+Macys.com retail website. Its primary role is that of a <span class="nobr"><a href="http://en.wikipedia.org/wiki/Master_data_management" rel="nofollow">Master Data Management<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span>
+ application: Stella takes source product data and allows multiple teams
+ of users to enrich and manipulate it for ongoing promotion and 
+presentation on the retail website.  </p>
+
+<p>The scope of this project is to replace the current FileMaker-based 
+Oz application with a robust, enterprise-level application that can 
+scale to match future growth for the next decade.</p>
+
+<h2 id="FunctionalSpecifications-ApplicationAudience">Application Audience</h2>
+
+<h5 id="FunctionalSpecifications-ExistingUserTypes">Existing User Types</h5>
+
+
+<p><span class="nobr"><a href="http://www.macysjobs.com/macysdirect/career/jobdescriptions/" rel="nofollow">Job descriptions for macys.com<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span></p>
+
+
+<table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh"> Group </th>
+<th class="confluenceTh"> Description </th>
+<th class="confluenceTh"> Location </th>
+<th class="confluenceTh"> User Type </th>
+<th class="confluenceTh"> How many (numbers are <em>very</em> approximate, are for SF and NY locations only, and <b>will grow</b>) </th>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Merchandise Managers</b> </td>
+<td class="confluenceTd"> site store managers </td>
+<td class="confluenceTd"> SF </td>
+<td class="confluenceTd"> Internal </td>
+<td class="confluenceTd"> 20 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Buyers</b> </td>
+<td class="confluenceTd"> determine which products to sell, manage pricing and determine promotions </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal </td>
+<td class="confluenceTd"> 100 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Planning</b> </td>
+<td class="confluenceTd"> plan which products will need additional stock, less stock, etc </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal </td>
+<td class="confluenceTd"> 15 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>MIO</b> </td>
+<td class="confluenceTd"> place purchase orders, watch orders until they are received </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 10 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Creative Project Managers</b> </td>
+<td class="confluenceTd"> create images for new ad's and banners, create ad IDs </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 5 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Imaging</b> </td>
+<td class="confluenceTd"> Manipulate product images </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 20 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Account Executives</b> </td>
+<td class="confluenceTd"> manage turn in process and projects in general </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 15 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Copywriters</b> </td>
+<td class="confluenceTd"> write copy for products </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 15 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Photo Studio</b> </td>
+<td class="confluenceTd"> Directs shooting of the products </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 10 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Content Engineers</b> </td>
+<td class="confluenceTd"> programs website front end </td>
+<td class="confluenceTd"> SF </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 10 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Production</b> </td>
+<td class="confluenceTd"> manage all site enhancements, approve promotions, manage site QA by release </td>
+<td class="confluenceTd"> SF </td>
+<td class="confluenceTd"> Admin? <br clear="all"> </td>
+<td class="confluenceTd"> 15 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Marketing</b> </td>
+<td class="confluenceTd"> set up overall marketing campaigns, manage 3rd party search terms </td>
+<td class="confluenceTd"> SF </td>
+<td class="confluenceTd"> Internal <br clear="all"> </td>
+<td class="confluenceTd"> 25 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Customer Service</b> </td>
+<td class="confluenceTd"> place orders for customers, recieve and communicate customer complaints </td>
+<td class="confluenceTd"> other </td>
+<td class="confluenceTd"> Partner <br clear="all"> </td>
+<td class="confluenceTd"> ? 20 ? </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Business Analyst</b> <br clear="all"> </td>
+<td class="confluenceTd"> Work with user groups to determine and define system enhancements <br clear="all"> </td>
+<td class="confluenceTd"> SF <br clear="all"> </td>
+<td class="confluenceTd"> Admin <br clear="all"> </td>
+<td class="confluenceTd"> 10 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Developers</b> </td>
+<td class="confluenceTd"> Develop system </td>
+<td class="confluenceTd"> SF </td>
+<td class="confluenceTd"> Admin <br clear="all"> </td>
+<td class="confluenceTd"> 20 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Operations</b> </td>
+<td class="confluenceTd"> maintain developed systems </td>
+<td class="confluenceTd"> SF </td>
+<td class="confluenceTd"> Admin <br clear="all"> </td>
+<td class="confluenceTd"> 15 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Bloomingdales</b> </td>
+<td class="confluenceTd"> Manage store front, manage catalog product info </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Bloomies <br clear="all"> </td>
+<td class="confluenceTd">&nbsp;</td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Bloomies Wedding Channel</b> </td>
+<td class="confluenceTd"> Manage store front data for WC </td>
+<td class="confluenceTd"> NY </td>
+<td class="confluenceTd"> Bloomies <br clear="all"> </td>
+<td class="confluenceTd">&nbsp;</td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Fulfillment</b> </td>
+<td class="confluenceTd"> fulfill customer orders, view system to ensure product meets expectations </td>
+<td class="confluenceTd"> other </td>
+<td class="confluenceTd"> Partner <br clear="all"> </td>
+<td class="confluenceTd"> 15 </td>
+</tr>
+<tr>
+<td class="confluenceTd"> <b>Vendors</b><br clear="all"> </td>
+<td class="confluenceTd"> Feed data about their products, approve product copy and images <br clear="all"> </td>
+<td class="confluenceTd"> other<br clear="all"> </td>
+<td class="confluenceTd"> Partner <br clear="all"> </td>
+<td class="confluenceTd"> 10 </td>
+</tr>
+</tbody></table>
+
+<h2 id="FunctionalSpecifications-ApplicationPrecedent">Application Precedent</h2>
+
+<p>Stella's nearest relative in the Macys universe is the FileMaker OZ 
+application.  Data being managed in Oz today will move out to four 
+separate applications:</p>
+
+<ol>
+	<li><b>Stella</b> for Product Information Management</li>
+	<li><b>CMS</b> for Content Management</li>
+	<li><b>DAM</b> for Digital Asset Management.</li>
+	<li><b>PWM</b> for Photography Workflow Management.</li>
+</ol>
+
+
+<p>(Splitting the Oz application into separate apps encourages 
+mindfulness to think of all of them at once, however they must be 
+treated separately, and therefore CMS, DAM and PWM are beyond the scope 
+of this document.)</p>
+
+<p>Several Enterprise-level applications were researched in the pursuit 
+of a suitable basis application for Stella. These are detailed in the <a href="http://intramdc/confluence/display/CMS/Request+for+Proposal" title="Request for Proposal">Request for Proposal</a>.  As a result of this process the <a href="http://intramdc/confluence/display/CMS/GXS+PIM+Product+Information" title="GXS PIM Product Information">GXS PIM application</a> was selected due to its feature-by-feature match to the macys.com requirements.</p>
+
+<h2 id="FunctionalSpecifications-ApplicationName">Application Name</h2>
+
+<p>The current application supporting this function is "Oz".  When a 
+plan began forming to replace it, the placeholder name was "CMS" for 
+"Content Management System".  Soon after it was discovered that this 
+application is really a "Product Information Management" (PIM) system, 
+and that three related systems were needed alongside to fully replace Oz
+ - an entirely separate "CMS", a "DAM" (Digital Asset Management 
+system), and a PWM (Photography Workflow Management system).</p>
+
+<p>A naming effort was embarked on and the company first chose "STARS", 
+but then it was decided that the STARS name would be better for the full
+ suite of four applications.  </p>
+
+<p>And so "former Oz" became "CMS" which became "PIM" which became "STARS" and finally is now <b>Stella</b>.
+  Efforts have been made to be retroactively consistent in the 
+documentation, but should you see references to PIM in the docs, please 
+read as: Stella.</p>
+
+<p>CMS, DAM and PWM have yet to be named. </p>
+
+<h1 id="FunctionalSpecifications-Models"><b>Models</b></h1>
+
+<h2 id="FunctionalSpecifications-Users%27ConceptualModels">Users' Conceptual Models</h2>
+
+<p>The <b><a href="http://intramdc/confluence/display/CMS/Mental+Models" title="Mental Models">Mental Model</a></b>
+ represents the business process flow from the highest possible vantage 
+point.  The Mental Model was constructed from an exhaustive series of 
+user interviews to gain an holistic picture of the entire business 
+workflow process, and ancillary systems, that Stella needs to support 
+and be familiar with.</p>
+
+<p><b><a href="http://intramdc/confluence/display/CMS/Workflow+Management" title="Workflow Management">Workflows</a></b> represent more granular and precise documentation of the components of the mental model.</p>
+
+<h2 id="FunctionalSpecifications-UserInteractionModel">User Interaction Model</h2>
+
+<p><span class="nobr"><a href="http://intramdc/confluence/download/attachments/5047943/user+interaction+model.pdf?version=3">user interaction model.pdf<sup><img class="rendericon" src="Functional+Specifications_files/link_attachment_7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span><br>
+</p><div class="embeddedObject"><object data="Functional+Specifications_files/user%2520interaction%2520model.pdf" type="application/pdf"><param name="data" value="/confluence/download/attachments/5047943/user interaction model.pdf"><param name="src" value="/confluence/download/attachments/5047943/user interaction model.pdf"><param name="type" value="application/pdf"><embed src="Functional+Specifications_files/user%2520interaction%2520model.pdf" type="application/pdf"></object></div><p></p>
+
+<h2 id="FunctionalSpecifications-Designer%27sModel">Designer's Model</h2>
+
+<p>In addition to this Functional Specifications document, the following documents outline the most relevant details to designers:</p>
+
+<ul>
+	<li><b><a href="http://intramdc/confluence/display/CMS/Functional+Requirements" title="Functional Requirements">Functional Requirements and Use Cases</a></b> detail specific business logic and use  necessities.</li>
+	<li>The <b><a href="http://intramdc/confluence/display/CMS/Wireframes" title="Wireframes">Wireframes</a></b> <em>(see the attachments tab)</em> represent the Information Architecture of the application.</li>
+	<li>The <b><a href="http://intramdc/confluence/display/CMS/Visual+Design+Style+Guide" title="Visual Design Style Guide">Visual Design Style Guide</a></b> documents presentation standards.</li>
+</ul>
+
+
+<h2 id="FunctionalSpecifications-Programmer%27sModel">Programmer's Model</h2>
+
+<p>The following documents outline the most relevant programming details of the Stella application:</p>
+<ul>
+	<li><b><a href="http://intramdc/confluence/display/CMS/Application+Design" title="Application Design">Application Design</a></b></li>
+	<li><b><a href="http://intramdc/confluence/display/CMS/Development+Environment+Requirements" title="Development Environment Requirements">Development Environment Requirements</a></b></li>
+	<li><b><a href="http://intramdc/confluence/display/CMS/Domain+Object+Model" title="Domain Object Model">Domain Object Model</a></b></li>
+	<li><b><a href="http://intramdc/confluence/display/CMS/Non-Functional+Requirements" title="Non-Functional Requirements">Non-functional Requirements</a></b></li>
+</ul>
+
+
+<h1 id="FunctionalSpecifications-InformationFlow"><b>Information Flow</b></h1>
+
+<h2 id="FunctionalSpecifications-NavigationandContext">Navigation and Context</h2>
+
+<h3 id="FunctionalSpecifications-Login%2FLogout">Log in / Log out</h3>
+
+<p>To log into the system, a user will open the application in a web 
+browser via a URL, bookmark, shortcut icon, or any other standard means 
+of getting to a URI space via a browser.</p>
+
+<p>Logging in will consist of entering a user ID (which may be stored 
+and automatically provided via cookie or auto-form-fill), and manually 
+entering a password.  The password entry is not optional - password must
+ be provided manually by user to enter the system.  The password will be
+ identical to the macys.com network login password that the user is 
+required to enter to initiate PC/LAN/VPN use on the macys.com network.  
+This combination of user ID and password is commonly known as the RACF 
+ID + password.</p>
+
+<p>Three attempts with the login + password that fail will result in a 
+login failure, and will require a call to the MST help line to 
+reestablish identity.</p>
+
+<p>A successful login will take a user to their Dashboard - their 
+personal home page in the Stella system that lets them review their 
+alerts and tasks that the system provides, as well as any other features
+ the dashboard provides (such as quick access to frequently used parts 
+of the system, saved sets and queries, etc.)</p>
+
+<h3 id="FunctionalSpecifications-GlobalNavigation">Global Navigation</h3>
+
+<p>Global navigation allows the user to access any of the default spaces
+ for the most common objects in the Stella system.  This list includes: </p>
+<ul>
+	<li>The user's dashboard</li>
+	<li>Products (including Projects and UPCs)</li>
+	<li>Pricing (including Promotions)</li>
+	<li>Images and Samples</li>
+	<li>Advertisements</li>
+	<li>Category Management</li>
+	<li>Administrative users will see an Admin link</li>
+	<li>Access to Saved Sets and Saved Queries</li>
+	<li>Immediate access to search</li>
+	<li>Logout</li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-Subnavigation">Subnavigation</h3>
+
+<p>The largest areas of the system reflect Objects such as Products, 
+Pricing, Images, and Advertisements.  Within each of these areas there 
+are different detail aspects to display. Subnavigation gets a user to 
+the exact detail screen they wish to see.</p>
+
+<p><em>Example: A Product will have a Main details screen, a Copy 
+details screen, an Images detail screen, a Search attributes detail 
+screen, etc.</em></p>
+
+<p>Navigating to each of these detail areas will be intuitive yet 
+distinct from the global navigation.  Objects for the most part will not
+ have common detail areas (i.e. a Product will have a Copy details 
+screen, but an Image will not).</p>
+
+<h3 id="FunctionalSpecifications-Search">Search</h3>
+
+<h4 id="FunctionalSpecifications-SimpleSearch">Simple Search</h4>
+
+<p>A search field that appears on almost every screen in the system (if not all).  (See the <a href="#FunctionalSpecifications-simplesearch">interaction controls description of simple search</a> for more detail.)  Allows the user to do quick and broad searches, Google-style across one object type or all object types.</p>
+
+<h4 id="FunctionalSpecifications-AdvancedSearch">Advanced Search</h4>
+
+<p>A search screen that is accessible from anywhere the simple search is displayed.  (See the <a href="#FunctionalSpecifications-advancedsearch">interaction controls description of advanced search</a> for more detail.)  </p>
+
+<p>This screen allows the user to construct very detailed searches with 
+multiple criteria related to one kind of object type (whatever object 
+type the user came from).</p>
+
+<h4 id="FunctionalSpecifications-SavedSets">Saved Sets</h4>
+
+<p>A <b>Saved Set</b> is a search result that has been captured into a 
+static list of records that the user can return to at anytime, apply to 
+another object, perform an action on, and share with other users.  The 
+contents of the set never change unless directly edited.</p>
+
+<h4 id="FunctionalSpecifications-SavedQueries">Saved Queries</h4>
+
+<p>A <b>Saved Query</b> is a search query that has been captured.  At 
+any time it is viewed it may provide different record results depending 
+on the state of data in the database.  <em>For example, a Saved Query 
+for blue towels in division 16 may return different results depending on
+ when it is run.  If a user wants to put all blue towels on sale for 
+march, without having to worry about incoming blue towels after the 
+fact, they will apply a Price Event to the blue towels saved query.</em></p>
+
+<p><a name="FunctionalSpecifications-corpclasscontext"></a></p>
+<h3 id="FunctionalSpecifications-CorporateClassificationContext">Corporate Classification Context</h3>
+<p>Corporate Classification hierarchy is described in the <span class="nobr"><a href="http://intramdc/confluence/download/attachments/5047943/GMMBreakdownFINAL.fp7?version=1">GMMBreakdownFINAL.fp7<sup><img class="rendericon" src="Functional+Specifications_files/link_attachment_7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> database.</p>
+
+<h4 id="FunctionalSpecifications-DivisionIdentification">Division Identification</h4>
+
+<p>A user's profile in the system will carry information about the 
+area(s) of business that they are primarily concerned with:  A user can 
+be mapped to 1, many, or ALL divisions.  </p>
+
+<p>This assignment will be used as a filter for what records the system automatically shows a browsing user.</p>
+
+<h4 id="FunctionalSpecifications-DivisionalFilteringofRecords">Divisional Filtering of Records</h4>
+
+<p>Users are primarily interested in seeing the products that fall under
+ their area: A Buyer who is responsible for Bedding goods will by 
+default only wish to see those.  Search features and saved sets/queries 
+will accomplish this for the majority of the time, but the system should
+ also have a default state of record presentation if they are just 
+browsing.</p>
+
+<p>Every object's default screen - a list view - will have a "<a href="#FunctionalSpecifications-filter">Filter By</a>"  control, which will default to the users area of interest when they log in.  This serves three purposes:</p>
+
+<ol>
+	<li>It automatically limits the amount of data to the most relevant records for that user</li>
+	<li>It's visible, so it messages the user as to what the application is showing them</li>
+	<li>It's changeable, so that a user can change the Filter By to "no filters", which will show them all objects in that data table.</li>
+</ol>
+
+
+<p>The "Filter By" control will allow focus by the following Corporate Classification attributes:</p>
+
+<table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh"> Broadest </th>
+<th class="confluenceTh"> More Refined </th>
+<th class="confluenceTh"> More Refined </th>
+<th class="confluenceTh"> More Refined </th>
+<th class="confluenceTh"> Most Granular </th>
+</tr>
+<tr>
+<td class="confluenceTd"> GMM </td>
+<td class="confluenceTd"> Division </td>
+<td class="confluenceTd"> Department </td>
+<td class="confluenceTd"> Class </td>
+<td class="confluenceTd"> Subclass </td>
+</tr>
+</tbody></table>
+
+<h3 id="FunctionalSpecifications-DefaultDetailScreen">Default Detail Screen</h3>
+
+<p>Each major object type in the system has an access tab at the top of 
+the screen: users will always be able to click to immediately dive into 
+Products, Pricing, Images, etc.</p>
+
+<p>When a user performs a browsing action, the system already knows the 
+primary area(s) of business that the user has been mapped to, and by 
+default filters the results to match their division(s).  </p>
+
+<p>To support the browsing method of interacting with the system, each 
+major object will have a default screen.  This is a list view of 
+records.</p>
+
+<h3 id="FunctionalSpecifications-BusinessRoleContext">Business Role Context</h3>
+
+<p>The Stella application should present itself as transparently as 
+possible to the end user.  While users will want the ability to view 
+detail areas not common to their job function, they will be primarily 
+concerned with their specific areas of business: a copy writer will be 
+primarily focused on writing copy.</p>
+
+<p>With this in mind, the Stella application will maintain a contextual 
+focus to the Business Role Area a user is working in.  This is best 
+illustrated by example:</p>
+
+<p><em>Copywriter Jo has performed a search and found all the Calvin 
+Klein blue towels for spring that she needs to amend copy on for the 
+upcoming blue towel sale.  She now has a <b>Record Focus State</b> on 
+her set of records that she wishes to work on.  She drills into one 
+specific record, onto the Copy Detail screen of that towel.  She amends 
+the copy for that single Product Object.  She then moves back into the 
+list view of her <b>Record Focus State</b>, and selects another towel from the list to work on. <b>The
+ application will remember that she was on the Copy Detail screen, and 
+present that to her as the default detail screen, instead of any other 
+detail screen.</b></em></p>
+
+<p>Not only does viewing a single object within a set persist the set, 
+but a user can page through the set, viewing the details of single 
+objects within the set one by one. The application will persist the 
+detail view that the user is concerned with. (e.g. the Copy team should 
+remain in Copy view.) </p>
+
+<h3 id="FunctionalSpecifications-MovingFromRecordtoRecordPersistsWindowState">Moving From Record to Record Persists Window State</h3>
+
+<p>Users will have the ability to manipulate the state and structure of 
+the detail screens they view, by means of expanding and collapsing 
+distinct areas of the screen.  This feature allows the user to tailor 
+the application presentation to their use and highlight what they wish 
+to focus on.</p>
+
+<p>The expanded/collapsed state of a screen should be maintained as they
+ navigate across records.  For example, if a user has chosen to collapse
+ the Corporate Classification details of one Product, then the next 
+Product they view should maintain the collapsed state of the Corporate 
+Classification details.</p>
+
+<p>This feature maintains a user-centric experience: the screen persists the state the user has chosen.</p>
+
+<p><em>The Interaction Elements portion of this document details specific UI elements that make this feature possible.</em></p>
+
+<p><a name="FunctionalSpecifications-recordfocus"></a></p>
+<h3 id="FunctionalSpecifications-RecordFocus">Record Focus</h3>
+
+<p>The Stella application can be seen as two things: </p>
+
+<ol>
+	<li>A Sifting tool, for finding relevant objects, and</li>
+	<li>A Manipulation tool, for changing data on the chosen objects.</li>
+</ol>
+
+
+<p>Given this, there are three states of record focus that a user could be in at any given time:</p>
+
+<p><b>1. Record Focus State 1 (Default): No records chosen = Show Records Relevant to my area of business</b><br>
+<em>(see <a href="#FunctionalSpecifications-corpclasscontext">Corporate Classification Context</a> for more details)</em><br>
+When a user enters the system and browses (without performing a search, 
+selecting a task, or otherwise drilling down to a set or single record) 
+the focus will be (by default) to show records that the system knows to 
+be of interest to the user's area of business; the user can maniuplate 
+the focus through use of a <a href="#FunctionalSpecifications-filter">filter</a>. <br clear="all"></p>
+
+<p><b>2. Record Focus State 2: Set of Records</b><br>
+The user has performed an action that limits the set of records displayed.  Possible ways of entering this state:</p>
+<ul>
+	<li>User has performed a search and gotten results</li>
+	<li>User has selected a saved set or saved query of records to view</li>
+	<li>User has chosen a task from their dashboard that involves multiple object records</li>
+	<li>etc. <br clear="all"></li>
+</ul>
+
+
+<p><b>3. Record Focus State 3: Single Record</b><br>
+The user has selected a single record to work on.  Note that the larger 
+focus depends on if they chose this single record from the <em>None/All state (1)</em> or the <em>Set State (2)</em>.  If the user is in a Set State then working with a Single Record in the Set still persists the Set.</p>
+
+<p>UI feedback, to inform the user of the Record Focus, will exist in 
+the form of a record count indicator.  Example: &lt;&lt; &lt; 10 of 230 
+&gt; &gt;&gt;</p>
+
+<h3 id="FunctionalSpecifications-RecordLocking">Record Locking</h3>
+
+<p>Just as a Product has many different aspects (copy, image, sample, 
+etc), the Stella application is designed with the idea of different 
+teams of people working on different focus areas of the Product (or 
+other object record, such as Image).  The Copy team will write copy, the
+ Images team will provide images.</p>
+
+<p>Stella will be smart about letting these teams work concomitantly.  
+The efforts of the Copy team should not block the efforts of the Images 
+team, and so on.  Intelligent separation of focal areas of the object 
+record, by team, will prevent work inefficiencies due to record-locking 
+collisions.</p>
+
+<p>When a user chooses to edit a record, they should only be locking out
+ the portion of that record that applies to their team.  A Copy editor 
+should only lock out the copy portion of the record.  Stella will 
+provide visual feedback as to what part of a record is currently in edit
+ state versus view state.  Stella will also visually message a user that
+ they are the current 'owner' of an area of a record, and that no-one 
+else may edit that area until they have committed or canceled.</p>
+
+<p>For further clarification, see section 2.3 of the <a href="http://intramdc/confluence/display/CMS/GXS+Elaboration+Artifact+-+DDS" title="GXS Elaboration Artifact - DDS">GXS FRS document</a>; specifically the section at the end of section 2.3 which speaks to Orchestration.</p>
+
+<h3 id="FunctionalSpecifications-BusinessProcessState">Business Process State</h3>
+
+<p>The approvals area will indicate to the user what teams have signed off on their work.  This will show:</p>
+
+<ol>
+	<li>Is it approved, and by who</li>
+	<li>Does it need revisions</li>
+</ol>
+
+
+<p><em>is it approved, is it even submitted for approval, is it rejected and needs revisions</em></p>
+
+<h3 id="FunctionalSpecifications-ArchiveView">Archive View</h3>
+
+<p>Old objects are not needed for general searching and viewing.  The 
+act of archiving flags an object as removable from the production 
+system, to be stored in a historical archive.  </p>
+
+<h4 id="FunctionalSpecifications-AutomaticChildObjectFlagging">Automatic Child Object Flagging</h4>
+
+<p>Flagging an object as archive will cause all of the children objects <em>which have no other parent objects</em>
+ to be flagged as archive as well.  The list of archivable children 
+object types should be limited to those children which would have no 
+reason for being in the system if their parent is not.  For example, if a
+ product is marked as archive, then copy attributes such as long 
+description, which belong to ONLY that product, should be marked as 
+archive.</p>
+
+<h4 id="FunctionalSpecifications-ArchiveSchedule">Archive Schedule</h4>
+
+<p>We imagine that things will be flagged as archive, and every so often
+ a cron job will perform the task of crawling the system for 
+archive-flagged objects and move them into the historical archive (and 
+therefore removing them from the production system).</p>
+
+<h4 id="FunctionalSpecifications-TheArchiveWorld">The Archive World</h4>
+
+<p>The historical archive should be browseable and searchable just as 
+production Stella is.  In fact, it should basically be another instance 
+of Stella, except with very clear visual messaging that this is the 
+"archive world". </p>
+
+<h4 id="FunctionalSpecifications-ObjectRetrieval">Object Retrieval</h4>
+
+<p>Just as objects and their children which have been flagged for 
+archive get moved into the Archive World, objects and their children 
+should be retrievable from the Archive World to be moved back into 
+Production.</p>
+
+<p><a name="FunctionalSpecifications-pageflow"></a></p>
+<h2 id="FunctionalSpecifications-PageInteractionFlow">Page Interaction Flow</h2>
+
+<p><span class="nobr"><a href="http://intramdc/confluence/download/attachments/5047943/stella_pageflow.pdf?version=2">stella_pageflow.pdf<sup><img class="rendericon" src="Functional+Specifications_files/link_attachment_7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span><br>
+</p><div class="embeddedObject"><object data="Functional+Specifications_files/stella_pageflow.pdf" type="application/pdf"><param name="data" value="/confluence/download/attachments/5047943/stella_pageflow.pdf"><param name="src" value="/confluence/download/attachments/5047943/stella_pageflow.pdf"><param name="type" value="application/pdf"><embed src="Functional+Specifications_files/stella_pageflow.pdf" type="application/pdf"></object></div><p></p>
+
+<h2 id="FunctionalSpecifications-Wireframes">Wireframes</h2>
+
+<p>The <b><a href="http://intramdc/confluence/display/CMS/Wireframes" title="Wireframes">Wireframes</a></b> <em>(see the attachments tab)</em> represent the Information Architecture of the application.</p>
+
+<h1 id="FunctionalSpecifications-GeneralDesignStandardsandApplicationBehavior"><b>General Design Standards and Application Behavior</b> </h1>
+
+<h2 id="FunctionalSpecifications-DesignIntroduction">Design Introduction</h2>
+
+<p>Stella is the instrument for a daily and constant fine tuning of the 
+merchandise for sale on the retail website. Macys.com customers expect 
+an elegant and refined retail experience; Stella should be the inward 
+facing reflection of this spirit.</p>
+
+<p>To this end, the application should be clean, elegant, and enjoyable 
+to use.  Above all it should be as transparent as possible to the user: 
+good design eliminates obstacles and allows the user to focus on what it
+ is they need to accomplish. </p>
+
+<p>Three key principles to bear in mind are:</p>
+
+<ol>
+	<li><b>Good Design is Transparent:</b> A well designed interface will allow the users to accomplish their tasks more efficiently.</li>
+	<li><b>Usability:</b> Following key ideas in usability philosophy reinforces the Good Design principle and is proven to return on investment.</li>
+	<li><b>User-centric:</b> The company asks their users to spend full 
+work days immersed in this application.  It should be a clean, smart and
+ even enjoyable place to spend time.  Where possible the application 
+should "know the user" and be a clear extension of their job function.</li>
+</ol>
+
+
+<p>With these principles in mind, this section describes granular 
+concepts about the interface that will contribute to the most successful
+ user experience.</p>
+
+<h2 id="FunctionalSpecifications-AJAXFramework">AJAX Framework</h2>
+
+<p>The AJAX Framework for the Stella application is <span class="nobr"><a href="http://developer.yahoo.com/yui/" rel="nofollow">The Yahoo! User Interface Library (YUI)<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span>.  See the <span class="nobr"><a href="http://developer.yahoo.com/yui/examples/" rel="nofollow">YUI Examples Gallery<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> to browse the library of features, utilities and widgets that this framework makes possible.</p>
+
+<p><em>See Wikipedia for definitions of <span class="nobr"><a href="http://en.wikipedia.org/wiki/Ajax_%28programming%29" rel="nofollow">AJAX<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span>) and <span class="nobr"><a href="http://en.wikipedia.org/wiki/Framework#Software_framework" rel="nofollow">Software Framework<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span></em></p>
+
+<h2 id="FunctionalSpecifications-InteractionElements"><b>Interaction Elements</b></h2>
+
+<h3 id="FunctionalSpecifications-Aggregators">Aggregators</h3>
+
+<p>An Aggregator allows users to select multiple items from a list, to form their own subset list.</p>
+
+<ul>
+	<li>Single or multiple items may be selected from the list on the left.</li>
+	<li>Clicking the <b>Add &gt;&gt;</b> button will move the selected items from the list on the left to the list on the right, removing them from the left list.</li>
+	<li>Likewise, single or multiple items may be selected from the list on the right, and clicking the <b>&lt;&lt; Remove</b> button will move the selected items from the list on the right to the list on the left, removing them from the right list.</li>
+</ul>
+
+
+<p><b>1. Initial (untouched) state</b><br>
+<img src="Functional+Specifications_files/fs-aggregator1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. Two items on the left selected</b><br>
+<img src="Functional+Specifications_files/fs-aggregator2.png" align="absmiddle" border="0"></p>
+
+<p><b>3. User has clicked the Add &gt;&gt; button, moving 2 selected items from the left list to the right list</b><br>
+<img src="Functional+Specifications_files/fs-aggregator3.png" align="absmiddle" border="0"></p>
+
+
+<p><br clear="all"></p>
+<h3 id="FunctionalSpecifications-ClickableIDs">Clickable IDs</h3>
+
+<p>Where related records are displayed, the id of the related record 
+will always be displayed, and will always be clickable.  Clicking the ID
+ will take you to a detail view of the object clicked.  The specific 
+detail view presented upon clicking depends on the user's previous use 
+of the application and the remembered contextual state:</p>
+<ol>
+	<li>If the user has been to a detail screen for that object type in the
+ present session, clicking the ID of, say, a related product record, 
+will take the user to the last detail screen type the user viewed within
+ that object area. <em>Example: a user is looking at an image detail 
+screen.  They got there by clicking an image id link from the Product 
+detail screen called Images.  Now in the image, they go to the 
+Associated Products detail screen.  They click on the ID of an 
+associated Product.  The system knows to take them not only to the 
+product but to the Product's Images detail screen.</em></li>
+	<li>If the user has not been on a detail screen for the clicked ID's 
+object type within this session, then the click will take them to the 
+default detail screen for that object type.</li>
+</ol>
+
+
+<p><img src="Functional+Specifications_files/FS-linkedIDs.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-ContextualHelp">Contextual Help</h3>
+
+<p>Where possible, contextual help will appear in the form of an 
+icon/button that spawns a new window to the appropriate section of the 
+user documentation/help wiki.</p>
+
+<p><img src="Functional+Specifications_files/FS-help.png" align="absmiddle" border="0"></p>
+
+<p><a name="FunctionalSpecifications-dashboard"></a></p>
+<h3 id="FunctionalSpecifications-Dashboard">Dashboard</h3>
+
+<h4 id="FunctionalSpecifications-Alerts%26Tasks">Alerts &amp; Tasks</h4>
+
+<p>Alerts in the Dashboard will be clickable, taking the user to exact 
+object record (or set of records) where their task is to be reviewed and
+ performed.</p>
+<ul>
+	<li>Single Tasks/Alerts reference a single object</li>
+	<li>Summary Tasks/Alerts provide a single action item in the Dashboard,
+ but reference a collection of (same type) objects.  Clicking the 
+Task/Alert brings the user to the set of objects and the correct detail 
+screen (or multi-change screen) to review/perform the action.</li>
+</ul>
+
+
+<p><a name="FunctionalSpecifications-dashboardpreferences"></a></p>
+<h4 id="FunctionalSpecifications-Preferences">Preferences</h4>
+
+<p>User will specify, by Alert type, whether to receive an Alert/Task by the following delivery choices:</p>
+<ol>
+	<li>Single Alert/Task</li>
+	<li>Digest of same Alert/Task types, on a schedule</li>
+	<li>Choice of Dashboard or email delivery (or both).  Dashboard is default.</li>
+</ol>
+
+
+<p><a name="FunctionalSpecifications-dates"></a></p>
+<h3 id="FunctionalSpecifications-Dates%26Times">Dates &amp; Times</h3>
+
+<h4 id="FunctionalSpecifications-CalendarWidgets">Calendar Widgets</h4>
+
+<p>Each user editable field typed as a date is to be accompanied by a 
+small calendar icon to the right.  Clicking this control brings up a 
+calendar widget that the user can use to choose a date.  <em>Note: use of this widget is not required to enter a date into the field; it is an optional control.</em> </p>
+
+<p>The widget will highlight the current (today) date, and provide 
+arrows to scroll backwards and forwards through months (and years?).</p>
+
+<p><b>1. Initial (untouched) state</b><br>
+<img src="Functional+Specifications_files/FS-calendar1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User has clicked the calendar icon</b> <em>Note the current date is highlighted</em><br>
+<img src="Functional+Specifications_files/FS-calendar2.png" align="absmiddle" border="0"></p>
+
+<p>*3. *User clicks on a date in the widget, and...<br>
+<img src="Functional+Specifications_files/FS-calendar3.png" align="absmiddle" border="0"></p>
+
+<p><b>4. ...the date chosen is populated into the field, and the widget dismisses itself.</b><br>
+<img src="Functional+Specifications_files/FS-calendar4.png" align="absmiddle" border="0"></p>
+
+<h4 id="FunctionalSpecifications-Times">Times</h4>
+
+<p>Where the design calls for the user to enter a time, there will be a 
+GUI widget that allows for control of the hours, minutes, seconds, and 
+time suffix (a.m. or p.m.).  The user is not required to use the up/down
+ controls; they can type in a number for each of the H, M S positions, 
+and an "a"/"am" or "p"/"pm" for the meridian position.  The up-down 
+control is an aid to the position they have selected.  </p>
+
+<ul>
+	<li>A user can type: 040010am  and the widget would display 04 : 00 : 10 : am.</li>
+	<li>A user can type 04, then use the arrows to add or subtract units to the position</li>
+	<li>a user can click on any of the 4 positions and type or use the up/down arrows to find the correct value.</li>
+</ul>
+
+
+<p><img src="Functional+Specifications_files/FS-time.jpg" align="absmiddle" border="0"></p>
+
+<table class="noteMacro" align="center" border="0" cellpadding="5" cellspacing="8px" width="85%"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Functional+Specifications_files/warning.gif" alt="" align="absmiddle" border="0" width="16" height="16"></td><td> <b>Time entry VS Sequencing</b>
+
+<p>Regarding Pricing, the website will look among same-day sale events 
+and choose the one with the greatest number of seconds.  Example: sale 1
+ starts at 00:00:01 and sale 2 starts at 00:00:02.  The site will show 
+the :02 sale event as the correct price.</p>
+
+<p>In Oz users manage sale priority this way, but this is not the best 
+useability practice.  For pricing instead we will use Sequencing, just 
+as Categories and Copy bullet points use them:  the user can enter a 1, 
+2, 3, etc to assign which sale event should have priority.  </p>
+
+<p>The system will take this sequence/priority assignment number and 
+adjust the seconds in the background to tell the site which sale event 
+has priority.</p></td></tr></tbody></table>
+
+<h4 id="FunctionalSpecifications-Multidates">Multidates</h4>
+
+<p>Where the requirements allow for multiple dates or date ranges to be 
+entered, the UI will present a way to spawn another date (and possibly, 
+time) entry field.</p>
+
+<p><b>1. Initial state</b><br>
+<img src="Functional+Specifications_files/FS-multidate1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User has filled out first, date &amp; time and clicked the action to spawn another</b><br>
+<img src="Functional+Specifications_files/FS-multidate2.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-Dropdowns%26AutoComplete%28Comboboxes%29">Dropdowns &amp; Auto-Complete (Comboboxes)</h3>
+
+<p>The Auto-Complete control provides the front-end logic for text-entry
+ suggestion and completion functionality.  Auto-complete involves the 
+program predicting a word or phrase that the user wants to type in 
+without the user actually typing it in completely. </p>
+
+<p>This approach can generally be used effectively in those cases where 
+it is relatively easy to predict the new words being input based on 
+those already input because of a limited number of possible words (small
+ lexicon).</p>
+
+<p><b>1. Initial (untouched) state</b><br>
+<img src="Functional+Specifications_files/FS-autocomplete1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User begins typing; drop-down displays results that match</b><br>
+<img src="Functional+Specifications_files/FS-autocomplete2.png" align="absmiddle" border="0"></p>
+
+<p><b>3. As the user enters characters, the results list filters down to match</b><br>
+<img src="Functional+Specifications_files/FS-autocomplete3.png" align="absmiddle" border="0"></p>
+
+<p><b>4. Using the arrows keys will change the highlighted result</b><br>
+<img src="Functional+Specifications_files/FS-autocomplete4.png" align="absmiddle" border="0"></p>
+
+<p><b>5. A result is chosen by 1. using the mouse to click on a result; 2. pressing the tab (selects highlighted result)</b><br>
+<img src="Functional+Specifications_files/FS-autocomplete5.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-Expanding%2FCollapsingWindowFunctionality">Expanding/Collapsing Window Functionality</h3>
+
+<p>Sections of screens will have to ability to expand and collapse, to provide a more useable user experience.  </p>
+<ul>
+	<li>The default/unused state of the system will be to have all areas expanded</li>
+	<li>When a user leaves a screen, the system should remember the state 
+of the screen (which sections are collapsed vs. expanded), and restore 
+that state when the user returns to that screen, UNLESS:
+	<ul>
+		<li>If they are coming to the screen by way of a reference to something in a collapsed area, that area should appear expanded.</li>
+	</ul>
+	</li>
+	<li>Collapsed areas that contain images should have an "intermediate" 
+collapsed state that still shows the image. _(This is a request from the
+ Copy Team.)</li>
+</ul>
+
+
+<p><b>1. Collapsed</b><br>
+<img src="Functional+Specifications_files/FS-expandablearea2.png" align="absmiddle" border="0"></p>
+
+<p><b>2. Expanded</b><br>
+<img src="Functional+Specifications_files/FS-expandablearea1.png" align="absmiddle" border="0"></p>
+
+<p><a name="FunctionalSpecifications-filter"></a></p>
+<h3 id="FunctionalSpecifications-Filters">Filters</h3>
+
+<p>A filter control allows the user to refine the selection of records they are viewing.  See <a href="#FunctionalSpecifications-corpclasscontext">Corporate Classification Context</a> for more detail.<br>
+<img src="Functional+Specifications_files/FS-filter.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-HoverDropdownsforNavigation">Hover Dropdowns for Navigation</h3>
+
+<p>Provides a shortcut to lower levels of navigation from the top-level 
+nav.  One click on the top nav tab will go to the default areas for that
+ tab; hovering over the tab (or clicking a down arrow on the side) 
+exposes a hovering menu that allows a user to drill down to a specific 
+detail screen.</p>
+
+<p><img src="Functional+Specifications_files/FS-hovernavs.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-HTML%2FXHTMLInputTypes">HTML/XHTML Input Types</h3>
+
+<p>Standard input types provided by XHTML.</p>
+
+<p><em>See <span class="nobr"><a href="http://www.webstandards.org/learn/tutorials/accessible-forms/intermediate/" rel="nofollow">Accessible HTML/XHTML Forms<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> for tips on maximizing accessibility via label use.</em></p>
+
+<h4 id="FunctionalSpecifications-BasicField">Basic Field</h4>
+
+<label for="txtFirstName">Product ID:</label><br>
+<input class="input" title="Enter your first name" maxlength="" size="" name="txtFirstName" id="txtFirstName" type="text">
+
+
+<h4 id="FunctionalSpecifications-Checkboxes">Checkboxes</h4>
+
+Select UPCs:<br>
+<input class="input" title="Select what colors you like" name="chk0" id="chk0_0" value="red" type="checkbox"><label for="chk0_0">&nbsp;000003984728934948 Tan</label><br>
+<input class="input" title="Select what colors you like" name="chk1" id="chk1_1" value="green" type="checkbox"><label for="chk1_1">&nbsp;000003984728934949 Green</label><br>
+<input class="input" title="Select what colors you like" name="chk2" id="chk2_2" value="blue" type="checkbox"><label for="chk2_2">&nbsp;000003984728934950 Blue</label><br>
+<input class="input" title="Select what colors you like" name="chk3" id="chk3_3" value="purple" type="checkbox"><label for="chk3_3">&nbsp;000003984728934968 White</label><br>
+ 
+
+<h4 id="FunctionalSpecifications-Dropdownlists">Dropdown lists</h4>
+
+<label for="ddlTown">Age Range:</label><br>
+<select title="Please choose an Age Range" name="ddlTown" id="ddlTown">
+<option selected="selected" value="">Please Select ... </option>
+<option value="Swindon">0-6</option>
+<option value="London">7-12</option>
+<option value="Burkino Faso">13-17</option>
+</select>
+
+
+<h4 id="FunctionalSpecifications-MultiSelectListBoxes">Multi-Select List Boxes</h4>
+
+<select multiple="multiple" size="5">
+ <option value="o1">Option 1
+ </option><option value="o2">Option 2
+ </option><option value="o3">Option 3
+ </option><option value="o4">Option 4
+ </option><option value="o5">Option 5
+ </option><option value="o6">Option 6
+</option></select>
+
+
+<h4 id="FunctionalSpecifications-RadioButtons">Radio Buttons</h4>
+
+Fabric Care:<br>
+<input class="input" title="Choose from one of the options" name="radAge" id="radAge4_0" value="Under30" type="radio"><label for="radAge4_0">&nbsp;Machine Washable</label><br>
+<input class="input" title="Choose from one of the options" name="radAge" id="radAge4_1" value="Over30" type="radio"><label for="radAge4_1">&nbsp;Dry-Clean Only</label><br>
+
+
+<h4 id="FunctionalSpecifications-TextArea">Text Area</h4>
+
+<label for="txtLifeStory">Copy Notes:</label><br>
+<textarea title="Write your life story here" name="txtLifeStory" id="txtLifeStory" rows="5" cols="25" class="input"></textarea>
+
+
+
+<h3 id="FunctionalSpecifications-ImageMapUtility">ImageMap Utility</h3>
+
+<p>Advertisement Images are often used as ImageMaps.  This is a utility 
+to assist the users in creating the slices and entering the link 
+information for the region selected.</p>
+
+<p><img src="Functional+Specifications_files/FS-imagemap_utility.png" align="absmiddle" border="0"></p>
+
+
+<h3 id="FunctionalSpecifications-ListofIDstoSet%2FSettoListofIDs">List of IDs to Set / Set to List of IDs</h3>
+
+<p>Users need to be able to extract a carriage-separated list of the IDs
+ the are currently browsing, and conversely to be able to paste in a 
+list of IDs and have the system create a saved set of records from the 
+matching IDs in the list.</p>
+
+<p>The interaction object will be a textarea.  It should be able to 
+handle 500 record IDs, or a 3000 character limit.  The lines are 
+separated by carriage returns.</p>
+
+<p><b>1. Extracting a List of IDs - the user has activated a control bringing them to this widget.</b> <br>
+<img src="Functional+Specifications_files/FS-IDlist1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. Create a Saved Set from a Pasted In list of IDs, 1 - initial state</b><br>
+<img src="Functional+Specifications_files/FS-IDlist2.png" align="absmiddle" border="0"></p>
+
+<p><b>3. Create a Saved Set from a Pasted In list of IDs, 2 - user has pasted in list</b><br>
+<img src="Functional+Specifications_files/FS-IDlist3.png" align="absmiddle" border="0"></p>
+
+
+<h3 id="FunctionalSpecifications-ListViews">List Views</h3>
+
+<h4 id="FunctionalSpecifications-Quantityofresultsshown">Quantity of results shown</h4>
+
+<p>List views should always display a count of the items being shown in the list.</p>
+
+<h4 id="FunctionalSpecifications-Endless%28autoload%29Paging">Endless (auto-load) Paging</h4>
+
+<p>Provided as an optional technique to replace multiple pages of 
+results. "Using Ajax we can dynamically fetch more results and append 
+them to the bottom of the page, as the user approaches the end of the 
+content they have already read. This pattern removes the need for 
+pagination, feeding your customer as much data as they care to read in a
+ subtle, non-intrusive way."</p>
+
+<p>For more information, see <span class="nobr"><a href="http://unspace.ca/discover/pageless/" rel="nofollow">http://unspace.ca/discover/pageless/<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span>.</p>
+
+<h3 id="FunctionalSpecifications-Messaging">Messaging</h3>
+
+<h4 id="FunctionalSpecifications-InformationalMessaging">Informational Messaging</h4>
+<p>Information messaging should consist of two primary components; an 
+overview message, and if appropriate, a bulleted listing providing 
+feedback specific to each operation.</p>
+
+<table class="noteMacro" align="center" border="0" cellpadding="5" cellspacing="8px" width="85%"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Functional+Specifications_files/warning.gif" alt="" align="absmiddle" border="0" width="16" height="16"></td><td> The following fields were reformatted:
+<ul>
+	<li>8 has been reformatted to $8.00.</li>
+	<li>089 has been reformatted to $89.00.</li>
+</ul>
+</td></tr></tbody></table>
+
+<p>The message itself should be contained within a bounding box 
+(#ffffcc), which serves to visually highlight the messaging to the end 
+user. </p>
+
+<h4 id="FunctionalSpecifications-ErrorMessaging">Error Messaging</h4>
+<p>Error messages should follow the same base rules as those defined for
+ Informational Messaging using a presentation of #ffccff. In addition, 
+each of the offending fields should be visually highlighted and include 
+the inline display of a short description of the validation failure to 
+the end user.</p>
+
+<p><a name="FunctionalSpecifications-IDvalidation"></a></p>
+<h4 id="FunctionalSpecifications-IDValidation">ID Validation</h4>
+
+<p>There are many places in the application where a user is prompted to 
+enter the ID of another object to forge a relationship.  The UI should 
+provide visual confirmation of correct ID entry, <em>before</em> they commit the transaction, to reassure them that they are making the correct association (and not an invalid one). <em>The more reassurance the GUI can provide that they have entered the correct ID, the better.</em></p>
+
+<p><b>1. Initial state - user prompted to enter an object ID</b><br>
+<img src="Functional+Specifications_files/FS-IDconfirmation1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User has entered an invalid ID</b><br>
+<img src="Functional+Specifications_files/FS-IDconfirmation3.png" align="absmiddle" border="0"></p>
+
+<p><b>3. User has entered a valid ID, the object's name appears</b><br>
+<img src="Functional+Specifications_files/FS-IDconfirmation2.png" align="absmiddle" border="0"></p>
+
+<h4 id="FunctionalSpecifications-RecordState">Record State</h4>
+
+<p>Messaging on the screen should tell the user at a glance what the current state of the record is:</p>
+<ul>
+	<li>If the screen, record or record-area is in view-only mode</li>
+	<li>If the user is currently editing the record or record area</li>
+	<li>If the record or record area is currently uneditable because another user has it in a workflow</li>
+</ul>
+
+
+<p>In addition to the state of the record, the user should be messaged about their most recent action:</p>
+<ul>
+	<li>"The change was successful"</li>
+	<li>"The change was canceled"</li>
+</ul>
+
+
+<h4 id="FunctionalSpecifications-RequiredFieldsandCompletionStatus">Required Fields and Completion Status</h4>
+
+<p>Required fields should be called out on the layout with a visual indicator.  A <font color="red">*</font> red asterisk is a common way of doing this.</p>
+
+<p>(anchor:notes}</p>
+<h3 id="FunctionalSpecifications-Notes">Notes</h3>
+
+<p>When a note is entered, the username, date and time should be pre-pended to the note. </p>
+
+<p><img src="Functional+Specifications_files/fs_copynotes.png" align="absmiddle" border="0"></p>
+
+
+
+<p><a name="FunctionalSpecifications-overlays"></a></p>
+<h3 id="FunctionalSpecifications-Overlays">Overlays</h3>
+
+<p>An overlay exposes an overlying 'sheet' of information that a user 
+can quickly scan for further detail, then dismiss to continue their 
+work.</p>
+
+<p><b>1. Initial state - standard Product detail screen</b><br>
+<img src="Functional+Specifications_files/FS-overylay1.png" align="absmiddle" border="0"></p>
+
+
+<p><b>2. User has clicked on the image thumbnail, exposing an overlay full of information about the image</b><br>
+<img src="Functional+Specifications_files/FS-overylay2.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-Popup%2FModaldialogboxes">Pop-up / Modal dialog boxes</h3>
+
+<p>Note: The default action must always be the first button on the left 
+... It should always be OK / Cancel as opposed to Cancel / Ok. <em>with the exception of a wizard... or any type of multi-step process.</em></p>
+
+<p><b>1. Confirmation Dialog.  Non-moveable.  Ok and Cancel buttons.</b><br>
+<img src="Functional+Specifications_files/FS-dialogbox2.png" align="absmiddle" border="0"></p>
+
+<p><b>2. Standard Dialog.</b> <br>
+<img src="Functional+Specifications_files/FS-dialogbox1.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-Preview">Preview</h3>
+
+<p>Preview will spawn a new browser window that lets the user examine 
+their data in a view that approximates how it will look on the retail 
+website.</p>
+
+<p>If the preview function was triggered from a set of records the user 
+wishes to preview, they should be able to flip through multiple preview 
+records.</p>
+
+<p><img src="Functional+Specifications_files/FS-preview.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-ProgressandActivityAnimations">Progress and Activity Animations</h3>
+
+<p>When the system is performing an action that will take more than a 
+second or two in response time, the system will display some sort of 
+"activity" animation to indicate to the user that a process is taking 
+place.  There are two types of these animations:</p>
+
+<p><img src="Functional+Specifications_files/FS-activityanimation.gif" align="absmiddle" border="0"> <b>1. Activity ("I'm thinking")</b>:
+ An animation such as a spinning wheel that has no start or stop points;
+ this indicates that a process is taking place but the system can't 
+accurately predict when it will end.  <em>Not to be used for long 
+processes but rather for short durations - any longer than 30 seconds 
+and the user will start to believe the system may be "hung".</em></p>
+<ul>
+	<li><span class="nobr"><a href="http://www.loadinfo.net/" rel="nofollow">http://www.loadinfo.net/<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> is a utility that will generate animations of this kind.</li>
+</ul>
+
+
+<p><b>2. Progress ("Here's how much I've done, and how much I have to go")</b>:
+ This animation has a clear start and stop, such as a progress bar that 
+fills up from left to right, the right side indicating completion.  An 
+animation of this type is frequently accompanied with a % complete 
+number, sometimes in the animation itself.  To be used when the system 
+can calculate approximately how long or how many units of processing an 
+action will take.  <em>Good candidate for bulk change requests that need to process across large sets of records.</em></p>
+
+<p><em><b>Note</b>: actual animations to be decided in visual design.</em></p>
+
+<h3 id="FunctionalSpecifications-RecentlyViewedItems">Recently Viewed Items</h3>
+
+<p>The system will maintain a running history of the last ___ recently 
+viewed objects in the system, and make them accessible to return to.  </p>
+
+<p><img src="Functional+Specifications_files/FS-recentlyviewed.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-SearchInteraction">Search Interaction</h3>
+
+<p><a name="FunctionalSpecifications-simplesearch"></a></p>
+<h4 id="FunctionalSpecifications-SimpleSearch">Simple Search</h4>
+
+<p>Simple search will be available at the top of every screen, consisting of 5 elements:</p>
+
+<ol>
+	<li>A drop down for the user to specify what object type to search on; 
+this is defaulted to the object type of the area they are in, and has an
+ All option;</li>
+	<li>A text entry field;</li>
+	<li>An action button that executes the search;</li>
+	<li>A link to go to the advanced search screen</li>
+	<li>A link to access saved sets and queries</li>
+</ol>
+
+
+<p><img src="Functional+Specifications_files/FS-simplesearch.png" align="absmiddle" border="0"></p>
+
+<p><a name="FunctionalSpecifications-advancedsearch"></a></p>
+<h4 id="FunctionalSpecifications-AdvancedSearch">Advanced Search</h4>
+
+<p>The advanced search interface is represented in the <a href="http://intramdc/confluence/display/CMS/Wireframes" title="Wireframes">wireframes</a> document (screen ids begin with WF-ADVSRCH).</p>
+
+<h5 id="FunctionalSpecifications-AddingSearchCriteria">Adding Search Criteria</h5>
+
+<p><img src="Functional+Specifications_files/FS-advancedsearchidea.png" align="absmiddle" border="0"></p>
+
+<p><b>Smart Interaction Controls</b><br>
+When adding a search criteria to an advanced search, the interaction 
+control for entering the search criteria value will present itself based
+ on the correct predetermined control type for that datapoint.  For 
+example, if a user adds a publish date field to the search criteria, the
+ interaction control for entering the date will be a <a href="#FunctionalSpecifications-dates">date field with popup calendar</a>.</p>
+
+<p><a name="FunctionalSpecifications-searchresults"></a></p>
+<h4 id="FunctionalSpecifications-SearchResults">Search Results</h4>
+
+<p>Search results for a single object type (say, Products), will have a 
+control that allows the user to view different columns of results.  </p>
+<ul>
+	<li>The ID and Name (or Description) columns in the results will be 
+visible across every "column grouping" that a user can view in their 
+results.</li>
+	<li>The "column groupings" will mirror the groupings by screen as seen in the left hand navigation on every detail screen.
+	<ul>
+		<li>Example: By default, Product results will show a set of columns 
+that reflect data seen on the Overview screen.  Other column groupings 
+they could view by are Copy, Approvals, History, Master Pages, Shipping 
+Values, etc.</li>
+	</ul>
+	</li>
+</ul>
+
+
+<p><img src="Functional+Specifications_files/fs-searchresults.png" align="absmiddle" border="0"></p>
+
+<h5 id="FunctionalSpecifications-Quantityofresults">Quantity of results</h5>
+
+<p>Searches will show 50 results per screen before the user needs to 'page' to the next set of results.</p>
+
+<p><a name="FunctionalSpecifications-sequencing"></a></p>
+<h3 id="FunctionalSpecifications-Sequencing%2FReorderingItemsinaList">Sequencing/Reordering Items in a List</h3>
+
+<p>Where drag and drop is possible, it is helpful; however, the default 
+method should always be manual sequence number entry, followed by a 
+commit action which visually reorders the list according to the entered 
+sequence numbers.</p>
+
+<h4 id="FunctionalSpecifications-ManualNumberEntry">Manual Number Entry</h4>
+
+<p><b>1. Initial state</b><br>
+<img src="Functional+Specifications_files/FS-manualsequence1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User manually changes sequence numbers</b><br>
+<img src="Functional+Specifications_files/FS-manualsequence2.png" align="absmiddle" border="0"></p>
+
+<p><b>3. User performs commit action; system refreshes list in correct 
+order, rewriting the sequence numbers and changing the row sort into the
+ new order.</b><br>
+<img src="Functional+Specifications_files/FS-manualsequence3.png" align="absmiddle" border="0"></p>
+
+<h5 id="FunctionalSpecifications-Preservingtheuser%27sentry">Preserving the user's entry</h5>
+
+<p>The sequence number should be preserved <b>as entered</b> by the 
+user; if they enter 1, 200, 3, then upon sorting, the list will return 
+as: 1, 3, 200 (and not 1, 2, 3).  This includes decimal entries AND 
+negative numbers.</p>
+
+
+
+<h4 id="FunctionalSpecifications-DragandDropSequencing">Drag and Drop Sequencing</h4>
+
+<p>User can reorder items in a list via drag and drop.</p>
+
+<p><b>1. Initial state</b><br>
+<img src="Functional+Specifications_files/FS-dragndrop1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User has selected item 3 and is dragging to the 2 position - note that 2 slides down to make room</b><br>
+<img src="Functional+Specifications_files/FS-dragndrop2.png" align="absmiddle" border="0"></p>
+
+<p><b>1. User releases item 3 in the 2 position</b><br>
+<img src="Functional+Specifications_files/FS-dragndrop3.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-TabbedPanels%2FSheets">Tabbed Panels/Sheets</h3>
+
+<p>This is an area of the screen that can be tabbed through to reveal more (and lower priority information).  </p>
+
+<p><b>1. Initial state</b><br>
+<img src="Functional+Specifications_files/FS-tabbedsheets1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. Clicking Tab 2 does not refresh the screen; it only changes the information displayed in the tab sheet area</b><br>
+<img src="Functional+Specifications_files/FS-tabbedsheets2.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-TabularDataDisplay%28tables%29">Tabular Data Display (tables)</h3>
+
+<p><a name="FunctionalSpecifications-expandablerows"></a></p>
+<h4 id="FunctionalSpecifications-Expandablerows">Expandable rows</h4>
+
+<p>A table row should have the option to be expandable &amp; collapsable
+ to display information that needs to be accessible but is not vital in 
+the first layer of the presentation.</p>
+
+<p><img src="Functional+Specifications_files/FS-table-expandablerows.png" align="absmiddle" border="0">
+<br clear="all"></p>
+
+<h4 id="FunctionalSpecifications-Liquidtablelength">Liquid table length</h4>
+
+<p>When a table is showing all related rows of information but the 
+number of rows does not exceed the maximum designated for display, the 
+table should "shrink" to end at the last row.  <em>No empty rows should be visible</em>.</p>
+
+<h4 id="FunctionalSpecifications-Rowquantitycounter">Row quantity counter</h4>
+
+<p>Tables should always display a counter of the rows being shown in the table.</p>
+
+<p><img src="Functional+Specifications_files/FS-table-pager.png" align="absmiddle" border="0"></p>
+
+<p><br clear="all">
+<a name="FunctionalSpecifications-sortablecolumns"></a></p>
+<h4 id="FunctionalSpecifications-Sortablecolumns">Sortable columns</h4>
+
+<ul>
+	<li>Clicking the header of a table column will cause the table to sort 
+itself by that column, and the header will display some visual 
+indication that it is the current sort column.</li>
+	<li>Clicking the column header more than once will alternate between descending and ascending sorts.</li>
+</ul>
+
+
+<p><b>1. Clicking the TKT column header sorts the table by that column in descending order</b><br>
+<img src="Functional+Specifications_files/FS-tablesort2.png" align="absmiddle" border="0"></p>
+
+<p><b>2. Clicking the TKT column again sorts the table by that column in ascending order</b><br>
+<img src="Functional+Specifications_files/FS-tablesort3.png" align="absmiddle" border="0"></p>
+
+<p><br clear="all"></p>
+
+<h4 id="FunctionalSpecifications-Tablepagination">Table pagination</h4>
+
+<p>When a table has more related rows to display than can fit in the 
+maximum number of rows as dictated by the design, there should be a 
+visual indication/pagination utility to move forward/backward through 
+the rows</p>
+
+<p><a name="FunctionalSpecifications-tooltips"></a></p>
+<h3 id="FunctionalSpecifications-Tooltips%2FMouseovers">Tooltips / Mouseovers</h3>
+
+<p>Tooltips display contextually relevant information in a small 
+hovering panel just underneath the mouse cursor.  They appear after a 
+very short delay when a user has positioned the cursor over something 
+that can potentially display a Tooltip. The purpose of a Tooltip is to 
+provide further business information or "help" that will be useful to 
+the user in a short glance but is not called for or possible in the 
+standard page layout.</p>
+
+<p><b>1. Initial (untouched) state</b><br>
+<img src="Functional+Specifications_files/FS-tooltip1.png" align="absmiddle" border="0"></p>
+
+<p><b>2. User has rested cursor over an object for a brief delay</b><br>
+<img src="Functional+Specifications_files/FS-tooltip2.png" align="absmiddle" border="0"></p>
+
+<h3 id="FunctionalSpecifications-ThumbnailsinListViews">Thumbnails in List Views</h3>
+<p>Whenever a list view shows, if a thubmnail image column is relevant, 
+it will display by default.  There will be an option to turn off 
+thumbnail view (and thereby display smaller and MORE rows).</p>
+
+<p><img src="Functional+Specifications_files/FS-list-thumbs.png" align="absmiddle" border="0"></p>
+
+<p>where a user enters a value into a combobox that isn't in the table. 
+ In some cases (including editing UPC size), the user should be asked to
+ confirm that they want to add a new entry to the list, and that action 
+should start a workflow that gets their manager to approve this.</p>
+
+<h3 id="FunctionalSpecifications-UnmatchingentryAddorReject">Unmatching entry Add or Reject</h3>
+<p>When a user enters a value into the system, and the systems performs a
+ validation, and the string they enter is new to the system, the system 
+will do one of two things: </p>
+
+<h4 id="FunctionalSpecifications-Listthatcanbeaddedto%3A">List that can be added to:</h4>
+<p>In some cases (including editing UPC size), the user should be asked 
+to confirm that their unrecognized entry should be added to the system. 
+That action will start a workflow that gets their manager or an admin to
+ approve this.</p>
+
+<h4 id="FunctionalSpecifications-Unchangeablelist%3A">Unchangeable list:</h4>
+<p>The user should be messaged that this entry is not valid and cannot be saved.</p>
+
+<h2 id="FunctionalSpecifications-GeneralApplicationBehavior"><b>General Application Behavior</b></h2>
+<p>(<a href="http://intramdc/confluence/pages/editpage.action?pageId=5047943">Edit</a>)</p>
+
+<h3 id="FunctionalSpecifications-AutoSave">Auto Save</h3>
+
+<p>Users familiar with the Oz system are accustomed to not having to 
+click a submit or commit button to make changes.  The Stella system will
+ intentionally change that model to move to a more standard way of 
+interacting with a database via a browser-based application.</p>
+
+<p>A user of the Stella system will be required to manually inform the 
+application that they wish to write their changes to the database: this 
+will be done via a Submit/Commit control.</p>
+
+<p>For usability purposes, designers of this system should keep in mind 
+that a user may not always remember to use this button.  Therefore:</p>
+
+<ul>
+	<li>When a screen is in edit mode, and a user has made changes, and has
+ not Submitted the changes, and attempts to navigate away from the area 
+they are editing, <b>the system should ask if the changes should be saved.</b></li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-ExternalDeviceSupport">External Device Support</h3>
+
+<h4 id="FunctionalSpecifications-BarcodeScanners">Barcode Scanners</h4>
+
+<p>The Sample Room will be the primary customer for this feature.  Users
+ in the Sample Room will have access to barcode scanning technology.  
+The Stella system should be able to recognize this form of input and 
+capture a barcode successfully.  </p>
+
+<h4 id="FunctionalSpecifications-Printers">Printers</h4>
+
+<p>Standard company printers should work with the system. Users should 
+be able to print out screens as they would with any other browser based 
+website or application.</p>
+
+<h3 id="FunctionalSpecifications-LocalizationSupportforMessaging">Localization Support for Messaging</h3>
+
+<ul>
+	<li>Localization is not in scope for Phase 1 of the project, but should
+ kept in mind as Macys.com moves forward with future initiatives.</li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-ApplicationPreferences">Application Preferences</h3>
+
+<ul>
+	<li>The user can specify their <a href="#FunctionalSpecifications-dashboardpreferences">alert/task delivery preferences</a> in their <a href="#FunctionalSpecifications-dashboard">Dashboard</a>.</li>
+	<li>Other preferences, such as font and font size, can be handled via browser settings.</li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-Spellcheck">Spellcheck</h3>
+
+<p>True inline spellcheck will be built for specific text area boxes, TBD.  For other spellcheck needs:</p>
+
+<ul>
+	<li>The FireFox browser has inline misspell highlighting, which should be available to any text input area.</li>
+	<li>For IE6, <span class="nobr"><a href="http://www.iespell.com/" rel="nofollow">ieSpell<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> is recommended.</li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-SystemErrors">System Errors</h3>
+
+<ul>
+	<li>If the system is currently offline or otherwise unavailable, the 
+goal is that the user should not see a generic error but instead an 
+informative admin message to the users and a rough ETA of when it will 
+be back up.</li>
+	<li>If an error occurs such that the user cannot retrieve data or 
+cannot write data at a particular instant, the user should be messaged <b>without losing their screen/work</b> to attempt again and/or contact the help desk.</li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-Timeout">Timeout</h3>
+
+<p>After 30 minutes of non-use, the application will time out.  Unsaved changes will be lost.</p>
+
+<h2 id="FunctionalSpecifications-BrowserBehavior"><b>Browser Behavior</b></h2>
+<p>(<a href="http://intramdc/confluence/pages/editpage.action?pageId=5047943">Edit</a>)</p>
+
+<h3 id="FunctionalSpecifications-BrowserRequirements">Browser Requirements</h3>
+
+<p>Internet Explorer is the target browser for computers running 
+windows.  Firefox is the target browser for other operating systems. The
+ application should detect if access is attempted with an unsupported 
+browser, and notify the user that there is a risk of potential issues.  
+However, we should never lock someone out of the system for using an 
+unsupported browser. </p>
+
+<h3 id="FunctionalSpecifications-AutoFill">Auto-Fill</h3>
+
+<p>Auto-fill (or automatic form completion) will be the domain of the 
+browser.  If the browser is Firefox, a form-filler plug-in such as <span class="nobr"><a href="https://addons.mozilla.org/en-US/firefox/addon/4775" rel="nofollow">Auto-fill plug in<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> or <span class="nobr"><a href="https://addons.mozilla.org/en-US/firefox/addon/3193" rel="nofollow">FireForm<sup><img class="rendericon" src="Functional+Specifications_files/linkext7.gif" alt="" align="absmiddle" border="0" width="7" height="7"></sup></a></span> is recommended.</p>
+
+<h3 id="FunctionalSpecifications-Find">Find</h3>
+
+<p>Users should be able to search within words on the page using "find."</p>
+
+<h3 id="FunctionalSpecifications-KeyboardSupport">Keyboard Support</h3>
+
+<p>Advanced users work more quickly with robust access to keyboard 
+shortcuts.  The following shortcuts are recommended for the Stella 
+application:</p>
+
+<table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh"> Command </th>
+<th class="confluenceTh"> PC Keystroke </th>
+<th class="confluenceTh"> Mac Keystroke </th>
+<th class="confluenceTh"> Native Browser Support? </th>
+</tr>
+<tr>
+<td class="confluenceTd"> save/submit </td>
+<td class="confluenceTd">&nbsp;</td>
+<td class="confluenceTd">&nbsp;</td>
+<td class="confluenceTd"> maybe </td>
+</tr>
+<tr>
+<td class="confluenceTd"> cancel </td>
+<td class="confluenceTd"> esc </td>
+<td class="confluenceTd"> esc </td>
+<td class="confluenceTd"> maybe </td>
+</tr>
+<tr>
+<td class="confluenceTd"> find (on screen) </td>
+<td class="confluenceTd"> control-f </td>
+<td class="confluenceTd"> command-f </td>
+<td class="confluenceTd"> yes </td>
+</tr>
+<tr>
+<td class="confluenceTd"> go to next field </td>
+<td class="confluenceTd"> tab </td>
+<td class="confluenceTd"> tab </td>
+<td class="confluenceTd"> yes </td>
+</tr>
+<tr>
+<td class="confluenceTd"> undo (typing only) </td>
+<td class="confluenceTd"> control-z </td>
+<td class="confluenceTd"> command-z </td>
+<td class="confluenceTd"> yes </td>
+</tr>
+</tbody></table>
+
+<p>In addition, access to the standard suite of all other native browser key commands is recommended.</p>
+
+<p><em>The Ctrl / Command key is reserved for OS based actions. On the 
+Windows side, the Alt key is typically used for in browser actions. 
+Should determine the OS X equivalent.</em></p>
+
+<h4 id="FunctionalSpecifications-Help%2FListofKeyboardShortcuts">Help / List of Keyboard Shortcuts</h4>
+
+<p>The appliation should have an easily accessible help page documenting the available keyboard short cuts.</p>
+
+<h4 id="FunctionalSpecifications-Returnkeyactsassubmitbutton">Return key acts as submit button</h4>
+
+<p><font color="red">Carriage returns will be necessary in the course of
+ normal text entry (notes, etc).  Is it reasonable to expect users to 
+have to mouse-click the submit button, or perhaps use the tab key to 
+focus the submit button, whereupon they can use the return key.  TBD.</font></p>
+
+<h4 id="FunctionalSpecifications-Tabbingaction">Tabbing action</h4>
+
+<p>Tabbing from field to field on a data entry/edit screen should follow
+ the logical order of information on the page.  Tab order is defined in 
+the page markup.</p>
+
+<h3 id="FunctionalSpecifications-MultipleBrowserWindows">Multiple Browser Windows</h3>
+
+<p>For the most part, Stella should be viewed as a single window 
+application.  There are a few cases where more than one window being 
+open can be advantageous, but should this occur, the model is that there
+ is one central application window, and that any other open windows are 
+satellite windows to the central window.  These include:</p>
+
+<ul>
+	<li><b>Online Help</b>: clicking a Help button can spawn a new window 
+that shows the user the requested documentation. This has the advantage 
+of not navigating the user away from what they were working on.  The 
+spawned window should not completely obscure the central work window, to
+ show the user their work is still 'right there'. Closing this window 
+does not affect the original window in any way.</li>
+</ul>
+
+
+<ul>
+	<li><b>Preview</b>: activating a Preview option should spawn a new 
+window containing the preview view of the record(s) the user requested 
+to preview. This has the advantage of not navigating the user away from 
+what they were working on.  The spawned window should not completely 
+obscure the central work window, to show the user their work is still 
+'right there'. Closing this window does not affect the original window 
+in any way.</li>
+</ul>
+
+
+<ul>
+	<li><b>Review Window(s)</b>:  A user may be working in one window, but 
+open other windows to review data, as reference materials for their 
+original work.  Example: a user is editing a product's swatches in one 
+window, and opens a second window to view that product's upc list while 
+they work in the firrst window. <b>At all times, a workflow or workflow 
+steps that can begin and end within a single user's perview and a single
+ session, should remain inside the same window (excepting workflow steps
+ such as <em>spawn preview</em>, etc).</b></li>
+</ul>
+
+
+<h3 id="FunctionalSpecifications-TheBackandForwardbuttons">The Back and Forward buttons</h3>
+
+<p>Back and forward buttons should work, allowing the end user to navigate through the page history.</p>
+
+<h3 id="FunctionalSpecifications-TheRefreshbutton">The Refresh button</h3>
+
+<p>The refresh button should work, refreshing the current state as opposed to re-initializing the application.</p>
+
+<h3 id="FunctionalSpecifications-TypingUndo">Typing Undo</h3>
+
+<p>The browser undo command should revert typing changes.</p>
+
+<h3 id="FunctionalSpecifications-URLs%2FBookmarks%2FDeeplinks">URLs / Bookmarks / Deeplinks</h3>
+
+<ul>
+	<li>Users should be able to create bookmarks.</li>
+	<li>Deep links should be provided that users can send to colleagues by e-mail and chat.</li>
+</ul>
+
+
+<p>-------------------------------------------------------------------------</p>
+
+
+
+<h1 id="FunctionalSpecifications-RevisionHistory"><b>Revision History</b></h1>
+<table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh"> Date </th>
+<th class="confluenceTh"> Revision </th>
+<th class="confluenceTh"> Description </th>
+<th class="confluenceTh"> Author </th>
+</tr>
+<tr>
+<td class="confluenceTd"> 10/23/2007 </td>
+<td class="confluenceTd"> 0.1 </td>
+<td class="confluenceTd"> Working Outline </td>
+<td class="confluenceTd"> Andrew Baldock </td>
+</tr>
+<tr>
+<td class="confluenceTd"> 10/26/2007 </td>
+<td class="confluenceTd"> 0.2 </td>
+<td class="confluenceTd"> Outline Approved </td>
+<td class="confluenceTd"> Andrew Baldock </td>
+</tr>
+<tr>
+<td class="confluenceTd"> 11/1/2007 </td>
+<td class="confluenceTd"> 0.3 </td>
+<td class="confluenceTd"> Interaction Elements section drafted </td>
+<td class="confluenceTd"> Andrew Baldock </td>
+</tr>
+<tr>
+<td class="confluenceTd"> 11/8/2007 </td>
+<td class="confluenceTd"> 0.4 </td>
+<td class="confluenceTd"> Information flow section reviewed by pyramid head, edits incorporated </td>
+<td class="confluenceTd"> Andrew Baldock </td>
+</tr>
+<tr>
+<td class="confluenceTd"> 11/23/2007 </td>
+<td class="confluenceTd"> 0.5 </td>
+<td class="confluenceTd"> Reviewed by manager, edits incorporated </td>
+<td class="confluenceTd"> Andrew Baldock </td>
+</tr>
+</tbody></table>
+                            </div>
+
+                            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+    rdf:about="http://intramdc/confluence/display/CMS/Functional+Specifications"
+    dc:identifier="http://intramdc/confluence/display/CMS/Functional+Specifications"
+    dc:title="Functional Specifications"
+    trackback:ping="http://intramdc/confluence/rpc/trackback/5047943"/>
+</rdf:RDF>
+-->
+
+                            
+                            <div class="tabletitle">
+                <a name="children">Children</a>
+
+                <span class="bodytext">
+                &nbsp;
+                <a href="http://intramdc/confluence/display/CMS/Functional+Specifications?showChildren=false">Hide Children</a>
+                | <a href="http://intramdc/confluence/pages/listpages-dirview.action?key=CMS&amp;openId=5047943#selectedPageInHierarchy">View in hierarchy</a>
+                                                            |
+                        <a href="http://intramdc/confluence/pages/createpage.action?spaceKey=CMS&amp;fromPageId=5047943"><img src="Functional+Specifications_files/add_page_child_16.gif" title="Add Child Page" align="absmiddle" border="0" width="16" height="16"></a>
+                        <a href="http://intramdc/confluence/pages/createpage.action?spaceKey=CMS&amp;fromPageId=5047943">Add Child Page</a>
+                                                    </span>
+            </div>
+            <div class="greybox" align="left">
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Advertisement Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Advertisement+Instantiation">Advertisement Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Category Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Category+Instantiation">Category Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Image Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Image+Instantiation">Image Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Pool Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Pool+Instantiation">Pool Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Price Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Price+Instantiation">Price Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Product Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Product+Instantiation">Product Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Project Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Project+Instantiation">Project Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Promotion Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Promotion+Instantiation">Promotion Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                                                         <img src="Functional+Specifications_files/docs_16.gif" title="Sample Instantiation" align="absmiddle" border="0" width="16" height="16">
+                         <a href="http://intramdc/confluence/display/CMS/Sample+Instantiation">Sample Instantiation</a>
+                                 <span class="smalltext">(Stella)</span>
+              <br>
+                            </div>
+            
+                                <!--
+    Root decorator: all decisions about how a page is to be decorated via the
+                    inline decoration begins here.
+-->
+
+
+
+<!--
+    Switch based upon the context. However, for now, just delegate to a decorator
+    identified directly by the context.
+-->
+
+
+    
+    
+
+<div class="wiki-content" style="margin-right: 10px;">
+    <p style="clear: both;"><!-- comments should always display underneath the content. we should have a 'clear:both' here just in case there are floats or aligned images in the content -->
+
+    
+    
+    
+    
+                                        </p><div style="margin-top: 30px;">
+                <a href="http://intramdc/confluence/display/CMS/Functional+Specifications?showComments=true&amp;showCommentArea=true#addcomment"><img src="Functional+Specifications_files/add_comment_16.gif" align="absmiddle" border="0" width="16" height="16"></a>
+                <a href="http://intramdc/confluence/display/CMS/Functional+Specifications?showComments=true&amp;showCommentArea=true#addcomment">Add Comment</a>
+                </div>
+                        </div>
+
+
+
+                                                            </td>
+
+
+                                                    </tr>
+        </tbody></table>
+
+        
+        </td>
+    </tr>
+</tbody></table>
+
+    </div>
+
+  	                                <div class="bottomshadow"></div>
+  	<div id="poweredby" class="smalltext">
+		Powered by <a href="http://www.atlassian.com/wiki/?clicked=footer" class="smalltext">Atlassian Confluence</a>, the <a href="http://www.atlassian.com/wiki/?clicked=footer" class="smalltext">Enterprise Wiki</a>. (Version: 2.4.4 Build:#707 Apr 01, 2007)
+		-
+		<a href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="smalltext">Bug/feature request</a>
+		-
+		<a href="http://intramdc/confluence/administrators.action">Contact Administrators</a>
+		<br>
+	</div>
+
+<!-- delay the loading of large javascript files to the end so that they don't interfere with the loading of page content -->
+<span style="display: none;">
+    <script type="text/javascript" language="JavaScript">var domainName = 'http://intramdc/confluence'; var entityId = '5047943'; var spaceKey = 'CMS'</script>
+    <script type="text/javascript" language="JavaScript" src="Functional+Specifications_files/labels-javascript"></script>
+    <script>new Ajax.Autocompleter('labelName', 'labelsAutocompleteList', '5047943', { tokens: new Array(',', ' '), dwrFunction: GenerateAutocompleteLabelsListForEntity.autocompleteLabels});</script>
+</span>
+
+
+</body></html>
