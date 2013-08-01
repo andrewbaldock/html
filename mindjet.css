@@ -1,0 +1,102 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
+
+html {
+	text-align:center;
+	background:#fff;
+	padding:30px;
+	font-family:'Open Sans', sans-serif;
+}
+#outer-container {
+	display:block;
+	width:100%;
+	text-align:center;
+}
+a#speedup {
+	display:inner-block;
+	padding:10px 40px;
+	background:#E1259B;
+	color:#fff;
+	font-size:18px;
+	line-height:50px;
+	text-align:center;
+	margin-top:120px;
+	text-decoration:none;
+	font-weight:600;
+	font-family:'Open Sans', sans-serif;
+	border-radius:10px;
+}
+#unicorn {
+	display:inline-block;
+	width:184px;
+	height:240px;
+	background:url('images/unicorn.png') no-repeat;
+}
+.esplode {
+	background:url('images/unicorn2.png') no-repeat!important;
+}
+.chiclet {
+	color:#fff;
+	font-family:'Open Sans',sans-serif;
+	border:1px solid #888;
+	width:230px;
+	padding:10px;
+	margin-bottom:10px;
+	box-shadow:	-1px 3px 2px rgba(69, 69, 69, 0.80);
+	text-align:left;
+}
+.ui-draggable-dragging {
+	box-shadow:	-1px 8px 17px rgba(69, 69, 69, 0.60);
+}
+.bad {
+	font-size:34px;
+	display:block;
+	float:left;
+	padding:2px;
+	margin-right:10px;
+}
+.chiclet:hover .bad {
+	color:#FFE000;
+}
+.good {
+	font-size:34px;
+	display:block;
+	float:left;
+	padding:2px;
+	margin-right:10px;
+}
+#oldstack .chiclet {
+	border:3px dotted #F5DCE7;
+	background:rgb(250, 92, 92);
+}
+
+#newstack .chiclet {
+	border:3px dotted #B1E9B1;
+	background:rgb(47, 189, 81);
+}
+
+.stack {
+	width:250px;
+	padding:10px;
+	font-size:16px;
+	text-align:left;
+}
+#oldstack {
+	float:left;
+	border:2px solid red;
+	background-color:#fff;
+}
+#newstack {
+	float:right;
+	border:2px solid green;
+}
+#notes {
+	width:600px;
+}
+

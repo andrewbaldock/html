@@ -12,41 +12,8 @@
   <!--fonts-->
   <link href='http://fonts.googleapis.com/css?family=Codystar|Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
   	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/longshadow.css" type="text/css" media="screen">
-	<style>
-		#outer-container {
-			display:block;
-			width:100%;
-			text-align:center;
-		}
-		a#speedup {
-			display:inner-block;
-			padding:10px 40px;
-			background:#E1259B;
-			color:#fff;
-			font-size:18px;
-			line-height:50px;
-			text-align:center;
-			margin-top:120px;
-			text-decoration:none;
-			font-weight:600;
-			font-family:'Open Sans', sans-serif;
-			border-radius:10px;
-		}
-		.slowstuff {
-			width:100px;
-			height:100px;
-			background:green;
-			color:#fff;
-			margin-left:20px;
-			float:left;
-			font-family:'Open Sans',sans-serif;
-		}
-		#unicorn {
-			width:150px;
-			float:right;
-		}
-	</style>
+	<link rel="stylesheet" href="mindjet.css" type="text/css" media="screen">
+
 	<!--browser eldercare-->
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
@@ -56,122 +23,74 @@
 
 <body>
 
-<div id="outer-container">
-<div id="container" style="width: 350px; height: 250px; margin: 0 auto"></div>
+
+<div id="container" style="width: 200px; height: 180px; margin: 0 auto"></div>
 
 
+<div class="stack" id="oldstack">
+	<h3>Existing Web Server</h3>
+	<div class="slowstuff chiclet" id="ss-cms" data-time="4.0">
+		<span class="fontawesome-ambulance bad"></span>
+		java-heavy CMS, multiple .jsps
+	</div>
+	<div class="slowstuff chiclet" id="ss-html" data-time=".5">
+		<span class="fontawesome-ambulance bad"></span>
+		javascript, css not load optimized
+	</div>
+	<div class="slowstuff chiclet" id="ss-cdn" data-time="2.5">
+		<span class="fontawesome-ambulance bad"></span>
+		all contents on same server
+	</div>
+	<div class="slowstuff chiclet" id="ss-apache" data-time="1.9">
+		<span class="fontawesome-ambulance bad"></span>
+		unoptimized apache; keep-alive not enabled
+	</div>
+	<div class="slowstuff chiclet" id="ss-tracking" data-time="1.1">
+		<span class="fontawesome-ambulance bad"></span>
+		multiple tracking systems installed
+	</div>
+</div>
 
-<div class="slowstuff" id="ss-cms" data-time="4.0">java-heavy CMS, multiple .jsps</div>
-<div class="slowstuff" id="ss-html" data-time=".5">javascript, css not load optimized</div>
-<div class="slowstuff" id="ss-cdn" data-time="2.5">all contents on same server</div>
-<div class="slowstuff" id="ss-apache" data-time="1.9">unoptimized apache; keep-alive not enabled</div>
-<div class="slowstuff" id="ss-tracking" data-time="1.1">multiple tracking systems installed</div>
+<div id="unicorn"></div>
 
-<div id="unicorn"><img src="images/unicorn.jpg"></div>
+<div class="stack"id="newstack">
+	<h3>New Web Server</h3>
+	<div class="goodstuff chiclet" id="fs-cms" style="display:none;">
+		<span class="fontawesome-thumbs-up good"></span>
+		clean crisp apache site
+	</div>
+	<div class="goodstuff chiclet" id="fs-html" style="display:none;">
+		<span class="fontawesome-thumbs-up good"></span>
+		pages optimzed for load time
+	</div>
+	<div class="goodstuff chiclet" id="fs-cdn" style="display:none;">
+		<span class="fontawesome-thumbs-up good"></span>
+		static assets moved to CDN
+	</div>
+	<div class="goodstuff chiclet" id="fs-apache" style="display:none;">
+		<span class="fontawesome-thumbs-up good">
+	</span>
+		optimized apache settings</div>
+	<div class="goodstuff chiclet" id="fs-tracking" style="display:none;">
+		<span class="fontawesome-thumbs-up good">
+	</span>
+		tracking container installed</div>
+</div>
+<br>
 
-<a href="mindjet.html">reset</a>
 
+	<div id="notes"></div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
-<script>
-var secondsPass = 0;
-$(function () {
-	myChart = $('#container').highcharts({
-	
-	    chart: {
-	        type: 'gauge',
-	        alignTicks: false,
-	        plotBackgroundColor: null,
-	        plotBackgroundImage: null,
-	        plotBorderWidth: 0,
-	        plotShadow: false
-	    },
-	
-	    title: {
-	        text: ''
-	    },
-	    
-	    pane: {
-	        startAngle: -150,
-	        endAngle: 150
-	    },	        
-	
-	    yAxis: [{
-	        min: 0,
-	        max: 20,
-	        tickPosition: 'outside',
-	        lineColor: '#C93682',
-	        lineWidth: 2,
-	        minorTickPosition: 'outside',
-	        tickColor: '#C93682',
-	        minorTickColor: '#C93682',
-	        tickLength: 5,
-	        minorTickLength: 5,
-	        labels: {
-	            distance: 5,
-	            rotation: 'auto'
-	        },
-	        offset: -20,
-	        endOnTick: false
-	    }],
-	
-	    series: [{
-	        name: 'Speed',
-	        data: [12.8],
-	        dataLabels: {
-	            formatter: function () {
-	                var secnds = this.y;
-	                return '<span style="color:#339">'+ secnds + ' seconds</span><br/>';
-	            },
-	            backgroundColor: {
-	                linearGradient: {
-	                    x1: 0,
-	                    y1: 0,
-	                    x2: 0,
-	                    y2: 1
-	                },
-	                stops: [
-	                    [0, '#dedede']//,
-	                    //[1, '#ccc']
-	                ]
-	            }
-	        },
-	        tooltip: {
-	            valueSuffix: ' seconds'
-	        }
-	    }]
-	
-	},
-	// onchartload
-	function (chart) {
-	  // nuttin
-	});
-    
-  function draggedToUnicorn( event, ui ) {
-  	var draggable = ui.draggable;
-		var secondsPass = draggable.attr('data-time');
-  	console.log(draggable.attr('id') + " optimized, saving " + secondsPass + " seconds. ");
-  	var point = Highcharts.charts[0].series[0].points[0];
-  	var pointOrig = point.y;
-  	var cleanVal = (pointOrig - secondsPass);
-  	cleanVal = Math.round(cleanVal * 10) / 10;
-  	point.update(cleanVal);
-  	
-  	//$('#speedup').click();
-  	
-  	$(draggable).remove();
-	}
-  $('.slowstuff').draggable({ containment: "document" });
-  $('#unicorn').droppable( {
-    drop: draggedToUnicorn
-   } );
-   
-});
-
-</script>
+<script src="mindjet.js"></script>
+<!--image preloader-->
+<div id="image-preload" style="display:none;">
+	<img src="images/unicorn2.png">
+</div>
+<a href="mindjet.html">reset</a>
 </body>
 </html>
