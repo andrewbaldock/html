@@ -1,4 +1,5 @@
 var secondsPass = 0;
+var howManyChiclet = 0;
 $(function () {
 	myChart = $('#container').highcharts({
 	
@@ -84,11 +85,12 @@ $(function () {
   	point.update(cleanVal);
   	//$('#speedup').click();
   	
-  	var noteCms = '<h3>Keep it simple silly!</h3>The website was being run an an open-source java CMS called OpenCMS.  The java stack added no appreciable value to the site; in fact it slowed it down, as did multiple nested .jsps used to generate each simple Web page.<br><br>By extracting all the HTML, CSS and javaScript content I was able to rebuild the site as simple HTML files running on a simple Apache server.  <div style="text-align:left;display:block;width:100%;margin-left:30px;"><h3 style="font-family:Codystar, sans-serif">Issue: slow CMS/server. <br>Solution: move to Apache.  <br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>'
-  	var noteHtml = "";
-  	var noteCdn = "";
-  	var noteApache = "";
-  	var noteTracking = "";
+  	var noteCms = '<h3>Keep it simple silly!</h3>The website was being run an an open-source java CMS called OpenCMS.  The java stack added no appreciable value to the site; in fact it slowed it down, as did multiple nested .jsps used to generate each simple Web page.<br><br>By extracting all the HTML, CSS and javaScript content I was able to rebuild the site as simple HTML files running on a simple Apache server. This made developers very happy as they no longer had to code across a database to manage a webpage. <div style="text-align:left;display:block;width:100%;margin-left:30px;margin-right:20px;"><h3 style="font-family:Codystar, sans-serif">Issue: slow CMS/server. <br>Solution: move to Apache.  <br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>'
+  	
+  	var noteHtml = '<h3>HTML Optimizations</h3>Because the code was accessible only through the OpenCMS UI, and only one section of a page could be edited at a time, this led to developers not structuring pages for optimal load speed.  <br><br>Once moved out of OpenCMS, the pages could be written in the correct structure for load optimization, with minified js and css, and javascript at the end of the page.<div style="text-align:left;display:block;width:100%;margin-left:30px;margin-right:20px;"><h3 style="font-family:Codystar, sans-serif">Issue: unoptimized HTML. <br>Solution: recode all pages with clean HTML structure<br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>';
+  	var noteCdn = '<h3>The Cookie Monster</h3>When a web page is requested, the server will send every cookie with every asset on the same server, which is very noisy.<br><br>I did finds and replaces throughout all the code to move all static images and other assets to a Content Delivery Network.<div style="text-align:left;display:block;width:100%;margin-left:30px;margin-right:20px;"><h3 style="font-family:Codystar, sans-serif">Issue: no CDN. <br>Solution: move assets to a CDN<br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>';
+  	var noteApache = '<h3>Apache</h3>Apache has many caching settings, rewrite rules, and other modules that can be customized and tweaked and tuned to perfection. (Such as Keep-alive).<br><br>Using the HTML5 Boilerplate as a reference, I tuned up the Apache settings.<div style="text-align:left;display:block;width:100%;margin-left:30px;margin-right:20px;"><h3 style="font-family:Codystar, sans-serif">Issue: Apache default settings are not necessarily fast. <br>Solution: tune up Apache<br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>';
+  	var noteTracking = '<h3>Too Many Dang Trackers</h3>The Marketing Department had multiple tracking tags form multiple vendors loading on each page, slowing down the page load.<br><br>I worked with <a href="http://www.tealium.com">Tealium</a> to install a tracking tag management GUI and CDN to mitigate this problem.<div style="text-align:left;display:block;width:100%;margin-left:30px;margin-right:20px;"><h3 style="font-family:Codystar, sans-serif">Issue: Lots of slow javascript from too many trackers <br>Solution: Tealium tracking tag CDN<br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>';
   	
   	if(eleId == 'ss-cms'){
   		$('#fs-cms').show('slow');
@@ -113,6 +115,11 @@ $(function () {
   	};
   	
   	$(draggable).remove();
+  	
+  	howManyChiclet = howManyChiclet +1;
+  	if(howManyChiclet == 5) {alert('You fixed the server and now Google SEO is going through the roof! Great job!');}
+  	
+  	
 	}
   $('.slowstuff').draggable({ 
   	containment: "document",

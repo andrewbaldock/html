@@ -25,7 +25,7 @@
 a {text-decoration:none;
 	color:#C93682}
 h1,h2,h3{font-family:'Playball',sans-serif;}
-#top h1{font-size:40px;margin-top:-20px;}
+#top h1{font-size:40px;margin-top:20px;}
 #top h2{margin-top:-20px;}
 h3 {font-size:24px;line-height:24px;}
 .stripe {
@@ -107,7 +107,7 @@ a#speedup {
 .chiclet {
 	color:#fff;
 	font-family:'Open Sans',sans-serif;
-	font-size:14px;
+	font-size:13px;
 	border:1px solid #888;
 	width:160px;
 	padding:10px;
@@ -122,7 +122,7 @@ a#speedup {
 	font-size:34px;
 }
 .bad {
-	font-size:34px;
+	font-size:30px;
 	display:block;
 	float:left;
 	padding:2px;
@@ -132,7 +132,7 @@ a#speedup {
 	color:#FFE000;
 }
 .good {
-	font-size:34px;
+	font-size:30px;
 	display:block;
 	float:left;
 	padding:2px;
