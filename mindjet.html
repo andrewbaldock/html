@@ -42,11 +42,8 @@
 			float:left;
 			font-family:'Open Sans',sans-serif;
 		}
-		#trash {
-			width:100px;
-			height:100px;
-			background:red;
-			color:#fff;
+		#unicorn {
+			width:150px;
 			float:right;
 		}
 	</style>
@@ -64,13 +61,15 @@
 
 
 
-<div class="slowstuff" id="ss-opencms" data-time="4.0">java-heavy CMS, multiple .jsps</div>
-<div class="slowstuff" id="ss-slowjs" data-time=".5">javascript, css not load optimized</div>
-<div class="slowstuff" id="ss-nocdn" data-time="2.5">all contents on same server</div>
-<div class="slowstuff" id="ss-nokeepalive" data-time="1.9">keep-alive not enabled</div>
-<div class="slowstuff" id="ss-overtracked" data-time="1.1">multiple tracking systems installed</div>
+<div class="slowstuff" id="ss-cms" data-time="4.0">java-heavy CMS, multiple .jsps</div>
+<div class="slowstuff" id="ss-html" data-time=".5">javascript, css not load optimized</div>
+<div class="slowstuff" id="ss-cdn" data-time="2.5">all contents on same server</div>
+<div class="slowstuff" id="ss-apache" data-time="1.9">unoptimized apache; keep-alive not enabled</div>
+<div class="slowstuff" id="ss-tracking" data-time="1.1">multiple tracking systems installed</div>
 
-<div id="trash">trash</div>
+<div id="unicorn"><img src="images/unicorn.jpg"></div>
+
+<a href="mindjet.html">reset</a>
 
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -93,7 +92,7 @@ $(function () {
 	    },
 	
 	    title: {
-	        text: 'mindjet.com page load time before Andrew: >12 seconds'
+	        text: ''
 	    },
 	    
 	    pane: {
@@ -152,7 +151,7 @@ $(function () {
 	  // nuttin
 	});
     
-  function draggedToTrash( event, ui ) {
+  function draggedToUnicorn( event, ui ) {
   	var draggable = ui.draggable;
 		var secondsPass = draggable.attr('data-time');
   	console.log(draggable.attr('id') + " optimized, saving " + secondsPass + " seconds. ");
@@ -167,8 +166,8 @@ $(function () {
   	$(draggable).remove();
 	}
   $('.slowstuff').draggable({ containment: "document" });
-  $('#trash').droppable( {
-    drop: draggedToTrash
+  $('#unicorn').droppable( {
+    drop: draggedToUnicorn
    } );
    
 });
