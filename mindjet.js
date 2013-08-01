@@ -8,11 +8,12 @@ $(function () {
 	        plotBackgroundColor: null,
 	        plotBackgroundImage: null,
 	        plotBorderWidth: 0,
-	        plotShadow: false
+	        plotShadow: false,
+	        backgroundColor: null
 	    },
 	
 	    title: {
-	        text: ''
+	        text: 'Page Load Time'
 	    },
 	    
 	    pane: {
@@ -41,7 +42,7 @@ $(function () {
 	
 	    series: [{
 	        name: 'Speed',
-	        data: [12.8],
+	        data: [16.08],
 	        dataLabels: {
 	            formatter: function () {
 	                var secnds = this.y;
@@ -83,7 +84,7 @@ $(function () {
   	point.update(cleanVal);
   	//$('#speedup').click();
   	
-  	var noteCms = "<h3>Keep it simple silly!</h3>The website was being run an an open-source java CMS called OpenCMS.  The java stack added no appreciable value to the site; in fact it slowed it down, as did multiple nested .jsps used to generate each simple Web page.<br><br>By extracting all the HTML, CSS and javaScript content I was able to rebuild the site as simple HTML files running on a simple Apache server.  <h3>Issue: slow CMS/server. Solution: move to Apache.  Win: page load time decreased by 4.0 seconds</h3>"
+  	var noteCms = '<h3>Keep it simple silly!</h3>The website was being run an an open-source java CMS called OpenCMS.  The java stack added no appreciable value to the site; in fact it slowed it down, as did multiple nested .jsps used to generate each simple Web page.<br><br>By extracting all the HTML, CSS and javaScript content I was able to rebuild the site as simple HTML files running on a simple Apache server.  <div style="text-align:left;display:block;width:100%;margin-left:30px;"><h3 style="font-family:Codystar, sans-serif">Issue: slow CMS/server. <br>Solution: move to Apache.  <br>Win: page load time decreased by ' + secondsPass + ' seconds</h3></div>'
   	var noteHtml = "";
   	var noteCdn = "";
   	var noteApache = "";
@@ -92,6 +93,7 @@ $(function () {
   	if(eleId == 'ss-cms'){
   		$('#fs-cms').show('slow');
   		$('#notes').html(noteCms);
+  		$('#x').click(function(){$('#notes').hide();});
   	};
   	if(eleId == 'ss-html'){
   		$('#fs-html').show('slow');

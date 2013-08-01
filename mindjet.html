@@ -10,8 +10,8 @@
   <!--favicon-->
   <link rel="shortcut icon" href="/img/favicon.ico"> 
   <!--fonts-->
-  <link href='http://fonts.googleapis.com/css?family=Codystar|Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-  	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Codystar|Open+Sans:300,400,600|Playball' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="mindjet.css" type="text/css" media="screen">
 
 	<!--browser eldercare-->
@@ -22,39 +22,72 @@
 </head>
 
 <body>
+<div id="top" class="clearfix">
+	<div class="stripe">	<h1>Mindjet.com Pageload Speed</h1>
+	<h2>Or, The Case of Too Much Java</h2>	</div>
+	<div id="ribbon">
+		<p id="subhead">another gripping web-mission from the files of</p>
+		<p id="nombre">Andrew Baldock</p>
+	</div>
+</div><!--/top-->
 
+<table style="width:80%;display:inline-block;margin-top:-40px;">
+<tbody>
+<tr>
+	<td>
+		<div id="intro">
+			<h3>Intro</h3>
+			<p>When I arrived at Mindjet, the <a target="_blank" href="http://www.opencms.org/en/news/070704_v7_available.html">OpenCMS 7 web server</a> in place for 3 years  was useful from an engineering perspective, but the pages loaded very slow.  See this report from Feb 2013:<br><a href="http://www.webpagetest.org/result/130212_Q8_4JE/"><span class="fontawesome-bar-chart big"></span> 16 seconds to load the home page!</a>
+		
+			</p>
+			<h3>Lets see the fixes!</h3>
+			<P>Play developer and help Andrew fix slow server issues one by one.  Take the 'bad' issues on the left and drag them onto Andrew (the Unicorn) to fix.  With each issue dropped, read the notes below to see the solutions!</p>
+			
+		</div>
+	</td>
+</tr>
+</tbody>
+</table>
+<br>
 
-<div id="container" style="width: 200px; height: 180px; margin: 0 auto"></div>
-
-
+<table style="display:inline-block">
+<tbody>
+<tr>
+<td style="vertical-align:top;"><br><br>
 <div class="stack" id="oldstack">
-	<h3>Existing Web Server</h3>
-	<div class="slowstuff chiclet" id="ss-cms" data-time="4.0">
+	<h3>Legacy Server</h3>
+	<hr style="margin-top:-10px;">
+	<div class="slowstuff chiclet" id="ss-cms" data-time="5.0">
 		<span class="fontawesome-ambulance bad"></span>
 		java-heavy CMS, multiple .jsps
 	</div>
-	<div class="slowstuff chiclet" id="ss-html" data-time=".5">
+	<div class="slowstuff chiclet" id="ss-html" data-time="1">
 		<span class="fontawesome-ambulance bad"></span>
 		javascript, css not load optimized
 	</div>
-	<div class="slowstuff chiclet" id="ss-cdn" data-time="2.5">
+	<div class="slowstuff chiclet" id="ss-cdn" data-time="3">
 		<span class="fontawesome-ambulance bad"></span>
 		all contents on same server
 	</div>
-	<div class="slowstuff chiclet" id="ss-apache" data-time="1.9">
+	<div class="slowstuff chiclet" id="ss-apache" data-time="2.9">
 		<span class="fontawesome-ambulance bad"></span>
 		unoptimized apache; keep-alive not enabled
 	</div>
-	<div class="slowstuff chiclet" id="ss-tracking" data-time="1.1">
+	<div class="slowstuff chiclet" id="ss-tracking" data-time="1.4">
 		<span class="fontawesome-ambulance bad"></span>
 		multiple tracking systems installed
 	</div>
 </div>
-
-<div id="unicorn"></div>
-
+</td>
+<td style="vertical-align:top;">
+<div id="container"></div><br>
+<div id="unicorn" style="display:inline-block"></div><br>
+<a href="mindjet.html">reset</a>
+</td>
+<td style="vertical-align:top;"><br><br>
 <div class="stack"id="newstack">
-	<h3>New Web Server</h3>
+	<h3>New Server</h3>
+	<hr style="margin-top:-10px;">
 	<div class="goodstuff chiclet" id="fs-cms" style="display:none;">
 		<span class="fontawesome-thumbs-up good"></span>
 		clean crisp apache site
@@ -76,10 +109,15 @@
 	</span>
 		tracking container installed</div>
 </div>
+</td>
+</tr>
+<tr><td colspan="3"><h3 style="margin-top:-10px;">solution notes</h3><div id="notes"></div> </td></tr>
+</tbody>
+</table>
 <br>
 
 
-	<div id="notes"></div>
+
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
@@ -91,6 +129,6 @@
 <div id="image-preload" style="display:none;">
 	<img src="images/unicorn2.png">
 </div>
-<a href="mindjet.html">reset</a>
+
 </body>
 </html>
