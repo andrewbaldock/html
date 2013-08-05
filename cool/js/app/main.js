@@ -1,4 +1,4 @@
-define(["jquery", "jquery.alpha", "underscore.min","json2.min","backbone.min","jquery.beta"], function($) {
+define(["jquery", "jquery.alpha", "underscore","json2","backbone","jquery.beta"], function($) {
     //the jquery.alpha.js and jquery.beta.js plugins have been loaded.
     $(function() {
         $('body').alpha().beta();

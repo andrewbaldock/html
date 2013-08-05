@@ -12,7 +12,10 @@ requirejs.config({
     "baseUrl": "js/lib",
     "paths": {
       "app": "../app",
-      "jquery": 		aB.protofix + "ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min"
+      "jquery" : 		aB.protofix + "ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min",
+      "underscore" : aB.protofix + "cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min",
+      "json2" : aB.protofix + "cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min",
+      "backbone": aB.protofix + "cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min"
     }
 });
 
