@@ -6,7 +6,7 @@
 // declare the aB object
 // fix for running locally and still loading remote js
 var aB = {prot:''};
-if(location.protocol == "file:"){aB.prot="http://"};
+if(location.protocol == "file:"){aB.prot="http://"}else{aB.prot="//"};
 aB.fn={};
 requirejs.config({
     "baseUrl": "js/lib",
