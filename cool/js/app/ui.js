@@ -3,11 +3,16 @@ define(["jquery", "soundcloud"], function($) {
       require(['soundcloud'], function (soundcloud) {
       	console.log('soundcloud loaded');
       });
-      require(['jquery'], function ($) {
-      	$('#getuser button').click(function(e){
-      		e.preventDefault();
+      require(['soundcloud'], function (soundcloud) {
+      	$('#getuser button').click(function(soundcloud){
       		var usrInput = $('#getuser input').val();
       		alert(usrInput);
+      		
+      		SC.initialize({
+    				client_id: usrInput,
+    				redirect_uri: "http://andrewbaldock.com/callback.html",
+  				});
+  				
       	});
       });
   };
