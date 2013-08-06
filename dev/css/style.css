@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Supermercado+One|Share:400,400italic);
+html {
+	font-family: 'Share', sans-serif;;
+	background:url('../img/background-gplaypattern.png') #eee;
+}
+body {
+	padding:0px 20px;
+}
+h1, h2, h3, h4, h5 {
+	font-family:'Supermercado One', cursive;
+	color:rgba(62, 206, 233, 0.87);
+	margin-bottom:-15px;
+}
+h1 {
+	font-size:60px;
+	line-height:65px;
+}
+header {
+	width:100%;
+	height:100px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:url('../img/background-wavegrid.png');
+	background-color: #444;
+}
+#spinner {
+	display:block;
+	height:50px;
+	width:50px;
+	background-image:url('../img/spinner.gif');
+}
+#getuser {
+	display:none;
+}
+#results {
+	width:90%;
+	margin-left:5%;
+	margin-right:5%;
+	padding:20px;
+	display:none;
+	border-radius:8px;
+	height:100%;
+}
+.track {
+	height:60px;
+	width:150px;
+	background-color:rgba(0, 172, 226, 0.34);
+	display:block;
+	float:left;
+	margin:10px;
+	padding:5px;
+	font-family:tahoma,helvetica,ariel,sans-serif;
+	font-size:12px;
+	background-size:100% 100%;
+	border-radius:0px;
+	background-repeat:no-repeat;
+}
+.track:hover {
+	background-color:rgba(62, 206, 233, 0.87);
+}
+.spinning {
+		background-image:url('img/spinner.gif') no-repeat;
+		background-position: 50% 50%;
+		height:200px;
+		width:100%;
+		display:block;
+}
