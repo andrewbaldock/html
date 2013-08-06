@@ -6,7 +6,8 @@ define(["jquery", "soundcloud"], function($) {
       require(['jquery'], function ($) {
       	$('#getuser button').click(function(e){
       		e.preventDefault();
-      		alert('woot');
+      		var usrInput = $('#getuser input').val();
+      		alert(usrInput);
       	});
       });
   };
