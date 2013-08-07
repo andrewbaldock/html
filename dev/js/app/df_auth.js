@@ -14,14 +14,30 @@ define(["jquery", "json2"], function($) {
         success: function (response) {
         		console.log("got session id from dreamfactory:" + response.session_id);
         		aB.sessionId = response.session_id;
+        		
+        		//now load users
+        		$.ajax({
+							type: "GET",
+							url: 'https://dsp-song.cloud.dreamfactory.com/rest/db/users?app_name=soundora',
+							dataType: "json",
+							contentType: "application/json",
+							success: function (response) {
+								console.log("got users:");
+								console.log(response);
+							},
+							error: function (response, textStatus, xError) {
+								console.log(response);
+							},
+							beforeSend: function (xhr) {
+								xhr.setRequestHeader('X-DreamFactory-Session-Token', aB.sessionId);
+							}
+						});
         },
+        
         error: function (response, textStatus, xError) {
             console.log(response.responseText);
-        }  
-        //for all subsequent transactions
-        /*,beforeSend: function (xhr) {
-            xhr.setRequestHeader('X-DreamFactory-Session-Token', aB.sessionId);
-        } */
+        } 
+        
     	});
     	
   };
