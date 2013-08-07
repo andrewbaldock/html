@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Supermercado+One|Share:400,400italic);
+#notes {display:none!important}
 html {
 	font-family: 'Share', sans-serif;;
 	background:url('../img/background-gplaypattern.png') #eee;
@@ -15,14 +16,22 @@ h1 {
 	font-size:60px;
 	line-height:65px;
 }
-header {
-	width:100%;
-	height:100px;
-	position:absolute;
-	top:0px;
-	left:0px;
-	background:url('../img/background-wavegrid.png');
-	background-color: #444;
+#subtitle{
+	font-size:25px;
+	line-height:25px;
+	margin-top:-10px;
+	margin-left:60px;
+	letter-spacing:1px;
+}
+.field {
+	height:30px;
+	font-size:25px;
+	line-height:25px;
+	font-family:'Supermercado One', cursive;
+	color:#222;
+}
+input:focus {
+	background-color:#ECF6FF;
 }
 #spinner {
 	display:block;
@@ -30,7 +39,18 @@ header {
 	width:50px;
 	background-image:url('../img/spinner.gif');
 }
-#getuser {
+#thequery button{
+	width: 50px;
+	color: #fff;
+	background-color: rgba(62, 206, 233, 0.87);
+	height:34px;
+	font-size:25px;
+	line-height:25px;
+	border-radius: 2px;
+	box-shadow: 3px 3px 6px #888;
+	border: none;
+}
+#thequery {
 	display:none;
 }
 #results {

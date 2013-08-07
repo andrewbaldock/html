@@ -11,8 +11,15 @@
     	</script>
   </head>
   <body>
-  
-  <div id="notes" style="float:right;margin:10px;padding:10px;color:#fff;background-color:#333;opacity:0.5;display:block;width:430px;"><pre>
+			<a href="#" id="createuser">Create Profile</a> or <a href="#" id="login">Login</a> 
+      <div id="newuserpanel">
+
+      </div>
+      <div id="loginpanel">
+
+      </div>
+    
+  <div id="notes" style="float:right;margin:10px;padding:10px;color:#fff;background-color:#333;opacity:0.5;width:430px;"><pre>
 TO DO
 [ ] build user model, set up database
 [ ] list view manage users
@@ -41,12 +48,14 @@ DONE
     
     <div id="spinner"></div>
         
-    <div id="getuser">
+    <div id="thequery">
     	<form name="search" action="" id="search" onsubmit="return formHandler();">
-      	<input type="text" value="seadisco">
-      	<button type="button">Go</button>
+      	<input class="field" id="query" type="text" value="billy jean">
+      	<button type="submit">>></button>
       </form>
     </div>
+    
+
     
     <div id="results"></div>
 
