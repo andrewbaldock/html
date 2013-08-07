@@ -3,15 +3,18 @@ define(["jquery", "soundcloud"], function($) {
       require(['soundcloud'], function (soundcloud) {
       	console.log('soundcloud loaded');
       	
-      	$('#getuser').show('slowest');
+      	$('#thequery').show();
+
+      	$('#thequery button').click(function(soundcloud){
+      		$('#thequery').hide('slowest');
+      		$('#spinner').show('slowest');
       	
-      	$('#getuser button').click(function(soundcloud){
-      		var usrInput = $('#getuser input').val(), songs={}; 
+      		var usrInput = $('#thequery input').val(), songs={}; 
       		aB.tracks = {};
       		
       		SC.initialize({
     				client_id: '3b56bf42a48bcfe2379a7950bc9dcf95',
-    				redirect_uri: "http://andrewbaldock.com/cool/callback.html",
+    				redirect_uri: "http://andrewbaldock.com/soundora/callback.html"
   				});
 					
 
@@ -19,14 +22,14 @@ define(["jquery", "soundcloud"], function($) {
 					$('#results').show('fastest');
 					
 					SC.get('/tracks', { q: usrInput }, function(result) {
-						console.log(result + ' ' + result.length);
-						// put 'em in teh dom
+							console.log(result + ' ' + result.length);
+							// put 'em in teh dom
 
-						for (var i=0;i<result.length;i++){ 			
-							var track = result[i];
-							aB.tracks['trk' + (i+1)] = track; //push to global aB object
-							$('#results').prepend('<div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '">id:' + track.id + '<br>' + track.title + '</div>');
-						}
+							for (var i=0;i<result.length;i++){ 			
+								var track = result[i];
+								aB.tracks['trk' + (i+1)] = track; //push to global aB object
+								$('#results').prepend('<div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '">id:' + track.id + '<br>' + track.title + '</div>');
+							};
 						
 						  $('.track').click(function(){
 								var id = this.id.replace('trk','');
@@ -34,11 +37,30 @@ define(["jquery", "soundcloud"], function($) {
   								sound.play();
 								});
 							});
-						
-          
-					});
+							
+							$('#spinner').hide('slowest');
+							$('#thequery').show('slowest');
+							
+					}); // end SC.get
   				
+      	}); // end click
+      	
+      	$('#thequery input#query').focus();
+      	
+      	//handle return key
+      	$('input #query').on('keydown', function(event) { if (event.which == 13 || event.keyCode == 13) { e.preventDefault();$('#thequery button').click(); } });
+      	
+      	$('#joinlink').click(function(e){
+      		e.preventDefault;
+      		$('#loginpanel').hide('slowest');
+      		$('#newuserpanel').toggle('slowest');
       	});
+      	$('#loginlink').click(function(e){
+      		e.preventDefault;
+      		$('#newuserpanel').hide('slowest');
+      		$('#loginpanel').toggle('slowest');
+      	});
+      	
       });
   };
   aB.fn.ui();

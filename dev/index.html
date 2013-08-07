@@ -6,6 +6,17 @@
     <script data-main="js/app/startup" src="js/lib/require.js"></script>
     <script>
     	function formHandler(e){
+
+    		return false;
+    	}
+    	function loginHandler(e){
+
+    		var loginuser = $('#login-email').val();
+    	
+    		//HERE
+    	
+    		
+    		
     		return false;
     	}
     	</script>
@@ -17,17 +28,17 @@
 			
       <div id="newuserpanel">
         <form name="createuser" action="" id="createuser" onsubmit="return formHandler();">
-      		<input id="email" class="field" type="text" value="" placeholder="email"><br><input class="field" id="name" type="text" value="" placeholder="name">
+      		<input id="email" class="field px20" type="text" value="" placeholder="email"><br><input class="field px20" id="name" type="text" value="" placeholder="name">
       	<button type="button">join</button>
-      	<br><p class="disclaimer">* I'll send you a few updates about this app only, and I won't sell your email to pirates<br>* no password because this is super alpha</p>
+      	<br><p class="disclaimer">* I won't sell your email to pirates</p>
       </form>
 
       </div>
       <div id="loginpanel">
-				<form name="loginform" action="" id="loginform" onsubmit="return formHandler();">
-      		<input class="field"  id="login-email" type="text" value="" placeholder="email">    
+				<form name="loginform" action="" id="loginform" onsubmit="return loginHandler();">
+      		<input class="field px20"  id="login-email" type="text" value="" placeholder="email">    
       	<button type="button">login</button>
-      	<p class="disclaimer">* no password because this is super alpha...</p>
+      	<p class="disclaimer"></p>
       </form>
       </div>
   </header>
@@ -40,12 +51,14 @@
     <div id="thequery">
     	<form name="search" action="" id="search" onsubmit="return formHandler();">
       	<input class="field" id="query" type="text" value="billy jean">
-      	<button type="submit">>></button>
+      	<button type="submit"><span class="fontawesome-search"></span></button>
       </form>
     </div>
     
 
-    
+    <div id="player">
+    <iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="//w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1848538&show_artwork=true"></iframe>
+    </div>
     <div id="results"></div>
 
   </body>

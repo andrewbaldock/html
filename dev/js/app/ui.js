@@ -1,4 +1,4 @@
-define(["jquery", "soundcloud"], function($) {
+define(["jquery", "soundcloud", "player"], function($) {
   aB.fn.ui = function(soundcloud) {
       require(['soundcloud'], function (soundcloud) {
       	console.log('soundcloud loaded');
@@ -41,7 +41,47 @@ define(["jquery", "soundcloud"], function($) {
 							$('#spinner').hide('slowest');
 							$('#thequery').show('slowest');
 							
+						
+					
+
+							require(['player'], function (player) {
+								if (aB.tracks.trk1.kind == "track") {
+									//expose the player
+									$('#player').show('slowest');
+									//fire the player up
+									(function($){
+										var widgetIframe = $('#sc-widget'),
+												widget       = SC.Widget(widgetIframe),
+												newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
+
+										widget.bind(SC.Widget.Events.READY, function() {
+											// load new widget
+											widget.bind(SC.Widget.Events.FINISH, function() {
+												widget.load(newSoundUrl, {
+													auto_advance: 'true',
+													auto_play: 'true',
+													buying: 'false',
+													callback: 'function(){alert("great job")',
+													download: 'true',
+													liking: 'false',
+													sharing: 'false',
+													show_artwork: 'true',
+													show_comments: 'true',
+													show_playcount: 'true',
+													show_user: 'true',
+													start_track: "0"
+												});
+											});
+										});
+									 }()); //end fireplayer
+								 } //end if
+							 });//end require;
+							
+							
+							
 					}); // end SC.get
+					
+					
   				
       	}); // end click
       	

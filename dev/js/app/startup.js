@@ -16,7 +16,8 @@ requirejs.config({
       "json2" : 			aB.prot + "cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min",
       "underscore" :  aB.prot + "cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min",
       "backbone" : 		aB.prot + "cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min",
-      "soundcloud" :  aB.prot + "connect.soundcloud.com/sdk"
+      "soundcloud" :  aB.prot + "connect.soundcloud.com/sdk",
+      "player" : 			aB.prot + "w.soundcloud.com/player/api"
     }
 });
 
