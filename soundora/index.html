@@ -1,90 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Soundora</title>
-        <style>
-        	@import url(http://fonts.googleapis.com/css?family=Supermercado+One|Share:400,400italic);
-        	html {
-        		font-family: 'Share', sans-serif;;
-        		background:url('img/background-gplaypattern.png') #eee;
-        	}
-        	body {
-        		padding:0px 20px;
-        	}
-        	h1, h2, h3, h4, h5 {
-        		font-family:'Supermercado One', cursive;
-        		color:rgba(62, 206, 233, 0.87);
-        		margin-bottom:-15px;
-        	}
-        	h1 {
-        		font-size:60px;
-        		line-height:65px;
-        	}
-					header {
-						width:100%;
-						height:100px;
-						position:absolute;
-						top:0px;
-						left:0px;
-						background:url('img/background-wavegrid.png');
-						background-color: #444;
-					}
-        	#spinner {
-        		display:block;
-        		height:50px;
-        		width:50px;
-        		background-image:url('img/spinner.gif');
-        	}
-        	#getuser {
-        		display:none;
-        	}
-        	#results {
-        		width:90%;
-        		margin-left:5%;
-        		margin-right:5%;
-        		padding:20px;
-        		display:none;
-        		border-radius:8px;
-        		height:100%;
-        	}
-        	.track {
-        		height:60px;
-        		width:150px;
-        		background-color:rgba(0, 172, 226, 0.34);
-        		display:block;
-        		float:left;
-        		margin:10px;
-        		padding:5px;
-        		font-family:tahoma,helvetica,ariel,sans-serif;
-        		font-size:12px;
-        		background-size:100% 100%;
-            border-radius:0px;
-            background-repeat:no-repeat;
-        	}
-        	.track:hover {
-        		background-color:rgba(62, 206, 233, 0.87);
-        	}
-        	.spinning {
-        			background-image:url('img/spinner.gif') no-repeat;
-        			background-position: 50% 50%;
-        			height:200px;
-        			width:100%;
-        			display:block;
-        	}
-        </style>
-        <script data-main="js/app/startup" src="js/lib/require.js"></script>
-    </head>
-    <body>
-					<h1>Soundora</h1>
-					<p>soundcloud radio</p>
+  <head>
+    <title>Soundora</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script data-main="js/app/startup" src="js/lib/require.js"></script>
+  </head>
+  <body>
+  
+  <div id="notes" style="float:right;margin:10px;padding:10px;color:#fff;background-color:#333;opacity:0.5;display:block;width:430px;"><pre>
+TO DO
+[ ] build user model, set up database
+[ ] list view manage users
+[ ] wire backbone to handle the REST communication
+[ ] load the player widget
+[ ] autoadvance feature
+[ ] add thumbs up/down per track, database write
+[ ] never play thumbed down songs
+[ ] list view of songs that user has liked
+[ ] finish UI beautification
+ 
+DONE
+[X] build app seed: backbone, require
+[X] load all libs from CDN using requirejs
+[X] wire up to SoundCloud API
+[X] get skeleton framework up 
+[X] decide on app nature: Pandora clone
+[X] select online REST database to save user data
+[X] searching by keyword to get SoundCloud sounds
+[X] stream song (try clicking one)
+ </pre>
+  </div>
+  
+    <h1>Soundora</h1>
+    <p id="subtitle">soundcloud radio</p>
+    
+    <div id="spinner"></div>
+        
+    <div id="getuser">
+      <input type="text" value="seadisco">
+      <button type="button">Go</button>
+    </div>
+    
+    <div id="results"></div>
 
-					<div id="spinner"></div>
-					<div id="getuser">
-						<input type="text" value="seadisco" placeholder="soundcloud user">
-						<button type="button">Go</button>
-					</div>
-					<div id="results" class="spinning">
-					</div>
-        </div>
-    </body>
+  </body>
 </html>

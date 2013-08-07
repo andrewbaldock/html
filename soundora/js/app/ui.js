@@ -13,15 +13,8 @@ define(["jquery", "soundcloud"], function($) {
     				client_id: '3b56bf42a48bcfe2379a7950bc9dcf95',
     				redirect_uri: "http://andrewbaldock.com/cool/callback.html",
   				});
-  				
-  				// initiate auth popup
-					/*SC.connect(function() {
-						SC.get('/me', function(me) { 
-							alert('Hello, ' + me.username); 
-						});
-					});*/
 					
-					// find all sounds of buskers licensed under 'creative commons share alike'
+
 					console.log('searching on ' + usrInput);
 					$('#results').show('fastest');
 					
@@ -35,9 +28,14 @@ define(["jquery", "soundcloud"], function($) {
 							$('#results').prepend('<div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '">id:' + track.id + '<br>' + track.title + '</div>');
 						}
 						
-						$('#results').removeClass('spinning');
+						  $('.track').click(function(){
+								var id = this.id.replace('trk','');
+								SC.stream("/tracks/" + id, function(sound){
+  								sound.play();
+								});
+							});
 						
-            //$('#results').prepend(result.length + ' results<br><br>');
+          
 					});
   				
       	});
