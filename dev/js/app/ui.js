@@ -14,7 +14,7 @@ define(["jquery", "soundcloud"], function($) {
       		
       		SC.initialize({
     				client_id: '3b56bf42a48bcfe2379a7950bc9dcf95',
-    				redirect_uri: "http://andrewbaldock.com/cool/callback.html",
+    				redirect_uri: "http://andrewbaldock.com/soundora/callback.html"
   				});
 					
 

@@ -24,6 +24,7 @@ define(["jquery", "json2"], function($) {
 							success: function (response) {
 								console.log("got users:");
 								console.log(response);
+								aB.users = response;
 							},
 							error: function (response, textStatus, xError) {
 								console.log(response);
