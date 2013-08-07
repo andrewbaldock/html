@@ -11,37 +11,26 @@
     	</script>
   </head>
   <body>
-			<a href="#" id="createuser">Create Profile</a> or <a href="#" id="login">Login</a> 
+			<header>
+				<div id="tippytop"><a href="#" id="joinlink">Join</a> or <a href="#" id="loginlink">Login</a> 
+				</div>
+			
       <div id="newuserpanel">
+        <form name="createuser" action="" id="createuser" onsubmit="return formHandler();">
+      		<input id="email" class="field" type="text" value="" placeholder="email"><br><input class="field" id="name" type="text" value="" placeholder="name">
+      	<button type="button">join</button>
+      	<br><p class="disclaimer">* I'll send you a few updates about this app only, and I won't sell your email to pirates<br>* no password because this is super alpha</p>
+      </form>
 
       </div>
       <div id="loginpanel">
-				
+				<form name="loginform" action="" id="loginform" onsubmit="return formHandler();">
+      		<input class="field"  id="login-email" type="text" value="" placeholder="email">    
+      	<button type="button">login</button>
+      	<p class="disclaimer">* no password because this is super alpha...</p>
+      </form>
       </div>
-    
-  <div id="notes" style="float:right;margin:10px;padding:10px;color:#fff;background-color:#333;opacity:0.5;width:430px;"><pre>
-TO DO
-[ ] build user model, set up database
-[ ] list view manage users
-[ ] wire backbone to handle the REST communication
-[ ] load the player widget
-[ ] autoadvance feature
-[ ] add thumbs up/down per track, database write
-[ ] never play thumbed down songs
-[ ] list view of songs that user has liked
-[ ] finish UI beautification
- 
-DONE
-[X] build app seed: backbone, require
-[X] load all libs from CDN using requirejs
-[X] wire up to SoundCloud API
-[X] get skeleton framework up 
-[X] decide on app nature: Pandora clone
-[X] select online REST database to save user data
-[X] searching by keyword to get SoundCloud sounds
-[X] stream song (try clicking one)
- </pre>
-  </div>
+  </header>
   
     <h1>Soundora</h1>
     <p id="subtitle" style="color:#bbb">soundcloud radio</p>

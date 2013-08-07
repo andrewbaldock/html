@@ -50,6 +50,17 @@ define(["jquery", "soundcloud"], function($) {
       	//handle return key
       	$('input #query').on('keydown', function(event) { if (event.which == 13 || event.keyCode == 13) { e.preventDefault();$('#thequery button').click(); } });
       	
+      	$('#joinlink').click(function(e){
+      		e.preventDefault;
+      		$('#loginpanel').hide('slowest');
+      		$('#newuserpanel').toggle('slowest');
+      	});
+      	$('#loginlink').click(function(e){
+      		e.preventDefault;
+      		$('#newuserpanel').hide('slowest');
+      		$('#loginpanel').toggle('slowest');
+      	});
+      	
       });
   };
   aB.fn.ui();
