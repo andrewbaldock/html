@@ -1,4 +1,4 @@
-define(["jquery", "soundcloud"], function($) {
+define(["jquery", "soundcloud", "player"], function($) {
   aB.fn.ui = function(soundcloud) {
       require(['soundcloud'], function (soundcloud) {
       	console.log('soundcloud loaded');
@@ -6,8 +6,8 @@ define(["jquery", "soundcloud"], function($) {
       	$('#thequery').show();
 
       	$('#thequery button').click(function(soundcloud){
-      		$('#thequery').hide('slowest');
-      		$('#spinner').show('slowest');
+      		$('#thequery').hide();
+      		$('#spinner').show();
       	
       		var usrInput = $('#thequery input').val(), songs={}; 
       		aB.tracks = {};
@@ -19,7 +19,8 @@ define(["jquery", "soundcloud"], function($) {
 					
 
 					console.log('searching on ' + usrInput);
-					$('#results').show('fastest');
+					$('#results').html('').show();
+
 					
 					SC.get('/tracks', { q: usrInput }, function(result) {
 							console.log(result + ' ' + result.length);
@@ -28,20 +29,64 @@ define(["jquery", "soundcloud"], function($) {
 							for (var i=0;i<result.length;i++){ 			
 								var track = result[i];
 								aB.tracks['trk' + (i+1)] = track; //push to global aB object
-								$('#results').prepend('<div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '">id:' + track.id + '<br>' + track.title + '</div>');
+
+								$('#results').append('<div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '"><br>' + track.title + '</div>');
 							};
+							
+							var sc_options = '&show_artwork=true&auto_play=true&show_comments=true&enable_api=true&sharing=true&color=00BCD3'
 						
 						  $('.track').click(function(){
-								var id = this.id.replace('trk','');
-								SC.stream("/tracks/" + id, function(sound){
-  								sound.play();
-								});
+								var Id = this.id.replace('trk','');
+								var domId = '#' + this.id;
+								var url = 'http://api.soundcloud.com/tracks/' + Id;
+								var myframe = document.getElementById('sc-widget');
+								myframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;
+								$('.track').css('background-color','rgba(0, 172, 226, 0.74)').css('color','#444');
+								$(domId).css('background-color','rgba(0, 0, 0, 0.82)').css('color','#fff');
 							});
 							
-							$('#spinner').hide('slowest');
-							$('#thequery').show('slowest');
+							$('#spinner').hide('fastest');
+							$('#thequery').fadeIn();
+
+						
+							function loadPlayer(){
+								
+								
+							}
+
+							require(['player'], function (player) {
+								if (aB.tracks.trk1.kind == "track") {
+									//expose the player
+									$('#player').show('fastest');
+									console.log('readying track ' + aB.tracks.trk1.id);
+									//fire the player up
+								
+									var widgetIframe = document.getElementById('sc-widget'),
+											widget       = SC.Widget(widgetIframe),
+											newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
+									//play first result
+									widgetIframe.src = 'https://w.soundcloud.com/player/?url=' + newSoundUrl + sc_options;
+									var domId = '#trk' + aB.tracks.trk1.id;
+									$(domId).css('background-color','rgba(0, 0, 0, 0.82)').css('color','#fff');
+									/* widget.bind(SC.Widget.Events.READY, function() {
+										// load new widget
+										widget.bind(SC.Widget.Events.FINISH, function() {
+											widget.load(newSoundUrl, {
+												show_artwork: true,
+												auto_play: true
+											});
+										});
+									}); */
+
+
+								 } //end if
+							 });//end require;
+							
+							
 							
 					}); // end SC.get
+					
+					
   				
       	}); // end click
       	
@@ -52,13 +97,13 @@ define(["jquery", "soundcloud"], function($) {
       	
       	$('#joinlink').click(function(e){
       		e.preventDefault;
-      		$('#loginpanel').hide('slowest');
-      		$('#newuserpanel').toggle('slowest');
+      		$('#loginpanel').hide('fastest');
+      		$('#newuserpanel').toggle('fastest');
       	});
       	$('#loginlink').click(function(e){
       		e.preventDefault;
-      		$('#newuserpanel').hide('slowest');
-      		$('#loginpanel').toggle('slowest');
+      		$('#newuserpanel').hide('fastest');
+      		$('#loginpanel').toggle('fastest');
       	});
       	
       });

@@ -1,4 +1,4 @@
-define(["jquery", "jquery.alpha", "jquery.beta", "app/df_auth", "json2", "underscore", "backbone", "app/ui" ], function($) {
+define(["jquery", "jquery.alpha", "jquery.beta", "underscore", "app/df_auth", "json2", "soundcloud", "player",  "backbone", "app/ui" ], function($) {
     //the jquery.alpha.js and jquery.beta.js plugins have been loaded.
     $(function() {
         $('body').alpha();

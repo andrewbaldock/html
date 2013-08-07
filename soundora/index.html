@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Soundora</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script data-main="js/app/startup" src="js/lib/require.js"></script>
-    <script>
-    	function formHandler(e){
-
-    		return false;
-    	}
-    	function loginHandler(e){
-
-    		var loginuser = $('#login-email').val();
-    	
-    		//HERE
-    	
-    		
-    		
-    		return false;
-    	}
-    	</script>
-  </head>
-  <body>
-			<header>
-				<div id="tippytop"><a href="#" id="joinlink">Join</a> or <a href="#" id="loginlink">Login</a> 
-				</div>
-			
-      <div id="newuserpanel">
-        <form name="createuser" action="" id="createuser" onsubmit="return formHandler();">
-      		<input id="email" class="field px20" type="text" value="" placeholder="email"><br><input class="field px20" id="name" type="text" value="" placeholder="name">
-      	<button type="button">join</button>
-      	<br><p class="disclaimer">* I won't sell your email to pirates</p>
-      </form>
-
-      </div>
-      <div id="loginpanel">
-				<form name="loginform" action="" id="loginform" onsubmit="return loginHandler();">
-      		<input class="field px20"  id="login-email" type="text" value="" placeholder="email">    
-      	<button type="button">login</button>
-      	<p class="disclaimer"></p>
-      </form>
-      </div>
-  </header>
+<head>
+	<title>Soundora</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script data-main="js/app/startup" src="js/lib/require.js"></script>
+	<script>
+		function formHandler(e){
+			return false;
+		}
+		function loginHandler(e){
+			var loginuser = $('#login-email').val();
+			//HERE
+			return false;
+		}
+		</script>
+</head>
+<body>
+ 	<div id="tippytop" style="display:none">
+ 		<a href="#" id="joinlink">Join</a> or 
+ 		<a href="#" id="loginlink">Login</a> 
+ 	</div>
+  								
+	<header>
+		<div id="newuserpanel">
+			<form name="createuser" action="" id="createuser" onsubmit="return formHandler();">
+				<input id="email" class="field px20" type="text" value="" placeholder="email"><br><input class="field px20" id="name" type="text" value="" placeholder="name"><br><button type="button">join</button>
+				<br><p class="disclaimer">* I won't sell your email to spammers, pirates or the NSA</p><br><br>
+			</form>
+		</div>
+	
+		<div id="loginpanel">
+			<form name="loginform" action="" id="loginform" onsubmit="return loginHandler();">
+				<input class="field px20"  id="login-email" type="text" value="" placeholder="email">    
+				<button type="button">login</button>
+				<p class="disclaimer"></p><br><br>
+			</form>
+		</div>
+	</header>
   
+  <div id="main">
     <h1>Soundora</h1>
     <p id="subtitle" style="color:#bbb">soundcloud radio</p>
-    
     <div id="spinner"></div>
         
     <div id="thequery">
     	<form name="search" action="" id="search" onsubmit="return formHandler();">
-      	<input class="field" id="query" type="text" value="billy jean">
+      	<input class="field" id="query" type="text" value="nudisco technokut">
       	<button type="submit"><span class="fontawesome-search"></span></button>
       </form>
     </div>
+  </div>
+  
+    <div id="player">
+    	<iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src=""></iframe>
+    </div>
     
-
-    
-    <div id="results"></div>
+    <div id="results">
+        
+    </div>
 
   </body>
 </html>
