@@ -106,6 +106,7 @@ button {
 header {
 	width:100%;
 	display:block;
+	min-height:30px;
 }
 #tippytop {
 	font-size:15px;
@@ -115,13 +116,14 @@ header {
 	position:absolute;
 	top:0px;
 	left:25px;
+	
 }
 #newuserpanel {
-	margin-top:50px;
+	margin-top:70px;
 	display:none;
 }
 #loginpanel {
-	margin-top:50px;
+	margin-top:70px;
 	display:none;
 }
 a {
