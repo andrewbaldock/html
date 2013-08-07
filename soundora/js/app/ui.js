@@ -30,29 +30,30 @@ define(["jquery", "soundcloud", "player"], function($) {
 								var track = result[i];
 								aB.tracks['trk' + (i+1)] = track; //push to global aB object
 
-								$('#results').append('<div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '"><br>' + track.title + '</div>');
+								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.artwork_url + ');"><div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '"><br>' + track.user.username + '<br>' + track.title + '</div></div>');
 							};
 							
 							var sc_options = '&show_artwork=true&auto_play=true&show_comments=true&enable_api=true&sharing=true&color=00BCD3'
+							
+							aB.fn.updatePlaying = function (trackId){
+								$('.track').removeClass('isPlaying');
+								var trkId = '#trk' + trackId;
+								$(trkId).addClass('isPlaying');
+							}
 						
 						  $('.track').click(function(){
 								var Id = this.id.replace('trk','');
-								var domId = '#' + this.id;
 								var url = 'http://api.soundcloud.com/tracks/' + Id;
 								var myframe = document.getElementById('sc-widget');
 								myframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;
-								$('.track').css('background-color','rgba(0, 172, 226, 0.74)').css('color','#444');
-								$(domId).css('background-color','rgba(0, 0, 0, 0.82)').css('color','#fff');
+								aB.fn.updatePlaying(Id);
 							});
 							
 							$('#spinner').hide('fastest');
 							$('#thequery').fadeIn();
 
 						
-							function loadPlayer(){
-								
-								
-							}
+
 
 							require(['player'], function (player) {
 								if (aB.tracks.trk1.kind == "track") {
@@ -66,17 +67,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 											newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
 									//play first result
 									widgetIframe.src = 'https://w.soundcloud.com/player/?url=' + newSoundUrl + sc_options;
-									var domId = '#trk' + aB.tracks.trk1.id;
-									$(domId).css('background-color','rgba(0, 0, 0, 0.82)').css('color','#fff');
-									/* widget.bind(SC.Widget.Events.READY, function() {
-										// load new widget
-										widget.bind(SC.Widget.Events.FINISH, function() {
-											widget.load(newSoundUrl, {
-												show_artwork: true,
-												auto_play: true
-											});
-										});
-									}); */
+									aB.fn.updatePlaying(aB.tracks.trk1.id);
 
 
 								 } //end if
