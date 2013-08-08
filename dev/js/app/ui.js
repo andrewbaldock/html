@@ -3,13 +3,30 @@ define(["jquery", "soundcloud", "player"], function($) {
       require(['soundcloud'], function (soundcloud) {
       	console.log('soundcloud loaded');
       	
-      	$('#thequery').show();
+      	String.prototype.replaceAll = function(str1, str2, ignore) {
+   				return this.replace(new RegExp(str1.replace(/([\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, function(c){return "\\" + c;}), "g"+(ignore?"i":"")), str2);
+				};
+      	
+      		//Get URL Params
+				aB.getUrlParam = function (paramName) {
+					paramName = paramName.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+					var regexS = "[\\?&]" + paramName + "=([^&#]*)";
+					var regex = new RegExp(regexS);
+					var results = regex.exec(window.location.href);
+					if (results === null) { 
+						return false; 
+					} else {
+						return results[1];
+					}
+				};
+
+				$('#thequery').show();
 
       	$('#thequery button').click(function(soundcloud){
       		$('#thequery').hide();
       		$('#spinner').show();
       	
-      		var usrInput = $('#thequery input').val(), songs={}; 
+      		var usrInput = $('#thequery input').val(); 
       		aB.tracks = {};
       		
       		SC.initialize({
@@ -21,7 +38,6 @@ define(["jquery", "soundcloud", "player"], function($) {
 					console.log('searching on ' + usrInput);
 					$('#results').html('').show();
 
-					
 					SC.get('/tracks', { q: usrInput }, function(result) {
 							console.log(result + ' ' + result.length);
 							// put 'em in teh dom
@@ -30,7 +46,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 								var track = result[i];
 								aB.tracks['trk' + (i+1)] = track; //push to global aB object
 
-								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.artwork_url + ');"><div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '"><br>' + track.user.username + '<br>' + track.title + '</div></div>');
+								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.artwork_url + ');"><div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '"><br><br>' + track.user.username + '<br>' + track.title + '</div></div>');
 							};
 							
 							var sc_options = '&show_artwork=true&auto_play=true&show_comments=true&enable_api=true&sharing=true&color=00BCD3'
@@ -44,17 +60,22 @@ define(["jquery", "soundcloud", "player"], function($) {
 						  $('.track').click(function(){
 								var Id = this.id.replace('trk','');
 								var url = 'http://api.soundcloud.com/tracks/' + Id;
-								var myframe = document.getElementById('sc-widget');
-								myframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;
+								var myframe = document.getElementById('widget');
+								myframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;		
 								aB.fn.updatePlaying(Id);
+								var iframeElement   	= document.querySelector('iframe');
+								var iframeElementID 	= iframeElement.id;
+								aB.current_player         = SC.Widget(iframeElement);
+
+								
 							});
 							
 							$('#spinner').hide('fastest');
 							$('#thequery').fadeIn();
 
-						
+							
 
-
+							//launch the player
 							require(['player'], function (player) {
 								if (aB.tracks.trk1.kind == "track") {
 									//expose the player
@@ -62,11 +83,22 @@ define(["jquery", "soundcloud", "player"], function($) {
 									console.log('readying track ' + aB.tracks.trk1.id);
 									//fire the player up
 								
-									var widgetIframe = document.getElementById('sc-widget'),
-											widget       = SC.Widget(widgetIframe),
-											newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
+									var newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
+									var widgetIframe = document.getElementById('widget');
+
+									var iframe = document.querySelector('#widget');
+									iframe.src = 'https://w.soundcloud.com/player/?url=' + newSoundUrl + sc_options;
+
+									var widget = SC.Widget(iframe);
+		
+									widget.bind(SC.Widget.Events.FINISH, function(eventData) {
+											console.log('song has finished');
+									});
+
+									
+
+									
 									//play first result
-									widgetIframe.src = 'https://w.soundcloud.com/player/?url=' + newSoundUrl + sc_options;
 									aB.fn.updatePlaying(aB.tracks.trk1.id);
 
 
@@ -77,11 +109,19 @@ define(["jquery", "soundcloud", "player"], function($) {
 							
 					}); // end SC.get
 					
+
 					
   				
       	}); // end click
       	
-      	$('#thequery input#query').focus();
+      	var autostart = aB.getUrlParam('play');
+				if(autostart != false) {
+					autostart = autostart.replaceAll('+', ' ');
+					$('#query').val(autostart);
+					$('#thequery button').click();
+				} else {
+					$('#thequery input#query').focus();
+				}
       	
       	//handle return key
       	$('input #query').on('keydown', function(event) { if (event.which == 13 || event.keyCode == 13) { e.preventDefault();$('#thequery button').click(); } });
