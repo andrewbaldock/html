@@ -47,7 +47,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 								var track = result[i];
 								aB.tracks['trk' + (i+1)] = track; //push to global aB object
 
-								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.waveform_url + ');"><div class="track" style="background-image:url(' + track.artwork_url + ');" data-trk="' + (i+1) + '" id="trk' + track.id + '"><br><br>' + track.user.username + '<br>' + track.title + '</div></div>');
+								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.waveform_url + ');"><div class="track" style="background-image:url(' + track.artwork_url + ');" data-trk="' + (i+1) + '" id="trk' + track.id + '"><div class="text"><span>' + track.user.username + '</span><br><p>' + track.title + '</p></div></div></div>');
 							};
 							
 							var sc_options = '&show_artwork=true&auto_play=true&show_comments=true&enable_api=true&sharing=true&color=00BCD3'

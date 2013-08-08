@@ -18,24 +18,32 @@ body {
 }
 h1, h2, h3, h4, h5 {
 	font-family:'Supermercado One', cursive;
-	color:rgba(0, 172, 226, 0.74);
+	color:rgba(0, 172, 226, 0.99);
 	margin-bottom:-15px;
 }
 h1 {
-	font-size:60px;
-	line-height:65px;
+	font-size:85px;
+	line-height:95px;
 	display:block;
 	/*background:url('../img/effect_2.png');*/
 	width:100%;
 	margin-top:20px;
+	color:rgba(0, 172, 226, 0.99);
 		
 }
+.longshadow {color:#fff;
+  text-shadow: 0px 0px 0 #00CFEC,-1px 1px 0 #00CFEC,-2px 2px 0 #00CFEC,-3px 3px 0 #00CFEC,-4px 4px 0 #00CFEC,-5px 5px 0 #00CFEC,-6px 6px 0 #00CFEC,-7px 7px 0 #00CFEC,-8px 8px 0 #00CFEC,-9px 9px 0 #00CFEC,-10px 10px 0 #00CFEC,-11px 11px 0 #00CFEC,-12px 12px 0 #00CFEC;
+}
+
+
 #subtitle{
-	font-size:25px;
+  font-size: 24px;
+	font-family: Supermercado One;
+	color: #D3D3D3;
 	line-height:25px;
-	margin-top:-10px;
-	margin-left:60px;
-	letter-spacing:1px;
+	margin-top:12px;
+	margin-left:50px;
+	letter-spacing:7px;
 }
 .field {
 	height:30px;
@@ -57,7 +65,7 @@ input:focus {
 	width: 50px;
 	color: #fff;
 	background-color: rgba(0, 172, 226, 0.74);
-	height:34px;
+	height:35px;
 	font-size:25px;
 	line-height:25px;
 	border-radius: 2px;
@@ -104,6 +112,7 @@ font-family:tahoma,helvetica,ariel,sans-serif;
 	background-repeat:no-repeat;
 	text-align:left;
 	color:#FFF;
+	text-shadow:0px 2px 2px #000;
 }
 .track-wrap {
 	display:block;
