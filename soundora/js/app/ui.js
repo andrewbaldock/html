@@ -20,7 +20,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 					}
 				};
 
-				$('#thequery').show();
+				$('#thequery').slideDown();
 
       	$('#thequery button').click(function(soundcloud){
       		$('#thequery').hide();
@@ -47,7 +47,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 								var track = result[i];
 								aB.tracks['trk' + (i+1)] = track; //push to global aB object
 
-								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.artwork_url + ');"><div class="track" style="background-image:url(' + track.waveform_url + ');" data-trk="' + (i+1) + '" id="trk' + track.id + '"><br><br>' + track.user.username + '<br>' + track.title + '</div></div>');
+								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.waveform_url + ');"><div class="track" style="background-image:url(' + track.artwork_url + ');" data-trk="' + (i+1) + '" id="trk' + track.id + '"><br><br>' + track.user.username + '<br>' + track.title + '</div></div>');
 							};
 							
 							var sc_options = '&show_artwork=true&auto_play=true&show_comments=true&enable_api=true&sharing=true&color=00BCD3'
@@ -66,7 +66,6 @@ define(["jquery", "soundcloud", "player"], function($) {
 								$(nextId).click();
 							}
 						
-						
 						  $('.track').click(function(){
 								var Id = this.id.replace('trk','');
 								var url = 'http://api.soundcloud.com/tracks/' + Id;
@@ -74,48 +73,60 @@ define(["jquery", "soundcloud", "player"], function($) {
 								var iframe = document.querySelector('#widget');
 								iframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;		
 								
+								aB.widget = SC.Widget(iframe);	
 								
+								aB.widget.unbind(SC.Widget.Events.FINISH, function(eventData) {
+										//unbound
+								});
+
 								setTimeout(function(){
-										var widget = SC.Widget(iframe);
-										widget.bind(SC.Widget.Events.FINISH, function(eventData) {
-											console.log('song has finished');
-											aB.fn.advanceTrack();
-										});
-								},5000);
-								
+									aB.widget.bind(SC.Widget.Events.FINISH, function(eventData) {
+										console.log('song has finished');
+										aB.fn.advanceTrack();
+									});
+								},5000); 
+
 								aB.fn.updatePlaying(Id); // css
 								
 							});
 							
 							$('#spinner').hide('fastest');
+							
 							$('#thequery').fadeIn();
 
 							
 
 							//launch the player
 							require(['player'], function (player) {
-								if (aB.tracks.trk1.kind == "track") {
+								if (aB.tracks.trk1.kind != undefined) {
 									//expose the player
 									$('#player').show('fastest');
 									console.log('readying track ' + aB.tracks.trk1.id);						
 
 									//play first result
-									var newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
+									aB.fn.updatePlaying(aB.tracks.trk1.id);
+									aB.tracks.played = 1;
+									
+									var firstSong = '#trk' + aB.tracks.trk1.id;
+									$(firstSong).click();
+									
+									/*var newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
 					
 									var iframe = document.querySelector('#widget');
 									iframe.src = 'https://w.soundcloud.com/player/?url=' + newSoundUrl + sc_options;
 									
-									var widget = SC.Widget(iframe);
-									widget.bind(SC.Widget.Events.FINISH, function(eventData) {
+									var wIdget = SC.Widget(iframe);
+									wIdget.bind(SC.Widget.Events.FINISH, function(eventData) {
 											console.log('song has finished');
 											aB.fn.advanceTrack();
 											
-									});
+									}); */
 
-									aB.fn.updatePlaying(aB.tracks.trk1.id);
-									aB.tracks.played = 1;
 
-								 } //end if
+
+								 } else {
+								 	alert('no results');
+								 }//end if
 							 });//end require;
 							
 							
@@ -123,9 +134,26 @@ define(["jquery", "soundcloud", "player"], function($) {
   				
       	}); // end click
       	
+				//interesting random queries
+				aB.seeds = ['night drive',
+					'nudisco technokut',
+					'band of horses infinite',
+					'seadisco',
+					'her favorite song',
+					'bill evans',
+					'dekire',
+					'first fires grey reverend',
+					'aeroplane',
+					'inside my love disco',
+					'kimbra remix'];
+
+				var seed = aB.seeds[Math.floor(Math.random()*aB.seeds.length)]; // get a random item
+				$('#query').val(seed);
+      	
       	var autostart = aB.fn.getUrlParam('play');
 				if(autostart != false) {
 					autostart = autostart.replaceAll('+', ' ');
+					autostart = autostart.replaceAll('%20', ' ');
 					$('#query').val(autostart);
 					$('#thequery button').click();
 				} else {

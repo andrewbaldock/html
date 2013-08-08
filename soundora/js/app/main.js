@@ -1,4 +1,4 @@
-define(["jquery", "jquery.alpha", "jquery.beta", "underscore", "app/df_auth", "json2", "soundcloud", "player",  "backbone", "app/ui" ], function($) {
+define(["jquery", "jquery.alpha", "jquery.beta", "underscore", "app/df_auth", "json2", "soundcloud", "player",  "backbone", "app/ui", "easing" ], function($) {
     //the jquery.alpha.js and jquery.beta.js plugins have been loaded.
     $(function() {
         $('body').alpha();
@@ -10,7 +10,7 @@ define(["jquery", "jquery.alpha", "jquery.beta", "underscore", "app/df_auth", "j
       		if(typeof Backbone !='undefined') {console.log("backbone loaded");}
       		
       		function toggleSpinner(){
-      			$('#spinner').toggle('slowest');
+      			$('#spinner').slideUp('slowest');
       		}
       		toggleSpinner();
 

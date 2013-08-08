@@ -9,11 +9,12 @@
 html {
 	font-family: 'Share', sans-serif;
 			text-align:center;
-			background:url('../img/background-gplaypattern.png') #eee;
+			background:url('../img/background-gplaypattern.png') #eee; 
+		/* 	background:url('../img/sfnight.jpg') #eee;*/
 	color:#979797;
 }
 body {
-	padding:0px 20px;
+	padding:0px 30px;
 }
 h1, h2, h3, h4, h5 {
 	font-family:'Supermercado One', cursive;
@@ -80,14 +81,13 @@ button:hover {
 }
 
 #results {
-	width:90%;
-	margin-left:5%;
-	padding-right:15%;
-	padding:20px;
+	display:inline-block;
+	width:95%;
+	padding:5%;
 	display:none;
 	border-radius:8px;
 	height:100%;
-
+	margin-top:-25px;
 }
 .track {
 	height:128px;
@@ -109,7 +109,9 @@ font-family:tahoma,helvetica,ariel,sans-serif;
 	display:block;
 }
 .track:hover {
-	background-color:rgba(62, 206, 233, 0.87);
+	height:112px;
+	width:112px;
+	border:8px solid #FF4100;
 }
 
 .disclaimer {
@@ -174,4 +176,7 @@ header {
 
 .isPlaying {
 		background-color:rgba(0, 172, 226, 1.00);
-}
+		height:112px;
+	  width:112px;
+	  border:8px solid rgba(0, 172, 226, 0.74);
+}	
