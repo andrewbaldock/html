@@ -100,7 +100,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 							require(['player'], function (player) {
 								if (aB.tracks.trk1.kind != undefined) {
 									//expose the player
-									$('#player').show('fastest');
+									$('#player-wrapper').show('slowest');
 									console.log('readying track ' + aB.tracks.trk1.id);						
 
 									//play first result
@@ -138,14 +138,14 @@ define(["jquery", "soundcloud", "player"], function($) {
 				aB.seeds = ['night drive',
 					'nudisco technokut',
 					'band of horses infinite',
-					'seadisco',
+					'koda',
 					'her favorite song',
-					'bill evans',
-					'dekire',
-					'first fires grey reverend',
-					'aeroplane',
+					'trying to be cool',
+					'charles+dekire',
+					'bonobo first fires',
+					'aeroplane kimbra remix',
 					'inside my love disco',
-					'kimbra remix'];
+					'phoenix'];
 
 				var seed = aB.seeds[Math.floor(Math.random()*aB.seeds.length)]; // get a random item
 				$('#query').val(seed);

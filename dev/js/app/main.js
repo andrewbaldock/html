@@ -10,7 +10,7 @@ define(["jquery", "jquery.alpha", "jquery.beta", "underscore", "app/df_auth", "j
       		if(typeof Backbone !='undefined') {console.log("backbone loaded");}
       		
       		function toggleSpinner(){
-      			$('#spinner').slideUp('slowest');
+      			$('#spinner').slideUp('fastest');
       		}
       		toggleSpinner();
 

@@ -2,6 +2,22 @@
 <html>
 <head>
 	<title>Soundora</title>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="description" content="Soundora is a Pandora clone built using the SoundCloud API">
+    <meta name="keywords" content="SoundCloud, Pandora" />
+    <link rel="canonical" href="http://andrewbaldock.com/soundora" />
+    <!-- Facebook -->
+    <meta property="og:title" content="Soundora is SoundCloud Radio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://andrewbaldock.com/soundora">
+    <meta property="og:image" content="http://andrewbaldock.com/soundora/img/sitepreview.png">
+    <meta property="og:site_name" content="Soundora">
+    <meta property="og:description" content="Soundora is a Pandora clone built using the SoundCloud API">
+    <!-- end Facebook -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<link rel="image_src" type="text/css" href="/img/sitepreview.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/longshadow.css">
 	<script>
@@ -20,7 +36,7 @@
 	<script data-main="js/app/startup" src="js/lib/require.js"></script>
 </head>
 <body>
- 	<div id="tippytop" style="display:none">
+ 	<div id="tippytop">
  		<a href="#" id="joinlink">Join</a> or 
  		<a href="#" id="loginlink">Login</a> 
  	</div>
@@ -58,8 +74,10 @@
     
   </div>
   
-    <div id="player">
-    	<iframe id="widget" width="100%" height="120" scrolling="no" frameborder="no" seamless="seamless" src=""></iframe>
+    <div id="player-wrapper">
+    	<div id="player">
+    		<iframe id="widget" width="100%" height="120" scrolling="no" frameborder="no" seamless="seamless" src=""></iframe>
+    	</div>
     </div>
     
     <div id="results">
