@@ -8,7 +8,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 				};
       	
       		//Get URL Params
-				aB.getUrlParam = function (paramName) {
+				aB.fn.getUrlParam = function (paramName) {
 					paramName = paramName.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
 					var regexS = "[\\?&]" + paramName + "=([^&#]*)";
 					var regex = new RegExp(regexS);
@@ -28,6 +28,7 @@ define(["jquery", "soundcloud", "player"], function($) {
       	
       		var usrInput = $('#thequery input').val(); 
       		aB.tracks = {};
+      		aB.tracks.played = 0;
       		
       		SC.initialize({
     				client_id: '3b56bf42a48bcfe2379a7950bc9dcf95',
@@ -46,7 +47,7 @@ define(["jquery", "soundcloud", "player"], function($) {
 								var track = result[i];
 								aB.tracks['trk' + (i+1)] = track; //push to global aB object
 
-								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.artwork_url + ');"><div class="track" style="background-image:url(' + track.waveform_url + ');" id="trk' + track.id + '"><br><br>' + track.user.username + '<br>' + track.title + '</div></div>');
+								$('#results').append('<div class="track-wrap"  style="background-image:url(' + track.artwork_url + ');"><div class="track" style="background-image:url(' + track.waveform_url + ');" data-trk="' + (i+1) + '" id="trk' + track.id + '"><br><br>' + track.user.username + '<br>' + track.title + '</div></div>');
 							};
 							
 							var sc_options = '&show_artwork=true&auto_play=true&show_comments=true&enable_api=true&sharing=true&color=00BCD3'
@@ -57,16 +58,32 @@ define(["jquery", "soundcloud", "player"], function($) {
 								$(trkId).addClass('isPlaying');
 							}
 						
+							aB.fn.advanceTrack = function (){
+								console.log('advancing...');
+								$('.track').removeClass('isPlaying');
+								aB.tracks.played = aB.tracks.played + 1;
+								var nextId = '#trk' + aB.tracks['trk' + aB.tracks.played].id;
+								$(nextId).click();
+							}
+						
+						
 						  $('.track').click(function(){
 								var Id = this.id.replace('trk','');
 								var url = 'http://api.soundcloud.com/tracks/' + Id;
-								var myframe = document.getElementById('widget');
-								myframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;		
-								aB.fn.updatePlaying(Id);
-								var iframeElement   	= document.querySelector('iframe');
-								var iframeElementID 	= iframeElement.id;
-								aB.current_player         = SC.Widget(iframeElement);
-
+								
+								var iframe = document.querySelector('#widget');
+								iframe.src = 'https://w.soundcloud.com/player/?url=' + url + sc_options;		
+								
+								
+								setTimeout(function(){
+										var widget = SC.Widget(iframe);
+										widget.bind(SC.Widget.Events.FINISH, function(eventData) {
+											console.log('song has finished');
+											aB.fn.advanceTrack();
+										});
+								},5000);
+								
+								aB.fn.updatePlaying(Id); // css
 								
 							});
 							
@@ -80,41 +97,33 @@ define(["jquery", "soundcloud", "player"], function($) {
 								if (aB.tracks.trk1.kind == "track") {
 									//expose the player
 									$('#player').show('fastest');
-									console.log('readying track ' + aB.tracks.trk1.id);
-									//fire the player up
-								
-									var newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
-									var widgetIframe = document.getElementById('widget');
+									console.log('readying track ' + aB.tracks.trk1.id);						
 
+									//play first result
+									var newSoundUrl = 'http://api.soundcloud.com/tracks/' + aB.tracks.trk1.id;
+					
 									var iframe = document.querySelector('#widget');
 									iframe.src = 'https://w.soundcloud.com/player/?url=' + newSoundUrl + sc_options;
-
+									
 									var widget = SC.Widget(iframe);
-		
 									widget.bind(SC.Widget.Events.FINISH, function(eventData) {
 											console.log('song has finished');
+											aB.fn.advanceTrack();
+											
 									});
 
-									
-
-									
-									//play first result
 									aB.fn.updatePlaying(aB.tracks.trk1.id);
-
+									aB.tracks.played = 1;
 
 								 } //end if
 							 });//end require;
 							
 							
-							
-					}); // end SC.get
-					
-
-					
+						}); // end SC.get			
   				
       	}); // end click
       	
-      	var autostart = aB.getUrlParam('play');
+      	var autostart = aB.fn.getUrlParam('play');
 				if(autostart != false) {
 					autostart = autostart.replaceAll('+', ' ');
 					$('#query').val(autostart);
